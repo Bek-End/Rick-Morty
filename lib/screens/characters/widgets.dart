@@ -3,14 +3,14 @@ import 'package:RickAndMorty/global_bloc/navigator_events.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/resources/images.dart';
 import 'package:RickAndMorty/resources/variables.dart';
-import 'package:RickAndMorty/screens/characters/bloc_s/characters_bloc.dart';
-import 'package:RickAndMorty/screens/characters/bloc_s/characters_event.dart';
+import 'package:RickAndMorty/screens/characters/bloc/characters_bloc.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CharactersWidgets {
-  Widget list(Size size) {
+  Widget list(Size size, BuildContext context) {
     return Column(children: [
       Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -21,7 +21,8 @@ class CharactersWidgets {
             ElevatedButton(
                 child: myIcons.grid,
                 onPressed: () {
-                  charactersBloc.mapEventToState(CharactersGridEvent());
+                  context.read<CharactersBloc>()
+                    ..add(CharactersEvent.gridEvent());
                 })
           ])),
       const SizedBox(height: 24),
@@ -66,7 +67,7 @@ class CharactersWidgets {
         ]));
   }
 
-  Widget grid(Size size) {
+  Widget grid(Size size, BuildContext context) {
     ScrollController controller1 = ScrollController();
     return Column(children: [
       Padding(
@@ -78,7 +79,9 @@ class CharactersWidgets {
             ElevatedButton(
                 child: myIcons.list,
                 onPressed: () {
-                  charactersBloc.mapEventToState(CharactersListEvent());
+                  context.read<CharactersBloc>()
+                    ..add(CharactersEvent.listEvent());
+                  //  charactersBloc.mapEventToState(CharactersListEvent());
                 })
           ])),
       const SizedBox(height: 24),

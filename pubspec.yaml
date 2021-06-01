@@ -30,8 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter_svg: ^0.19.1
   rxdart: ^0.24.1
-  flutter_bloc: 
-  flutter_spinkit: ^4.1.2+1
+  flutter_bloc:
   freezed_annotation: ^0.12.0
 
 

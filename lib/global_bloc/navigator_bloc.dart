@@ -1,8 +1,6 @@
 import 'package:RickAndMorty/global_bloc/navigator_events.dart';
 import 'package:RickAndMorty/global_bloc/navigator_states.dart';
 import 'package:RickAndMorty/screens/character_profile/character_profile_screen.dart';
-import 'package:RickAndMorty/screens/characters/bloc_s/characters_bloc.dart';
-import 'package:RickAndMorty/screens/characters/bloc_s/characters_event.dart';
 import 'package:RickAndMorty/screens/navBar/navBarScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,6 @@ class NavigatorBloc {
         navigatorKey = initialEvent.navigatorKey;
         subject.sink.add(InitialMainScreenState());
         await Future.delayed(Duration(seconds: 2));
-        charactersBloc.mapEventToState(CharactersListEvent());
         navigatorKey.currentState.pushNamed(NavBarScreen.routeName);
         break;
       case CharacterProfileEvent:

@@ -32,23 +32,22 @@ class _MyAppState extends State<MyApp> {
         stream: navigatorBloc.subject.stream,
         builder: (context, AsyncSnapshot<NavigatorStates> snapshot) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Rick&Morty',
-            theme: ThemeData(
-                elevatedButtonTheme: ElevatedButtonThemeData(
-                    style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        primary: Colors.transparent,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        shadowColor: Colors.transparent))),
-            navigatorKey: _navigatorKey,
-            routes: {
-              NavBarScreen.routeName: (context) => NavBarScreen(),
-              InitialScreen.routeName: (context) => InitialScreen(),
-              CharactersScreen.routeName: (context) => CharactersScreen(),
-            },
-            home: InitialScreen(),
-          );
+              debugShowCheckedModeBanner: false,
+              title: 'Rick&Morty',
+              theme: ThemeData(
+                  elevatedButtonTheme: ElevatedButtonThemeData(
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          primary: Colors.transparent,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          shadowColor: Colors.transparent))),
+              navigatorKey: _navigatorKey,
+              routes: {
+                NavBarScreen.routeName: (context) => NavBarScreen(),
+                InitialScreen.routeName: (context) => InitialScreen(),
+                CharactersScreen.routeName: (context) => CharactersScreen()
+              },
+              home: InitialScreen());
         });
   }
 }
