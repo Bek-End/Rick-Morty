@@ -1,25 +1,25 @@
-import 'package:RickAndMorty/global_bloc/navigator_bloc.dart';
-import 'package:RickAndMorty/global_bloc/navigator_events.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/resources/images.dart';
 import 'package:RickAndMorty/resources/variables.dart';
-import 'package:RickAndMorty/screens/character_profile/widgets.dart';
+import 'package:RickAndMorty/screens/character_profile/model/episodes_list_model.dart';
+import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
+import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
+import 'package:RickAndMorty/screens/characters/models/characters_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_theme.dart';
+import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
-class CharacterProfile extends StatefulWidget {
-  static final routeName = "/CharacterProfile";
-  final int index;
-  const CharacterProfile({this.index});
-  @override
-  _CharacterProfileState createState() => _CharacterProfileState();
-}
+class CharacterProfileScreen extends StatelessWidget {
+  CharactersModel charactersModel;
+  CharacterProfileScreen({this.charactersModel});
 
-class _CharacterProfileState extends State<CharacterProfile> {
   @override
   Widget build(BuildContext context) {
+    int index;
     Size size = MediaQuery.of(context).size;
+    // return BlocConsumer<CharacterProfileBloc, CharacterProfileState>(
+    //     builder: (context, state) {
+
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -30,7 +30,7 @@ class _CharacterProfileState extends State<CharacterProfile> {
                 padding: const EdgeInsets.only(left: 24),
                 child: ElevatedButton(
                   onPressed: () {
-                    navigatorBloc.mapEventToState(NavigatorPopEvent());
+                    Navigator.pop(context);
                   },
                   child: Container(
                       height: 48,
@@ -49,7 +49,7 @@ class _CharacterProfileState extends State<CharacterProfile> {
                   height: 218,
                   width: size.width,
                   child: FittedBox(
-                      child: Image.asset(images.avatars[widget.index + 1]),
+                      child: Image.asset(images.avatars[index + 1]),
                       fit: BoxFit.cover)),
               Container(
                   width: size.width,
@@ -58,12 +58,12 @@ class _CharacterProfileState extends State<CharacterProfile> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const SizedBox(height: 90),
-                        Text(variables.characterName[widget.index],
-                            style: MyTextTheme.characterNameStyle),
+                        Text(variables.characterName[index],
+                            style: TextThemes.characterNameStyle),
                         const SizedBox(height: 4),
-                        Text(variables.characterStatus[widget.index],
+                        Text(variables.characterStatus[index],
                             style: TextStyle(
-                                color: widget.index < 4
+                                color: index < 4
                                     ? ColorTheme.kGreen
                                     : ColorTheme.kRed,
                                 fontSize: 10,
@@ -75,39 +75,41 @@ class _CharacterProfileState extends State<CharacterProfile> {
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Column(children: [
                               Text(variables.characterNature,
-                                  style: MyTextTheme.characterNatureStyle),
+                                  style: TextThemes.characterNatureStyle),
                               const SizedBox(height: 24),
                               Row(children: [
                                 Expanded(
                                     child: Text("Пол",
-                                        style: MyTextTheme.keyStyle)),
+                                        style: TextThemes.keyStyle)),
                                 Expanded(
                                     child: Text("Расса",
-                                        style: MyTextTheme.keyStyle))
+                                        style: TextThemes.keyStyle))
                               ]),
                               const SizedBox(height: 4),
                               Row(children: [
                                 Expanded(
-                                    child: Text(
-                                        variables.characterSex[widget.index],
-                                        style: MyTextTheme.valueStyle)),
+                                    child: Text(variables.characterSex[index],
+                                        style: TextThemes.valueStyle)),
                                 Expanded(
                                     child: Text("Человек",
-                                        style: MyTextTheme.valueStyle))
+                                        style: TextThemes.valueStyle))
                               ]),
                               const SizedBox(height: 20),
-                              characterProfileWidgets.enter(
-                                  "Место рождения", "Земля C-137"),
-                              characterProfileWidgets.enter("Местоположение",
-                                  "Земля (Измерение подменны)")
+                              EnterWidget(
+                                  myKey: "Место рождения",
+                                  value: "Земля C-137"),
+                              EnterWidget(
+                                  myKey: "Местоположение",
+                                  value: "Земля (Измерение подменны)")
                             ])),
                         Container(
                             height: 1,
                             margin: const EdgeInsets.only(top: 36, bottom: 45),
                             color: ColorTheme.kDirtyGrey),
-                        Container(
-                            child: characterProfileWidgets.episodes(),
-                            padding: const EdgeInsets.symmetric(horizontal: 16))
+                        EpisodesWidget(
+                          episodesListModel:
+                              EpisodesListModel.getEpisodesList(),
+                        )
                       ]))
             ]),
             Container(
@@ -125,10 +127,10 @@ class _CharacterProfileState extends State<CharacterProfile> {
                           border: Border.all(
                               width: 8, color: ColorTheme.kMainDark)),
                       child: FittedBox(
-                          child:
-                              Image.asset(images.avatars[widget.index + 1]))))
+                          child: Image.asset(images.avatars[index + 1]))))
             ])
           ])
         ])));
+    //});
   }
 }

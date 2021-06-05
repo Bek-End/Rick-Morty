@@ -1,7 +1,7 @@
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
-class MyTextTheme {
+class TextThemes {
   static TextStyle characterNameStyle =
       TextStyle(color: ColorTheme.kWhite, fontSize: 34, height: 1.17);
   static TextStyle characterNatureStyle = TextStyle(

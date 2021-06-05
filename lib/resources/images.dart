@@ -16,7 +16,7 @@ class Images {
     "assets/images/episod3.png"
   ];
 
-  final mainImage = 'assets/images/mainImage.png';//of string type, because we use fit when we use this image
+  final mainImage = 'assets/images/mainImage.png';
   final rick = Image.asset('assets/images/Rick.png');
   final and = Image.asset('assets/images/and.png');
   final morty = Image.asset('assets/images/Morty.png');

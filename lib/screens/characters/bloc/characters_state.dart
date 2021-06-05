@@ -1,7 +1,13 @@
 part of 'characters_bloc.dart';
 
+abstract class ListOrGrid {
+  CharactersListModel get charactersListModel;
+  bool get isGrid;
+}
+
 @freezed
 abstract class CharactersState with _$CharactersState {
-  const factory CharactersState.gridState() = _GridState;
-  const factory CharactersState.listState() = _ListState;
+  @Implements(ListOrGrid)
+  const factory CharactersState.select(
+      {CharactersListModel charactersListModel, bool isGrid}) = _SelectState;
 }
