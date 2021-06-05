@@ -1,6 +1,6 @@
 part of 'global_bloc.dart';
 
 @freezed
-abstract class GlobalBlocEvent with _$GlobalBlocEvent {
-  const factory GlobalBlocEvent.navbar() = _NavbarEvent;
+abstract class GlobalEvent with _$GlobalEvent {
+  const factory GlobalEvent.navbar() = _NavbarEvent;
 }

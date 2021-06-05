@@ -15,8 +15,7 @@ class CharacterProfileBloc
   Stream<CharacterProfileState> mapEventToState(
     CharacterProfileEvent event,
   ) async* {
-    yield* event.maybeMap(
-        characterProfile: _characterProfileStream, orElse: () {});
+    yield* event.map(characterProfile: _characterProfileStream);
   }
 
   Stream<CharacterProfileState> _characterProfileStream(

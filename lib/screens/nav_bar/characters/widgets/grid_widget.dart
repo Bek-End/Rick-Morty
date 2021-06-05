@@ -1,5 +1,5 @@
-import 'package:RickAndMorty/screens/characters/models/characters_list_model.dart';
-import 'package:RickAndMorty/screens/characters/widgets/grid_item.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_list_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_item.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +13,15 @@ class GridWidget extends StatelessWidget {
     return Container(
       width: size.width,
       color: ColorTheme.kDarkBlue,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: GridView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: charactersListModel.charactersListModel.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 24,
-            mainAxisSpacing: 24,
-            crossAxisCount: 2,
-            childAspectRatio: 0.8),
+          crossAxisSpacing: 24,
+          mainAxisSpacing: 24,
+          crossAxisCount: 2,
+          childAspectRatio: 0.9,
+        ),
         itemBuilder: (context, index) {
           return GridItem(
             charactersModel: charactersListModel.charactersListModel[index],

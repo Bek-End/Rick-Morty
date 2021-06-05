@@ -152,8 +152,8 @@ class _$CharactersStateTearOff {
   const _$CharactersStateTearOff();
 
 // ignore: unused_element
-  _SelectState select({CharactersListModel charactersListModel, bool isGrid}) {
-    return _SelectState(
+  SelectState select({CharactersListModel charactersListModel, bool isGrid}) {
+    return SelectState(
       charactersListModel: charactersListModel,
       isGrid: isGrid,
     );
@@ -181,11 +181,11 @@ mixin _$CharactersState {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult select(_SelectState value),
+    @required TResult select(SelectState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectState value),
+    TResult select(SelectState value),
     @required TResult orElse(),
   });
 
@@ -225,32 +225,32 @@ class _$CharactersStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SelectStateCopyWith<$Res>
+abstract class $SelectStateCopyWith<$Res>
     implements $CharactersStateCopyWith<$Res> {
-  factory _$SelectStateCopyWith(
-          _SelectState value, $Res Function(_SelectState) then) =
-      __$SelectStateCopyWithImpl<$Res>;
+  factory $SelectStateCopyWith(
+          SelectState value, $Res Function(SelectState) then) =
+      _$SelectStateCopyWithImpl<$Res>;
   @override
   $Res call({CharactersListModel charactersListModel, bool isGrid});
 }
 
 /// @nodoc
-class __$SelectStateCopyWithImpl<$Res>
+class _$SelectStateCopyWithImpl<$Res>
     extends _$CharactersStateCopyWithImpl<$Res>
-    implements _$SelectStateCopyWith<$Res> {
-  __$SelectStateCopyWithImpl(
-      _SelectState _value, $Res Function(_SelectState) _then)
-      : super(_value, (v) => _then(v as _SelectState));
+    implements $SelectStateCopyWith<$Res> {
+  _$SelectStateCopyWithImpl(
+      SelectState _value, $Res Function(SelectState) _then)
+      : super(_value, (v) => _then(v as SelectState));
 
   @override
-  _SelectState get _value => super._value as _SelectState;
+  SelectState get _value => super._value as SelectState;
 
   @override
   $Res call({
     Object charactersListModel = freezed,
     Object isGrid = freezed,
   }) {
-    return _then(_SelectState(
+    return _then(SelectState(
       charactersListModel: charactersListModel == freezed
           ? _value.charactersListModel
           : charactersListModel as CharactersListModel,
@@ -262,8 +262,8 @@ class __$SelectStateCopyWithImpl<$Res>
 @Implements(ListOrGrid)
 
 /// @nodoc
-class _$_SelectState implements _SelectState {
-  const _$_SelectState({this.charactersListModel, this.isGrid});
+class _$SelectState implements SelectState {
+  const _$SelectState({this.charactersListModel, this.isGrid});
 
   @override
   final CharactersListModel charactersListModel;
@@ -278,7 +278,7 @@ class _$_SelectState implements _SelectState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SelectState &&
+        (other is SelectState &&
             (identical(other.charactersListModel, charactersListModel) ||
                 const DeepCollectionEquality()
                     .equals(other.charactersListModel, charactersListModel)) &&
@@ -294,8 +294,8 @@ class _$_SelectState implements _SelectState {
 
   @JsonKey(ignore: true)
   @override
-  _$SelectStateCopyWith<_SelectState> get copyWith =>
-      __$SelectStateCopyWithImpl<_SelectState>(this, _$identity);
+  $SelectStateCopyWith<SelectState> get copyWith =>
+      _$SelectStateCopyWithImpl<SelectState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -323,7 +323,7 @@ class _$_SelectState implements _SelectState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult select(_SelectState value),
+    @required TResult select(SelectState value),
   }) {
     assert(select != null);
     return select(this);
@@ -332,7 +332,7 @@ class _$_SelectState implements _SelectState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectState value),
+    TResult select(SelectState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -343,9 +343,9 @@ class _$_SelectState implements _SelectState {
   }
 }
 
-abstract class _SelectState implements CharactersState, ListOrGrid {
-  const factory _SelectState(
-      {CharactersListModel charactersListModel, bool isGrid}) = _$_SelectState;
+abstract class SelectState implements CharactersState, ListOrGrid {
+  const factory SelectState(
+      {CharactersListModel charactersListModel, bool isGrid}) = _$SelectState;
 
   @override
   CharactersListModel get charactersListModel;
@@ -353,5 +353,5 @@ abstract class _SelectState implements CharactersState, ListOrGrid {
   bool get isGrid;
   @override
   @JsonKey(ignore: true)
-  _$SelectStateCopyWith<_SelectState> get copyWith;
+  $SelectStateCopyWith<SelectState> get copyWith;
 }

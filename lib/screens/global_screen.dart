@@ -12,15 +12,17 @@ class GlobalScreen extends StatefulWidget {
 class _GlobalScreenState extends State<GlobalScreen> {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<GlobalBloc, GlobalBlocState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return state.maybeMap(
-              splash: (_) => SplashScreen(),
-              navBar: (_) => NavBarScreen(),
-              orElse: () {
-                return Container();
-              });
-        });
+    return BlocConsumer<GlobalBloc, GlobalState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return state.maybeMap(
+          splash: (_) => SplashScreen(),
+          navBar: (_) => NavBarScreen(),
+          orElse: () {
+            return Container();
+          },
+        );
+      },
+    );
   }
 }

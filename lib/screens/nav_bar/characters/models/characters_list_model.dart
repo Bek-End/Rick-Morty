@@ -1,8 +1,8 @@
-import 'package:RickAndMorty/screens/characters/models/characters_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class CharactersListModel {
-  List<CharactersModel> charactersListModel=[];
+  List<CharactersModel> charactersListModel = [];
   CharactersListModel({@required this.charactersListModel});
 
   CharactersListModel.getCharactersList() {
@@ -11,4 +11,3 @@ class CharactersListModel {
     }
   }
 }
-

@@ -10,8 +10,8 @@ part of 'global_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$GlobalBlocEventTearOff {
-  const _$GlobalBlocEventTearOff();
+class _$GlobalEventTearOff {
+  const _$GlobalEventTearOff();
 
 // ignore: unused_element
   _NavbarEvent navbar() {
@@ -21,10 +21,10 @@ class _$GlobalBlocEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $GlobalBlocEvent = _$GlobalBlocEventTearOff();
+const $GlobalEvent = _$GlobalEventTearOff();
 
 /// @nodoc
-mixin _$GlobalBlocEvent {
+mixin _$GlobalEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult navbar(),
@@ -46,20 +46,19 @@ mixin _$GlobalBlocEvent {
 }
 
 /// @nodoc
-abstract class $GlobalBlocEventCopyWith<$Res> {
-  factory $GlobalBlocEventCopyWith(
-          GlobalBlocEvent value, $Res Function(GlobalBlocEvent) then) =
-      _$GlobalBlocEventCopyWithImpl<$Res>;
+abstract class $GlobalEventCopyWith<$Res> {
+  factory $GlobalEventCopyWith(
+          GlobalEvent value, $Res Function(GlobalEvent) then) =
+      _$GlobalEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GlobalBlocEventCopyWithImpl<$Res>
-    implements $GlobalBlocEventCopyWith<$Res> {
-  _$GlobalBlocEventCopyWithImpl(this._value, this._then);
+class _$GlobalEventCopyWithImpl<$Res> implements $GlobalEventCopyWith<$Res> {
+  _$GlobalEventCopyWithImpl(this._value, this._then);
 
-  final GlobalBlocEvent _value;
+  final GlobalEvent _value;
   // ignore: unused_field
-  final $Res Function(GlobalBlocEvent) _then;
+  final $Res Function(GlobalEvent) _then;
 }
 
 /// @nodoc
@@ -70,8 +69,7 @@ abstract class _$NavbarEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NavbarEventCopyWithImpl<$Res>
-    extends _$GlobalBlocEventCopyWithImpl<$Res>
+class __$NavbarEventCopyWithImpl<$Res> extends _$GlobalEventCopyWithImpl<$Res>
     implements _$NavbarEventCopyWith<$Res> {
   __$NavbarEventCopyWithImpl(
       _NavbarEvent _value, $Res Function(_NavbarEvent) _then)
@@ -87,7 +85,7 @@ class _$_NavbarEvent implements _NavbarEvent {
 
   @override
   String toString() {
-    return 'GlobalBlocEvent.navbar()';
+    return 'GlobalEvent.navbar()';
   }
 
   @override
@@ -143,13 +141,13 @@ class _$_NavbarEvent implements _NavbarEvent {
   }
 }
 
-abstract class _NavbarEvent implements GlobalBlocEvent {
+abstract class _NavbarEvent implements GlobalEvent {
   const factory _NavbarEvent() = _$_NavbarEvent;
 }
 
 /// @nodoc
-class _$GlobalBlocStateTearOff {
-  const _$GlobalBlocStateTearOff();
+class _$GlobalStateTearOff {
+  const _$GlobalStateTearOff();
 
 // ignore: unused_element
   _SplashState splash() {
@@ -164,10 +162,10 @@ class _$GlobalBlocStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $GlobalBlocState = _$GlobalBlocStateTearOff();
+const $GlobalState = _$GlobalStateTearOff();
 
 /// @nodoc
-mixin _$GlobalBlocState {
+mixin _$GlobalState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult splash(),
@@ -193,20 +191,19 @@ mixin _$GlobalBlocState {
 }
 
 /// @nodoc
-abstract class $GlobalBlocStateCopyWith<$Res> {
-  factory $GlobalBlocStateCopyWith(
-          GlobalBlocState value, $Res Function(GlobalBlocState) then) =
-      _$GlobalBlocStateCopyWithImpl<$Res>;
+abstract class $GlobalStateCopyWith<$Res> {
+  factory $GlobalStateCopyWith(
+          GlobalState value, $Res Function(GlobalState) then) =
+      _$GlobalStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GlobalBlocStateCopyWithImpl<$Res>
-    implements $GlobalBlocStateCopyWith<$Res> {
-  _$GlobalBlocStateCopyWithImpl(this._value, this._then);
+class _$GlobalStateCopyWithImpl<$Res> implements $GlobalStateCopyWith<$Res> {
+  _$GlobalStateCopyWithImpl(this._value, this._then);
 
-  final GlobalBlocState _value;
+  final GlobalState _value;
   // ignore: unused_field
-  final $Res Function(GlobalBlocState) _then;
+  final $Res Function(GlobalState) _then;
 }
 
 /// @nodoc
@@ -217,8 +214,7 @@ abstract class _$SplashStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SplashStateCopyWithImpl<$Res>
-    extends _$GlobalBlocStateCopyWithImpl<$Res>
+class __$SplashStateCopyWithImpl<$Res> extends _$GlobalStateCopyWithImpl<$Res>
     implements _$SplashStateCopyWith<$Res> {
   __$SplashStateCopyWithImpl(
       _SplashState _value, $Res Function(_SplashState) _then)
@@ -234,7 +230,7 @@ class _$_SplashState implements _SplashState {
 
   @override
   String toString() {
-    return 'GlobalBlocState.splash()';
+    return 'GlobalState.splash()';
   }
 
   @override
@@ -296,7 +292,7 @@ class _$_SplashState implements _SplashState {
   }
 }
 
-abstract class _SplashState implements GlobalBlocState {
+abstract class _SplashState implements GlobalState {
   const factory _SplashState() = _$_SplashState;
 }
 
@@ -308,8 +304,7 @@ abstract class _$NavBarStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NavBarStateCopyWithImpl<$Res>
-    extends _$GlobalBlocStateCopyWithImpl<$Res>
+class __$NavBarStateCopyWithImpl<$Res> extends _$GlobalStateCopyWithImpl<$Res>
     implements _$NavBarStateCopyWith<$Res> {
   __$NavBarStateCopyWithImpl(
       _NavBarState _value, $Res Function(_NavBarState) _then)
@@ -325,7 +320,7 @@ class _$_NavBarState implements _NavBarState {
 
   @override
   String toString() {
-    return 'GlobalBlocState.navBar()';
+    return 'GlobalState.navBar()';
   }
 
   @override
@@ -387,6 +382,6 @@ class _$_NavBarState implements _NavBarState {
   }
 }
 
-abstract class _NavBarState implements GlobalBlocState {
+abstract class _NavBarState implements GlobalState {
   const factory _NavBarState() = _$_NavBarState;
 }

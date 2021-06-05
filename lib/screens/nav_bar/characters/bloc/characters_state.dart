@@ -8,6 +8,8 @@ abstract class ListOrGrid {
 @freezed
 abstract class CharactersState with _$CharactersState {
   @Implements(ListOrGrid)
-  const factory CharactersState.select(
-      {CharactersListModel charactersListModel, bool isGrid}) = _SelectState;
+  const factory CharactersState.select({
+    CharactersListModel charactersListModel,
+    bool isGrid,
+  }) = SelectState;
 }

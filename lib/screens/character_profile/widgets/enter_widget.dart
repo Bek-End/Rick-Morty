@@ -9,14 +9,14 @@ class EnterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(myKey, style: TextThemes.keyStyle),
-            Text(value, style: TextThemes.keyStyle)
-          ]),
-          myIcons.forward
-        ]));
+      onPressed: () {},
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(myKey, style: TextThemes.keyStyle),
+          Text(value, style: TextThemes.keyStyle)
+        ]),
+        myIcons.forward
+      ]),
+    );
   }
 }

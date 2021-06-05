@@ -8,7 +8,13 @@ class EpisodModel {
   final String title;
   final String date;
 
-  EpisodModel({this.id, this.image, this.title, this.date, this.serie});
+  EpisodModel({
+    this.id,
+    this.image,
+    this.title,
+    this.date,
+    this.serie,
+  });
 }
 
 EpisodModel buildEpisodModel(int index) {
