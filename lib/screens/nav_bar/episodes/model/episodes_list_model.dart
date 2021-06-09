@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/screens/character_profile/model/episod_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/model/episod_model.dart';
 import 'package:flutter/material.dart';
 
 class EpisodesListModel {

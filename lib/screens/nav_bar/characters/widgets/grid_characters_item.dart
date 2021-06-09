@@ -1,19 +1,20 @@
 import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
-class GridItem extends StatelessWidget {
+class GridCharactersItem extends StatelessWidget {
   CharactersModel charactersModel;
-  GridItem({this.charactersModel});
+  GridCharactersItem({this.charactersModel});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
+    return ElevatedButton(
+      onPressed: () {
         Navigator.of(context).push(
-          ProfilePageRoute(charactersModel: charactersModel),
+          ProfilePageRoute(page: CharacterProfileScreen(charactersModel: charactersModel,)),
         );
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [

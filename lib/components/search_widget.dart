@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class SearchWidget extends StatelessWidget {
   final Size size;
   final TextEditingController controller;
+  final String hintText;
 
-  const SearchWidget({Key key, this.size, this.controller});
+  const SearchWidget({Key key, this.size, this.controller, this.hintText});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,10 +26,13 @@ class SearchWidget extends StatelessWidget {
             height: 48,
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
+              style: TextStyle(
+                color: ColorTheme.kWhite,
+              ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(bottom: 12),
                 border: InputBorder.none,
-                hintText: "Найти персонажа",
+                hintText: hintText,
                 hintStyle: TextStyle(color: ColorTheme.kDirtyGrey),
               ),
               controller: controller,

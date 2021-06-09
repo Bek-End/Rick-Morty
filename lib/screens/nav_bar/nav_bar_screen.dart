@@ -47,14 +47,14 @@ class _NavBarScreenState extends State<NavBarScreen> {
               myIcons.navBar[0],
               color: ColorTheme.kGreen,
             ),
-            label: variables.episodLabels[0],
+            label: variables.navBarLabels[0],
           ),
           BottomNavigationBarItem(
             backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
               myIcons.navBar[1],
             ),
-            label: variables.episodLabels[1],
+            label: variables.navBarLabels[1],
             activeIcon: SvgPicture.asset(
               myIcons.navBar[1],
               color: ColorTheme.kGreen,
@@ -65,7 +65,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
             icon: SvgPicture.asset(
               myIcons.navBar[2],
             ),
-            label: variables.episodLabels[2],
+            label: variables.navBarLabels[2],
             activeIcon: SvgPicture.asset(
               myIcons.navBar[2],
               color: ColorTheme.kGreen,
@@ -80,7 +80,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
             icon: SvgPicture.asset(
               myIcons.navBar[3],
             ),
-            label: variables.episodLabels[3],
+            label: variables.navBarLabels[3],
           )
         ],
         selectedItemColor: ColorTheme.kGreen,

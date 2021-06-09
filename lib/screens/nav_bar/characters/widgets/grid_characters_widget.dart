@@ -1,11 +1,11 @@
 import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_list_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_item.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_characters_item.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
-class GridWidget extends StatelessWidget {
+class GridCharactersWidget extends StatelessWidget {
   CharactersListModel charactersListModel;
-  GridWidget({this.charactersListModel});
+  GridCharactersWidget({this.charactersListModel});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class GridWidget extends StatelessWidget {
           childAspectRatio: 0.9,
         ),
         itemBuilder: (context, index) {
-          return GridItem(
+          return GridCharactersItem(
             charactersModel: charactersListModel.charactersListModel[index],
           );
         },

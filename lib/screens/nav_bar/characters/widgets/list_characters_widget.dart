@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_list_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/widgets/list_item.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/widgets/list_characters_item.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class ListWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: charactersListModel.charactersListModel.length,
         itemBuilder: (context, index) {
-          return ListItem(
+          return ListCharactersItem(
             charactersModel: charactersListModel.charactersListModel[index],
           );
         },

@@ -40,11 +40,16 @@ class Variables {
     "Анатомический парк"
   ];
 
-  List<String> episodLabels = [
+  List<String> navBarLabels = [
     "Персонажи",
     "Локацииии",
     "Эпизоды",
     "Настройки"
+  ];
+
+  List<String> locationName = [
+    "Земля C-137",
+    "Анатомический парк",
   ];
 }
 

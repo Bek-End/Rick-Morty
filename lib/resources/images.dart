@@ -16,6 +16,11 @@ class Images {
     "assets/images/episod3.png"
   ];
 
+  final List<String> locations = [
+    "assets/images/location1.png",
+    "assets/images/location2.png",
+  ];
+
   final mainImage = 'assets/images/mainImage.png';
   final rick = Image.asset('assets/images/Rick.png');
   final and = Image.asset('assets/images/and.png');

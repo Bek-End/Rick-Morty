@@ -1,8 +1,8 @@
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/screens/character_profile/model/episodes_list_model.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/model/episodes_list_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +74,7 @@ class CharacterProfileScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(children: [
                           Text(charactersModel.characterNature,
-                              style: TextThemes.characterNatureStyle),
+                              style: TextThemes.natureStyle),
                           const SizedBox(height: 24),
                           Row(children: [
                             Expanded(
