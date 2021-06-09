@@ -7,6 +7,7 @@ class MyIcons {
   final search = SvgPicture.asset("assets/svg_icons/Search.svg");
   final back = SvgPicture.asset("assets/svg_icons/back.svg");
   final forward = SvgPicture.asset("assets/svg_icons/forward.svg");
+  final theme = SvgPicture.asset("assets/svg_icons/theme.svg");
 
   final List navBar = [
     "assets/svg_icons/Персонажи.svg",

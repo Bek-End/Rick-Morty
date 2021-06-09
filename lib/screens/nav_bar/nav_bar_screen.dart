@@ -8,7 +8,6 @@ import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'episodes/episodes_screen.dart';
 
 class NavBarScreen extends StatefulWidget {

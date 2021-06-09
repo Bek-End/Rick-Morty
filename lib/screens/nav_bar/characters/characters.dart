@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/result_of_search_widget.dart';
-import 'package:RickAndMorty/components/search_widget.dart';
+import 'package:RickAndMorty/components/search_component.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_characters_widget.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/list_characters_widget.dart';

@@ -1,7 +1,7 @@
+import 'package:RickAndMorty/data/network/models/character_model/characters_list_model.dart';
+import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/location_info/widgets/character_list.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_list_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/locations/model/location_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
@@ -16,25 +16,26 @@ class LocationInfoScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leadingWidth: 72,
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24),
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Container(
-                height: 48,
-                width: 48,
-                padding: EdgeInsets.symmetric(horizontal: 17, vertical: 19),
-                decoration: BoxDecoration(
-                    color: ColorTheme.kLightBlue, shape: BoxShape.circle),
-                child: myIcons.back),
+        toolbarHeight: 100,
+          leadingWidth: 72,
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 24),
+            child: ElevatedButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+          height: 48,
+          width: 48,
+          padding: EdgeInsets.symmetric(horizontal: 17, vertical: 19),
+          decoration: BoxDecoration(
+              color: ColorTheme.kLightBlue, shape: BoxShape.circle),
+          child: myIcons.back),
+            ),
           ),
         ),
-      ),
       body: Container(
         child: ListView(padding: EdgeInsets.zero, children: [
           Stack(children: [

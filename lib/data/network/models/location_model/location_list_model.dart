@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/screens/nav_bar/locations/model/location_model.dart';
+import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
 import 'package:flutter/material.dart';
 
 class LocationListModel {

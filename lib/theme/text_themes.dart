@@ -11,7 +11,7 @@ class TextThemes {
     color: ColorTheme.kWhite,
     fontSize: 13,
     height: 1.5,
-    letterSpacing: 0.5,
+    letterSpacing: 0.25,
   );
   static TextStyle keyStyle = TextStyle(
     color: ColorTheme.kDirtyGrey,
@@ -34,6 +34,12 @@ class TextThemes {
     fontWeight: FontWeight.w500,
     fontSize: 20,
     height: 1.4,
+    letterSpacing: 0.15,
+  );
+  static TextStyle themeStyle = TextStyle(
+    color: ColorTheme.kWhite,
+    fontSize: 16,
+    height: 1.5,
     letterSpacing: 0.15,
   );
   static TextStyle characterNameStyleGrid = TextStyle(
@@ -75,5 +81,11 @@ class TextThemes {
     fontSize: 24,
     height: 1.3,
     fontWeight: FontWeight.w700,
+  );
+  static TextStyle dialogStyle = TextStyle(
+    color: ColorTheme.kWhite,
+    fontSize: 14,
+    height: 1.7,
+    letterSpacing: 1.5,
   );
 }

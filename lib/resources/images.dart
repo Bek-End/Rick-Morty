@@ -13,7 +13,11 @@ class Images {
   final List<String> episodes = [
     "assets/images/episod1.png",
     "assets/images/episod2.png",
-    "assets/images/episod3.png"
+    "assets/images/episod3.png",
+    "assets/images/episod4.png",
+    "assets/images/episod5.png",
+    "assets/images/episod6.png",
+    "assets/images/episod7.png"
   ];
 
   final List<String> locations = [

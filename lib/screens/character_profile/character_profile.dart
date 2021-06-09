@@ -1,8 +1,9 @@
+import 'package:RickAndMorty/components/line_component.dart';
+import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
+import 'package:RickAndMorty/data/network/models/episod_model/episodes_list_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/models/characters_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/model/episodes_list_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class CharacterProfileScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        toolbarHeight: 100,
         leadingWidth: 72,
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
@@ -109,10 +111,9 @@ class CharacterProfileScreen extends StatelessWidget {
                               value: "Земля (Измерение подменны)")
                         ]),
                       ),
-                      Container(
-                          height: 1,
-                          margin: const EdgeInsets.only(top: 36, bottom: 45),
-                          color: ColorTheme.kDirtyGrey),
+                      LineComponent(
+                        horizontalPadding: 0,
+                      ),
                       EpisodesWidget(
                         episodesListModel: EpisodesListModel.getEpisodesList(),
                       )

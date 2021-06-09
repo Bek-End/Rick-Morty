@@ -1,5 +1,5 @@
+import 'package:RickAndMorty/data/network/models/episod_model/episod_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/model/episod_model.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 

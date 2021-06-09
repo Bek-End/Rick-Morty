@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/screens/nav_bar/locations/model/location_list_model.dart';
+import 'package:RickAndMorty/data/network/models/location_model/location_list_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/list_location_item.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';

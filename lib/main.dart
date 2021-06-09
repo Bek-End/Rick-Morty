@@ -1,6 +1,7 @@
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
-import 'package:RickAndMorty/screens/global_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
+import 'package:RickAndMorty/screens/nav_bar/nav_bar_screen.dart';
+import 'package:RickAndMorty/screens/splash/splash_screen.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Rick&Morty',
       theme: ThemeData(
+        unselectedWidgetColor: ColorTheme.kDirtyGrey,
         scaffoldBackgroundColor: ColorTheme.kDarkBlue,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -36,7 +38,18 @@ class MyApp extends StatelessWidget {
             create: (_) => CharactersBloc(),
           )
         ],
-        child: GlobalScreen(),
+        child: BlocConsumer<GlobalBloc, GlobalState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            return state.maybeMap(
+              splash: (_) => SplashScreen(),
+              navBar: (_) => NavBarScreen(),
+              orElse: () {
+                return Container();
+              },
+            );
+          },
+        ),
       ),
     );
   }

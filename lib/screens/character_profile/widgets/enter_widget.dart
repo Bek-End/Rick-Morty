@@ -13,7 +13,7 @@ class EnterWidget extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(myKey, style: TextThemes.keyStyle),
-          Text(value, style: TextThemes.keyStyle)
+          Text(value, style: TextThemes.valueStyle)
         ]),
         myIcons.forward
       ]),

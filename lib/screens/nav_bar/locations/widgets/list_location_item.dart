@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
 import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
-import 'package:RickAndMorty/screens/nav_bar/locations/model/location_model.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
