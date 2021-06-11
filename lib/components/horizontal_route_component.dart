@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePageRoute extends CupertinoPageRoute {
+class ProfilePageRouteComponent extends CupertinoPageRoute {
   Widget page;
-  ProfilePageRoute({this.page})
+  ProfilePageRouteComponent({this.page})
       : super(
           builder: (BuildContext context) => page,
         );

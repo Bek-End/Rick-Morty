@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/components/horizontal_route_component.dart';
 import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
@@ -6,9 +6,9 @@ import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
-class CharacterList extends StatelessWidget {
+class CharacterListComponent extends StatelessWidget {
   final CharactersModel charactersModel;
-  const CharacterList({this.charactersModel});
+  const CharacterListComponent({this.charactersModel});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CharacterList extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.of(context).push(
-            ProfilePageRoute(
+            ProfilePageRouteComponent(
               page: CharacterProfileScreen(
                 charactersModel: charactersModel,
               ),
@@ -30,7 +30,10 @@ class CharacterList extends StatelessWidget {
             Container(
               child: CircleAvatar(
                 radius: 37,
-                child: Image.asset(charactersModel.image),
+                child: Hero(
+                  tag: "${charactersModel.image}",
+                  child: Image.asset(charactersModel.image),
+                ),
               ),
             ),
             const SizedBox(width: 18),

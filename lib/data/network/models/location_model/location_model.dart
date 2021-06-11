@@ -7,7 +7,7 @@ class LocationModel {
   final String category = "Мир";
   final String image;
   final String measurement = "Измерение С-137";
-  final String locationNature =
+  final String locationInfo =
       "Это планета, на которой проживает человеческая раса, и главное место для персонажей Рика и Морти. Возраст этой Земли более 4,6 миллиардов лет, и она является четвертой планетой от своей звезды.";
 
   LocationModel({

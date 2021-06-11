@@ -1,23 +1,37 @@
+import 'package:RickAndMorty/components/horizontal_route_component.dart';
 import 'package:RickAndMorty/data/network/models/episod_model/episod_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
+import 'package:RickAndMorty/screens/episod_info/episod_info.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
-class EpisodWidget extends StatelessWidget {
+class EpisodWidgetWithIcon extends StatelessWidget {
   final EpisodModel episodModel;
-  EpisodWidget({@required this.episodModel});
+  const EpisodWidgetWithIcon({@required this.episodModel});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 24),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            ProfilePageRouteComponent(
+              page: EpisodInfoScreen(
+                episodModel: episodModel,
+              ),
+            ),
+          );
+        },
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(children: [
             Container(
-              child: Image.asset(episodModel.image),
+              child: Hero(
+                tag: "${episodModel.image}",
+                child: Image.asset(episodModel.image),
+              ),
               width: 74,
               height: 74,
               decoration: BoxDecoration(

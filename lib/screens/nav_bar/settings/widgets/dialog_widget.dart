@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 enum ThemeEnum { off, included, systemSettings, energySaving }
 
 class DialogWidget extends StatefulWidget {
-  const DialogWidget({Key key}) : super(key: key);
-
   @override
   _DialogWidgetState createState() => _DialogWidgetState();
 }
@@ -27,62 +25,58 @@ class _DialogWidgetState extends State<DialogWidget> {
         titleTextStyle: TextThemes.mainTitleStyle,
         children: [
           ListTile(
-            title: Text(
-              variables.themeEnum[0],
-              style: TextThemes.themeStyle,
-            ),
-            leading: Radio<ThemeEnum>(
+            contentPadding: EdgeInsets.zero,
+            title: RadioListTile<ThemeEnum>(
+              title: Text(
+                variables.themeEnum[0],
+                style: TextThemes.themeStyle,
+              ),
               value: ThemeEnum.off,
               groupValue: _select,
               onChanged: (ThemeEnum value) {
-                setState(() {
-                  _select = value;
-                });
+                onItemTapped(value);
               },
             ),
           ),
           ListTile(
-            title: Text(
-              variables.themeEnum[1],
-              style: TextThemes.themeStyle,
-            ),
-            leading: Radio<ThemeEnum>(
+            contentPadding: EdgeInsets.zero,
+            title: RadioListTile<ThemeEnum>(
+              title: Text(
+                variables.themeEnum[1],
+                style: TextThemes.themeStyle,
+              ),
               value: ThemeEnum.included,
               groupValue: _select,
               onChanged: (ThemeEnum value) {
-                setState(() {
-                  _select = value;
-                });
+                onItemTapped(value);
               },
             ),
           ),
           ListTile(
-            title: Text(
-              variables.themeEnum[2],
-              style: TextThemes.themeStyle,
-            ),
-            leading: Radio<ThemeEnum>(
+            contentPadding: EdgeInsets.zero,
+            title: RadioListTile<ThemeEnum>(
+              title: Text(
+                variables.themeEnum[2],
+                style: TextThemes.themeStyle,
+              ),
               value: ThemeEnum.systemSettings,
               groupValue: _select,
               onChanged: (ThemeEnum value) {
-                setState(() {
-                  _select = value;
-                });
+                onItemTapped(value);
               },
             ),
           ),
           ListTile(
-            title: Text(
-              variables.themeEnum[3],
-              style: TextThemes.themeStyle,
-            ),
-            leading: Radio<ThemeEnum>(
+            contentPadding: EdgeInsets.zero,
+            title: RadioListTile<ThemeEnum>(
+              title: Text(
+                variables.themeEnum[3],
+                style: TextThemes.themeStyle,
+              ),
               value: ThemeEnum.energySaving,
               groupValue: _select,
               onChanged: (ThemeEnum value) {
-                setState(() {
-                  _select = value;
-                });
+                onItemTapped(value);
               },
             ),
           ),
@@ -102,5 +96,11 @@ class _DialogWidgetState extends State<DialogWidget> {
             ),
           )
         ]);
+  }
+
+  void onItemTapped(ThemeEnum value) {
+    setState(() {
+      _select = value;
+    });
   }
 }

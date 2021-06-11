@@ -7,6 +7,8 @@ class EpisodModel {
   final String serie;
   final String title;
   final String date;
+  final String episodInfo =
+      "Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.";
 
   EpisodModel({
     this.id,

@@ -1,14 +1,16 @@
 import 'package:RickAndMorty/components/back_button_component.dart';
+import 'package:RickAndMorty/components/line_component.dart';
 import 'package:RickAndMorty/data/network/models/character_model/characters_list_model.dart';
-import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
+import 'package:RickAndMorty/data/network/models/episod_model/episod_model.dart';
+import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
-class LocationInfoScreen extends StatelessWidget {
-  final LocationModel locationModel;
-  const LocationInfoScreen({this.locationModel});
+class EpisodInfoScreen extends StatelessWidget {
+  final EpisodModel episodModel;
+  const EpisodInfoScreen({this.episodModel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +23,14 @@ class LocationInfoScreen extends StatelessWidget {
       ),
       body: Container(
         child: ListView(padding: EdgeInsets.zero, children: [
-          Stack(children: [
+          Stack(alignment: Alignment.topCenter, children: [
             Container(
               height: 298,
               width: size.width,
               child: FittedBox(
                 child: Hero(
-                  tag: "${locationModel.image}",
-                  child: Image.asset(locationModel.image),
+                  tag: "${episodModel.image}",
+                  child: Image.asset(episodModel.image),
                 ),
                 fit: BoxFit.cover,
               ),
@@ -52,30 +54,42 @@ class LocationInfoScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                        const SizedBox(height: 34),
-                        Text(
-                          locationModel.name,
-                          style: TextThemes.locationStyle,
+                        const SizedBox(height: 82),
+                        Center(
+                          child: Text(
+                            episodModel.title,
+                            style: TextThemes.locationStyle,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                        Row(children: [
-                          Text(
-                            locationModel.category,
-                            style: TextThemes.subTitleStyle,
+                        const SizedBox(
+                          width: 3,
+                        ),
+                        Center(
+                          child: Text(
+                            episodModel.serie,
+                            style: TextThemes.seriesStyle,
                           ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            locationModel.measurement,
-                            style: TextThemes.subTitleStyle,
-                          ),
-                        ]),
-                        const SizedBox(height: 32),
-                        Text(
-                          locationModel.locationInfo,
-                          style: TextThemes.mainInfoStyle,
                         ),
                         const SizedBox(height: 36),
+                        Text(
+                          episodModel.episodInfo,
+                          style: TextThemes.mainInfoStyle,
+                        ),
+                        const SizedBox(height: 24),
+                        Text(
+                          "Премьера",
+                          style: TextThemes.keyStyle,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          episodModel.date,
+                          style: TextThemes.dateStyle
+                              .copyWith(color: ColorTheme.kWhite),
+                        ),
+                        LineComponent(
+                          horizontalPadding: 0,
+                        ),
                         Text(
                           "Персонажи",
                           style: TextThemes.mainTitleStyle,
@@ -93,6 +107,7 @@ class LocationInfoScreen extends StatelessWidget {
                 ),
               ),
             ]),
+            Positioned(top: 185, child: myIcons.play)
           ]),
         ]),
       ),

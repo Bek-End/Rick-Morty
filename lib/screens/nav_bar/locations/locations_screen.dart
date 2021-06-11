@@ -9,6 +9,7 @@ final _textController = TextEditingController();
 
 class LocationsScreen extends StatelessWidget {
   LocationListModel locationListModel = LocationListModel.getLocationsList();
+  
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,7 +21,7 @@ class LocationsScreen extends StatelessWidget {
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           toolbarHeight: 130,
-          title: SearchWidget(
+          title: SearchComponent(
             size: size,
             controller: _textController,
             hintText: "Найти локацию",

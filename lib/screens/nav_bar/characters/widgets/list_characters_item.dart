@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/components/horizontal_route_component.dart';
 import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
 import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -16,14 +16,14 @@ class ListCharactersItem extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.of(context).push(
-            ProfilePageRoute(page: CharacterProfileScreen(charactersModel: charactersModel,)),
+            ProfilePageRouteComponent(page: CharacterProfileScreen(charactersModel: charactersModel,)),
           );
         },
         child: Row(children: [
           Container(
             child: CircleAvatar(
               radius: 37,
-              child: Image.asset(charactersModel.image),
+              child: Hero(tag: "${charactersModel.image}", child: Image.asset(charactersModel.image),),
             ),
           ),
           const SizedBox(width: 18),

@@ -32,7 +32,7 @@ class CharactersScreen extends StatelessWidget {
             resizeToAvoidBottomPadding: false,
             appBar: AppBar(
               toolbarHeight: 130,
-              title: SearchWidget(size: size, controller: _textController, hintText: "Найти персонажа",),
+              title: SearchComponent(size: size, controller: _textController, hintText: "Найти персонажа",),
               elevation: 0,
               backgroundColor: ColorTheme.kDarkBlue,
               automaticallyImplyLeading: false,

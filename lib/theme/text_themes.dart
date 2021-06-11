@@ -7,7 +7,7 @@ class TextThemes {
     fontSize: 34,
     height: 1.17,
   );
-  static TextStyle natureStyle = TextStyle(
+  static TextStyle mainInfoStyle = TextStyle(
     color: ColorTheme.kWhite,
     fontSize: 13,
     height: 1.5,

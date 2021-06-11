@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/components/horizontal_route_component.dart';
 import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
 import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -15,7 +15,7 @@ class LocationItem extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         Navigator.of(context).push(
-          ProfilePageRoute(
+          ProfilePageRouteComponent(
             page: LocationInfoScreen(
               locationModel: locationModel,
             ),
@@ -35,11 +35,13 @@ class LocationItem extends StatelessWidget {
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            child: Image.asset(
-              locationModel.image,
-              width: size.width,
-              height: 150,
-              fit: BoxFit.cover,
+            child: Hero(tag: "${locationModel.image}",
+                          child: Image.asset(
+                locationModel.image,
+                width: size.width,
+                height: 150,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(

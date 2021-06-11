@@ -4,8 +4,8 @@ import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
 class GridCharactersWidget extends StatelessWidget {
-  CharactersListModel charactersListModel;
-  GridCharactersWidget({this.charactersListModel});
+  final CharactersListModel charactersListModel;
+  const GridCharactersWidget({this.charactersListModel});
 
   @override
   Widget build(BuildContext context) {

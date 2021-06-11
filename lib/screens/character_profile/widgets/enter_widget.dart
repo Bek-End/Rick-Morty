@@ -3,8 +3,8 @@ import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class EnterWidget extends StatelessWidget {
-  String myKey, value;
-  EnterWidget({this.myKey, this.value});
+  final String myKey, value;
+  const EnterWidget({this.myKey, this.value});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
+import 'package:RickAndMorty/components/back_button_component.dart';
 import 'package:RickAndMorty/components/line_component.dart';
 import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
 import 'package:RickAndMorty/data/network/models/episod_model/episodes_list_model.dart';
-import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -9,34 +9,17 @@ import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class CharacterProfileScreen extends StatelessWidget {
-  CharactersModel charactersModel;
-  CharacterProfileScreen({this.charactersModel});
+  final CharactersModel charactersModel;
+  const CharacterProfileScreen({this.charactersModel});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        toolbarHeight: 100,
-        leadingWidth: 72,
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24),
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Container(
-                height: 48,
-                width: 48,
-                padding: EdgeInsets.symmetric(horizontal: 17, vertical: 19),
-                decoration: BoxDecoration(
-                    color: ColorTheme.kLightBlue, shape: BoxShape.circle),
-                child: myIcons.back),
-          ),
-        ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: BackButtonComponent(),
       ),
       body: Container(
         child: ListView(padding: EdgeInsets.zero, children: [
@@ -75,8 +58,8 @@ class CharacterProfileScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(children: [
-                          Text(charactersModel.characterNature,
-                              style: TextThemes.natureStyle),
+                          Text(charactersModel.characterInfo,
+                              style: TextThemes.mainInfoStyle),
                           const SizedBox(height: 24),
                           Row(children: [
                             Expanded(
@@ -136,7 +119,7 @@ class CharacterProfileScreen extends StatelessWidget {
                     border: Border.all(width: 8, color: ColorTheme.kMainDark),
                   ),
                   child: FittedBox(
-                    child: Image.asset(charactersModel.image),
+                    child: Hero(tag: "${charactersModel.image}", child: Image.asset(charactersModel.image),),
                   ),
                 ),
               ),

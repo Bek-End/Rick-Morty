@@ -2,7 +2,6 @@ import 'package:RickAndMorty/components/line_component.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/resources/variables.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/widgets/dialog_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
@@ -15,27 +14,9 @@ class SettingsScreen extends StatelessWidget {
         toolbarHeight: 100,
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24),
-          child: ElevatedButton(
-            onPressed: () {
-              //onItemTapped();
-            },
-            child: Container(
-                height: 48,
-                width: 48,
-                padding: EdgeInsets.symmetric(horizontal: 17, vertical: 19),
-                decoration: BoxDecoration(
-                    color: ColorTheme.kLightBlue, shape: BoxShape.circle),
-                child: myIcons.back),
-          ),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.only(left: 30),
-          child: Text(
-            "Настройки",
-            style: TextThemes.mainTitleStyle,
-          ),
+        title: Text(
+          "Настройки",
+          style: TextThemes.mainTitleStyle,
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(60),
@@ -57,8 +38,9 @@ class SettingsScreen extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               showDialog(
-                    context: context,
-                    builder: (BuildContext context) => DialogWidget());
+                context: context,
+                builder: (BuildContext context) => DialogWidget(),
+              );
             },
             child: ListTile(
               leading: myIcons.theme,
@@ -85,7 +67,7 @@ class SettingsScreen extends StatelessWidget {
           ),
           Text(
             variables.appInfo,
-            style: TextThemes.natureStyle,
+            style: TextThemes.mainInfoStyle,
           ),
           LineComponent(
             horizontalPadding: 0,
@@ -99,7 +81,7 @@ class SettingsScreen extends StatelessWidget {
           ),
           Text(
             "Rick & Morty  v1.0.0",
-            style: TextThemes.natureStyle,
+            style: TextThemes.mainInfoStyle,
           ),
         ]),
       ),

@@ -8,7 +8,7 @@ class CharactersModel {
   final String image;
   final String sex;
   final String person;
-  final String characterNature =
+  final String characterInfo =
       "Главный протагонист мультсериала «Рик и Морти». Безумный ученый, чей алкоголизм, безрассудность и социопатия заставляют беспокоиться семью его дочери.";
 
   CharactersModel({

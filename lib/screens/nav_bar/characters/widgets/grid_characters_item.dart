@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/components/horizontal_route_widget.dart';
+import 'package:RickAndMorty/components/horizontal_route_component.dart';
 import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
 import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -6,15 +6,15 @@ import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class GridCharactersItem extends StatelessWidget {
-  CharactersModel charactersModel;
-  GridCharactersItem({this.charactersModel});
+  final CharactersModel charactersModel;
+  const GridCharactersItem({this.charactersModel});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         Navigator.of(context).push(
-          ProfilePageRoute(page: CharacterProfileScreen(charactersModel: charactersModel,)),
+          ProfilePageRouteComponent(page: CharacterProfileScreen(charactersModel: charactersModel,)),
         );
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -23,7 +23,7 @@ class GridCharactersItem extends StatelessWidget {
           child: Container(
             child: CircleAvatar(
               radius: 60,
-              child: Image.asset(charactersModel.image),
+              child: Hero(tag: "${charactersModel.image}", child: Image.asset(charactersModel.image),),
             ),
           ),
         ),

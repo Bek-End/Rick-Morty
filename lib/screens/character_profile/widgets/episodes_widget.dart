@@ -4,8 +4,8 @@ import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class EpisodesWidget extends StatelessWidget {
-  EpisodesListModel episodesListModel;
-  EpisodesWidget({this.episodesListModel});
+  final EpisodesListModel episodesListModel;
+  const EpisodesWidget({this.episodesListModel});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,12 @@ class EpisodesWidget extends StatelessWidget {
                   children: <Widget>[
                     Text("Эпизоды", style: TextThemes.mainTitleStyle),
                     Text("Все эпизоды", style: TextThemes.keyStyle)
-                  ])
+                  ]),
+                  const SizedBox(height: 12,)
             ] +
             List.generate(
-              3,
-              (i) => EpisodWidget(
+              7,
+              (i) => EpisodWidgetWithIcon(
                 episodModel: episodesListModel.episodesListModel[i],
               ),
             ),
