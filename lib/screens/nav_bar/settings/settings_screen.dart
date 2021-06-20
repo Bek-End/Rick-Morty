@@ -43,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
               );
             },
             child: ListTile(
-              leading: myIcons.theme,
+              leading: MyIcons.theme,
               title: Text(
                 "Темная тема",
                 style: TextThemes.themeStyle,
@@ -52,7 +52,7 @@ class SettingsScreen extends StatelessWidget {
                 "Включена",
                 style: TextThemes.dateStyle,
               ),
-              trailing: myIcons.forward,
+              trailing: MyIcons.forward,
             ),
           ),
           LineComponent(
@@ -66,7 +66,7 @@ class SettingsScreen extends StatelessWidget {
             height: 24,
           ),
           Text(
-            variables.appInfo,
+           Variables.appInfo,
             style: TextThemes.mainInfoStyle,
           ),
           LineComponent(

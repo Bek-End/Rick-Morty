@@ -20,7 +20,7 @@ class SearchComponent extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         child: Row(children: [
-          Padding(padding: const EdgeInsets.only(left: 15), child: myIcons.search),
+          Padding(padding: const EdgeInsets.only(left: 15), child: MyIcons.search),
           Container(
             width: size.width - 141,
             height: 48,
@@ -43,7 +43,7 @@ class SearchComponent extends StatelessWidget {
             width: 1,
             margin: EdgeInsets.only(right: 14),
           ),
-          myIcons.filter
+          MyIcons.filter
         ]),
       ),
     );

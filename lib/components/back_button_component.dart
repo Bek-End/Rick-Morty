@@ -22,7 +22,7 @@ class BackButtonComponent extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 17, vertical: 19),
               decoration: BoxDecoration(
                   color: ColorTheme.kLightBlue, shape: BoxShape.circle),
-              child: myIcons.back),
+              child: MyIcons.back),
         ),
       ),
     );

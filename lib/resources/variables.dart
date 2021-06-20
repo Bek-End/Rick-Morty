@@ -1,5 +1,5 @@
 class Variables {
-  final List<String> characterName = [
+  static final List<String> characterName = [
     "Рик Cанчез",
     "Директор Агентства",
     "Морти Смит",
@@ -8,7 +8,7 @@ class Variables {
     "Алан Райлс",
   ];
 
-  final List<String> characterSex = [
+  static final List<String> characterSex = [
     "Мужской",
     "Мужской",
     "Мужской",
@@ -17,7 +17,7 @@ class Variables {
     "Мужской"
   ];
 
-  final List<String> characterStatus = [
+  static final List<String> characterStatus = [
     "Живой",
     "Живой",
     "Живой",
@@ -26,9 +26,9 @@ class Variables {
     "Мертвый"
   ];
 
-  final characterCount = "ВСЕГО ПЕРСОНАЖЕЙ: 200";
+  static final characterCount = "ВСЕГО ПЕРСОНАЖЕЙ: 200";
 
-  List<String> episodDate = [
+  static List<String> episodDate = [
     "2 декабря 2013",
     "9 декабря 2013",
     "16 декабря 2013",
@@ -38,7 +38,7 @@ class Variables {
     "20 января 2014"
   ];
 
-  List<String> episodTitles = [
+  static List<String> episodTitles = [
     "Пилот",
     "Пёс-газонокосильщик",
     "Анатомический парк",
@@ -48,27 +48,25 @@ class Variables {
     "Воспитание Газорпазорпа"
   ];
 
-  List<String> navBarLabels = [
+  static List<String> navBarLabels = [
     "Персонажи",
     "Локацииии",
     "Эпизоды",
     "Настройки"
   ];
 
-  List<String> themeEnum = [
+  static List<String> themeEnum = [
     "Выключенна",
     "Включенна",
     "Следовать настройкам системы",
     "В режиме энергосбережения"
   ];
 
-  List<String> locationName = [
+  static List<String> locationName = [
     "Земля C-137",
     "Анатомический парк",
   ];
 
-  final String appInfo =
+  static final String appInfo =
       "Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.";
 }
-
-final variables = Variables();

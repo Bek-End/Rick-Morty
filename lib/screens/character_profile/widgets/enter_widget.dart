@@ -15,7 +15,7 @@ class EnterWidget extends StatelessWidget {
           Text(myKey, style: TextThemes.keyStyle),
           Text(value, style: TextThemes.valueStyle)
         ]),
-        myIcons.forward
+        MyIcons.forward
       ]),
     );
   }

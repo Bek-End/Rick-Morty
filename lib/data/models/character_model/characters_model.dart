@@ -24,10 +24,10 @@ class CharactersModel {
 CharactersModel buildCharacterModel(int index) {
   return CharactersModel(
     id: index,
-    name: variables.characterName[index - 1],
-    sex: variables.characterSex[index - 1],
-    status: variables.characterStatus[index - 1],
-    image: images.avatars[index - 1],
+    name: Variables.characterName[index - 1],
+    sex: Variables.characterSex[index - 1],
+    status: Variables.characterStatus[index - 1],
+    image: Images.avatars[index - 1],
     person: "Человек",
   );
 }

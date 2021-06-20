@@ -20,7 +20,7 @@ class SearchWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         child: Row(children: [
-          Padding(padding: EdgeInsets.only(left: 15), child: myIcons.search),
+          Padding(padding: EdgeInsets.only(left: 15), child: MyIcons.search),
           Container(
             width: size.width - 100,
             height: 48,

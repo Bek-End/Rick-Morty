@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
         color: ColorTheme.kDarkBlue,
         child: Stack(children: [
           Image.asset(
-            images.mainImage,
+            Images.mainImage,
             fit: BoxFit.cover,
             width: size.width,
             height: size.height,
@@ -21,15 +21,15 @@ class SplashScreen extends StatelessWidget {
             width: size.width,
             child: Stack(alignment: Alignment.topCenter, children: [
               Positioned(
-                child: images.rick,
+                child: Images.rick,
                 top: 53.92,
               ),
               Positioned(
-                child: images.and,
+                child: Images.and,
                 top: 246.7,
               ),
               Positioned(
-                child: images.morty,
+                child: Images.morty,
                 top: 241.28,
               )
             ]),
@@ -39,11 +39,11 @@ class SplashScreen extends StatelessWidget {
             width: size.width,
             child: Stack(alignment: Alignment.topCenter, children: [
               Positioned(
-                child: images.morty2,
+                child: Images.morty2,
                 bottom: 194.73,
               ),
               Positioned(
-                child: images.rick2,
+                child: Images.rick2,
                 bottom: 0,
               )
             ]),

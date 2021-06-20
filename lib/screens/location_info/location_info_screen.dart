@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/components/back_button_component.dart';
-import 'package:RickAndMorty/data/network/models/character_model/characters_list_model.dart';
-import 'package:RickAndMorty/data/network/models/location_model/location_model.dart';
+import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
+import 'package:RickAndMorty/data/models/location_model/location_model.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';

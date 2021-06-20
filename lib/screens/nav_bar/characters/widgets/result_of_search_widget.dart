@@ -24,7 +24,7 @@ class _ResultOfSearchWidgetState extends State<ResultOfSearchWidget> {
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: IconButton(
-            icon: isGrid ? myIcons.list : myIcons.grid,
+            icon: isGrid ? MyIcons.list : MyIcons.grid,
             onPressed: () {
               setState(
                 () {

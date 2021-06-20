@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/components/horizontal_route_component.dart';
-import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
+import 'package:RickAndMorty/data/models/character_model/characters_model.dart';
 import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';

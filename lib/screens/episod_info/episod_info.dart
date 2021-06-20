@@ -1,7 +1,7 @@
 import 'package:RickAndMorty/components/back_button_component.dart';
 import 'package:RickAndMorty/components/line_component.dart';
-import 'package:RickAndMorty/data/network/models/character_model/characters_list_model.dart';
-import 'package:RickAndMorty/data/network/models/episod_model/episod_model.dart';
+import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
+import 'package:RickAndMorty/data/models/episod_model/episod_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -107,7 +107,7 @@ class EpisodInfoScreen extends StatelessWidget {
                 ),
               ),
             ]),
-            Positioned(top: 185, child: myIcons.play)
+            Positioned(top: 185, child: MyIcons.play)
           ]),
         ]),
       ),

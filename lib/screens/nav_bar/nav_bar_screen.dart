@@ -39,47 +39,47 @@ class _NavBarScreenState extends State<NavBarScreen> {
           BottomNavigationBarItem(
             backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
-              myIcons.navBar[0],
+              MyIcons.navBar[0],
               color: ColorTheme.kDirtyGrey,
             ),
             activeIcon: SvgPicture.asset(
-              myIcons.navBar[0],
+              MyIcons.navBar[0],
               color: ColorTheme.kGreen,
             ),
-            label: variables.navBarLabels[0],
+            label: Variables.navBarLabels[0],
           ),
           BottomNavigationBarItem(
             backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
-              myIcons.navBar[1],
+              MyIcons.navBar[1],
             ),
-            label: variables.navBarLabels[1],
+            label: Variables.navBarLabels[1],
             activeIcon: SvgPicture.asset(
-              myIcons.navBar[1],
+              MyIcons.navBar[1],
               color: ColorTheme.kGreen,
             ),
           ),
           BottomNavigationBarItem(
             backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
-              myIcons.navBar[2],
+              MyIcons.navBar[2],
             ),
-            label: variables.navBarLabels[2],
+            label: Variables.navBarLabels[2],
             activeIcon: SvgPicture.asset(
-              myIcons.navBar[2],
+              MyIcons.navBar[2],
               color: ColorTheme.kGreen,
             ),
           ),
           BottomNavigationBarItem(
             activeIcon: SvgPicture.asset(
-              myIcons.navBar[3],
+              MyIcons.navBar[3],
               color: ColorTheme.kGreen,
             ),
             backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
-              myIcons.navBar[3],
+              MyIcons.navBar[3],
             ),
-            label: variables.navBarLabels[3],
+            label: Variables.navBarLabels[3],
           )
         ],
         selectedItemColor: ColorTheme.kGreen,

@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/data/network/models/episod_model/episodes_list_model.dart';
+import 'package:RickAndMorty/data/models/episod_model/episodes_list_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/episod_widget.dart';
 import 'package:flutter/material.dart';
 

@@ -23,8 +23,8 @@ EpisodModel buildEpisodModel(int index) {
   return EpisodModel(
     id: index,
     serie: "CЕРИЯ $index",
-    title: variables.episodTitles[index - 1],
-    date: variables.episodDate[index - 1],
-    image: images.episodes[index - 1],
+    title: Variables.episodTitles[index - 1],
+    date: Variables.episodDate[index - 1],
+    image: Images.episodes[index - 1],
   );
 }

@@ -20,7 +20,7 @@ class LocationModel {
 LocationModel buildLocationModel(int index) {
   return LocationModel(
     id: index,
-    name: variables.locationName[index - 1],
-    image: images.locations[index - 1],
+    name: Variables.locationName[index - 1],
+    image: Images.locations[index - 1],
   );
 }

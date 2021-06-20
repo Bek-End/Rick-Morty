@@ -28,7 +28,7 @@ class _DialogWidgetState extends State<DialogWidget> {
             contentPadding: EdgeInsets.zero,
             title: RadioListTile<ThemeEnum>(
               title: Text(
-                variables.themeEnum[0],
+                Variables.themeEnum[0],
                 style: TextThemes.themeStyle,
               ),
               value: ThemeEnum.off,
@@ -42,7 +42,7 @@ class _DialogWidgetState extends State<DialogWidget> {
             contentPadding: EdgeInsets.zero,
             title: RadioListTile<ThemeEnum>(
               title: Text(
-                variables.themeEnum[1],
+                Variables.themeEnum[1],
                 style: TextThemes.themeStyle,
               ),
               value: ThemeEnum.included,
@@ -56,7 +56,7 @@ class _DialogWidgetState extends State<DialogWidget> {
             contentPadding: EdgeInsets.zero,
             title: RadioListTile<ThemeEnum>(
               title: Text(
-                variables.themeEnum[2],
+                Variables.themeEnum[2],
                 style: TextThemes.themeStyle,
               ),
               value: ThemeEnum.systemSettings,
@@ -70,7 +70,7 @@ class _DialogWidgetState extends State<DialogWidget> {
             contentPadding: EdgeInsets.zero,
             title: RadioListTile<ThemeEnum>(
               title: Text(
-                variables.themeEnum[3],
+                Variables.themeEnum[3],
                 style: TextThemes.themeStyle,
               ),
               value: ThemeEnum.energySaving,

@@ -1,7 +1,7 @@
 import 'package:RickAndMorty/components/back_button_component.dart';
 import 'package:RickAndMorty/components/line_component.dart';
-import 'package:RickAndMorty/data/network/models/character_model/characters_model.dart';
-import 'package:RickAndMorty/data/network/models/episod_model/episodes_list_model.dart';
+import 'package:RickAndMorty/data/models/character_model/characters_model.dart';
+import 'package:RickAndMorty/data/models/episod_model/episodes_list_model.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';

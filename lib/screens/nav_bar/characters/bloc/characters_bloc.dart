@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:RickAndMorty/data/network/models/character_model/characters_list_model.dart';
+import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
