@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             create: (_) => GlobalBloc()..add(GlobalEvent.navbar()),
           ),
           BlocProvider(
-            create: (_) => CharactersBloc(),
+            create: (_) => CharactersBloc()..add(CharactersEvent.select()),
           )
         ],
         child: BlocConsumer<GlobalBloc, GlobalState>(

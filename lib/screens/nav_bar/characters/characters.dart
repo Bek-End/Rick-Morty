@@ -13,44 +13,52 @@ class CharactersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return BlocListener<CharactersBloc, CharactersState>(listener:
-        (context, state) {
-      state.maybeMap(
-        select: (_) => SelectState(),
-        orElse: () {
-          return Container();
-        },
-      );
-    }, child:
-        BlocBuilder<CharactersBloc, CharactersState>(builder: (context, state) {
-      if (state is SelectState) {
-        return GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
+    return BlocListener<CharactersBloc, CharactersState>(
+      listener: (context, state) {
+        state.maybeMap(
+          select: (_) => SelectState(),
+          orElse: () {
+            return Container();
           },
-          child: Scaffold(
-            resizeToAvoidBottomPadding: false,
-            appBar: AppBar(
-              toolbarHeight: 130,
-              title: SearchComponent(size: size, controller: _textController, hintText: "Найти персонажа",),
-              elevation: 0,
-              backgroundColor: ColorTheme.kDarkBlue,
-              automaticallyImplyLeading: false,
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(60),
-                child: ResultOfSearchWidget(onPressButton: () {
-                  context.read<CharactersBloc>()..add(CharactersEvent.select());
-                }),
-              ),
-            ),
-            body: state.isGrid
-                ? GridCharactersWidget(charactersListModel: state.charactersListModel)
-                : ListWidget(charactersListModel: state.charactersListModel),
-          ),
         );
-      } else {
-        return Container();
-      }
-    }));
+      },
+      child: BlocBuilder<CharactersBloc, CharactersState>(
+          builder: (context, state) {
+        if (state is SelectState) {
+          return GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: Scaffold(
+              resizeToAvoidBottomPadding: false,
+              appBar: AppBar(
+                toolbarHeight: 130,
+                title: SearchComponent(
+                  size: size,
+                  controller: _textController,
+                  hintText: "Найти персонажа",
+                ),
+                elevation: 0,
+                backgroundColor: ColorTheme.kDarkBlue,
+                automaticallyImplyLeading: false,
+                bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(60),
+                  child: ResultOfSearchWidget(onPressButton: () {
+                    context.read<CharactersBloc>()
+                      ..add(CharactersEvent.select());
+                  }),
+                ),
+              ),
+              body: state.isGrid
+                  ? GridCharactersWidget(
+                      charactersListModel: state.charactersListModel)
+                  : ListWidget(charactersListModel: state.charactersListModel),
+            ),
+          );
+        } else {
+          return Container();
+        }
+      }),
+    );
   }
 }

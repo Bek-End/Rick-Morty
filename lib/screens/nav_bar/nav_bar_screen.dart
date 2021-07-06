@@ -6,7 +6,6 @@ import 'package:RickAndMorty/screens/nav_bar/locations/locations_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/settings_screen.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'episodes/episodes_screen.dart';
 
@@ -17,10 +16,7 @@ class NavBarScreen extends StatefulWidget {
 
 class _NavBarScreenState extends State<NavBarScreen> {
   List<Widget> _widgetOptions = <Widget>[
-    BlocProvider(
-      create: (context) => CharactersBloc()..add(CharactersEvent.select()),
-      child: CharactersScreen(),
-    ),
+    CharactersScreen(),
     LocationsScreen(),
     EpisodesScreen(),
     SettingsScreen()
