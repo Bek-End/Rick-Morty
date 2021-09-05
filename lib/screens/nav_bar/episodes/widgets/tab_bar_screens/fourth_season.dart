@@ -1,18 +1,19 @@
-import 'package:RickAndMorty/data/models/episod_model/episodes_list_model.dart';
+import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/episod_widget.dart';
 import 'package:flutter/material.dart';
 
 class FourthSeasonScreen extends StatelessWidget {
-  final EpisodesListModel episodesListModel =EpisodesListModel.getEpisodesList();
+  final List<EpisodesData> episodesData;
+  const FourthSeasonScreen({this.episodesData});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
       children: List.generate(
-        7,
-        (i) => EpisodWidgetWithoutIcon(
-          episodModel: episodesListModel.episodesListModel[i],
+        episodesData.length,
+        (index) => EpisodWidgetWithoutIcon(
+          episodesData: episodesData[index],
         ),
       ),
     );

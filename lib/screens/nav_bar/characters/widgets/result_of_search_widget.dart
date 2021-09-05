@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class ResultOfSearchWidget extends StatefulWidget {
   final Function onPressButton;
-  const ResultOfSearchWidget({Key key, this.onPressButton});
+  final int totalRecords;
+  const ResultOfSearchWidget({Key key, this.totalRecords, this.onPressButton});
 
   @override
   _ResultOfSearchWidgetState createState() => _ResultOfSearchWidgetState();
@@ -18,7 +19,7 @@ class _ResultOfSearchWidgetState extends State<ResultOfSearchWidget> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
-          "Всего персонажей: 200".toUpperCase(),
+          "Всего персонажей: ${widget.totalRecords}".toUpperCase(),
           style: TextThemes.resultOfSearchStyle,
         ),
         Padding(

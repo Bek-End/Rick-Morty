@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/components/search_component.dart';
-import 'package:RickAndMorty/data/models/location_model/location_list_model.dart';
+import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/location_widget.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 final _textController = TextEditingController();
 
 class LocationsScreen extends StatelessWidget {
-  final LocationListModel locationListModel = LocationListModel.getLocationsList();
-  
+  final LocationsModel locationsList;
+  const LocationsScreen({this.locationsList});
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -36,7 +36,7 @@ class LocationsScreen extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Всего локаций: 200".toUpperCase(),
+                  "Всего локаций: ${locationsList.totalRecords}".toUpperCase(),
                   style: TextThemes.resultOfSearchStyle,
                 ),
               ),
@@ -44,7 +44,7 @@ class LocationsScreen extends StatelessWidget {
           ),
         ),
         body: LocationWidgets(
-          locationListModel: locationListModel,
+          locationsList: locationsList,
         ),
       ),
     );

@@ -1,12 +1,12 @@
-import 'package:RickAndMorty/components/horizontal_route_component.dart';
-import 'package:RickAndMorty/data/models/episod_model/episod_model.dart';
-import 'package:RickAndMorty/screens/episod_info/episod_info.dart';
+import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EpisodWidgetWithoutIcon extends StatelessWidget {
-  final EpisodModel episodModel;
-  const EpisodWidgetWithoutIcon({@required this.episodModel});
+  final EpisodesData episodesData;
+  const EpisodWidgetWithoutIcon({@required this.episodesData});
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +14,14 @@ class EpisodWidgetWithoutIcon extends StatelessWidget {
       padding: const EdgeInsets.only(top: 24),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.of(context).push(
-            ProfilePageRouteComponent(
-              page: EpisodInfoScreen(
-                episodModel: episodModel,
-              ),
-            ),
-          );
+          BlocProvider.of<EpisodesBloc>(context).add(EpisodesEvent.info());
         },
         child: Row(children: [
           Container(
-            child: Hero(tag: "${episodModel.image}", child: Image.asset(episodModel.image),),
+            child: Hero(
+              tag: "${episodesData.imageName}",
+              child: Image.network(episodesData.imageName),
+            ),
             width: 74,
             height: 74,
             decoration: BoxDecoration(
@@ -33,9 +30,9 @@ class EpisodWidgetWithoutIcon extends StatelessWidget {
           ),
           const SizedBox(width: 16),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(episodModel.serie, style: TextThemes.seriesStyle),
-            Text(episodModel.title, style: TextThemes.titleStyle),
-            Text(episodModel.date, style: TextThemes.dateStyle)
+            Text(episodesData.series.toString(), style: TextThemes.seriesStyle),
+            Text(episodesData.name, style: TextThemes.titleStyle),
+            Text(episodesData.premiere.toString(), style: TextThemes.dateStyle)
           ])
         ]),
       ),

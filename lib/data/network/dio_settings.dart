@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 class DioSettings {
   //Этот класс будет содержать настройки Dio.
-  static final mainServer = "URL";
+  static final mainServer = "http://173.249.20.184:7001";
 
   //Создаем экземпляр Dio и прописываем настройки, адрес сервера и тайм-аут:
   Dio dio = Dio(

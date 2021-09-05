@@ -1,15 +1,13 @@
-import 'package:RickAndMorty/components/back_button_component.dart';
-import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
-import 'package:RickAndMorty/data/models/location_model/location_model.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
+import 'package:RickAndMorty/data/models/location_model/location_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/locations/widgets/locations_back_button_widget.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class LocationInfoScreen extends StatelessWidget {
-  final LocationModel locationModel;
-  const LocationInfoScreen({this.locationModel});
-
+  final LocationModel locationInfo;
+  const LocationInfoScreen({this.locationInfo});
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,7 +15,7 @@ class LocationInfoScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
-        child: BackButtonComponent(),
+        child: LocationsBackButtonWidget(),
       ),
       body: Container(
         child: ListView(padding: EdgeInsets.zero, children: [
@@ -27,8 +25,8 @@ class LocationInfoScreen extends StatelessWidget {
               width: size.width,
               child: FittedBox(
                 child: Hero(
-                  tag: "${locationModel.image}",
-                  child: Image.asset(locationModel.image),
+                  tag: "${locationInfo.data.imageName}",
+                  child: Image.network(locationInfo.data.imageName),
                 ),
                 fit: BoxFit.cover,
               ),
@@ -54,25 +52,25 @@ class LocationInfoScreen extends StatelessWidget {
                   children: <Widget>[
                         const SizedBox(height: 34),
                         Text(
-                          locationModel.name,
+                          locationInfo.data.name,
                           style: TextThemes.locationStyle,
                         ),
                         Row(children: [
                           Text(
-                            locationModel.category,
+                            locationInfo.data.type,
                             style: TextThemes.subTitleStyle,
                           ),
                           const SizedBox(
                             width: 5,
                           ),
                           Text(
-                            locationModel.measurement,
+                            locationInfo.data.measurements,
                             style: TextThemes.subTitleStyle,
                           ),
                         ]),
                         const SizedBox(height: 32),
                         Text(
-                          locationModel.locationInfo,
+                          locationInfo.data.about,
                           style: TextThemes.mainInfoStyle,
                         ),
                         const SizedBox(height: 36),
@@ -83,11 +81,9 @@ class LocationInfoScreen extends StatelessWidget {
                         const SizedBox(height: 24),
                       ] +
                       List.generate(
-                        6,
-                        (i) => CharacterListComponent(
-                          charactersModel:
-                              CharactersListModel.getCharactersList()
-                                  .charactersListModel[i],
+                        locationInfo.data.characters.length,
+                        (index) => CharacterListComponent(
+                          charactersModel: locationInfo.data.characters[index],
                         ),
                       ),
                 ),

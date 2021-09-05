@@ -1,26 +1,20 @@
-import 'package:RickAndMorty/components/horizontal_route_component.dart';
-import 'package:RickAndMorty/data/models/location_model/location_model.dart';
-import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
+import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
+import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LocationItem extends StatelessWidget {
-  final LocationModel locationModel;
-  const LocationItem({this.locationModel});
+  final LocationsData locationsData;
+  const LocationItem({this.locationsData});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return ElevatedButton(
       onPressed: () {
-        Navigator.of(context).push(
-          ProfilePageRouteComponent(
-            page: LocationInfoScreen(
-              locationModel: locationModel,
-            ),
-          ),
-        );
+        BlocProvider.of<LocationsBloc>(context).add(LocationsEvent.info(locationId: locationsData.id));
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 12),
@@ -35,9 +29,10 @@ class LocationItem extends StatelessWidget {
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            child: Hero(tag: "${locationModel.image}",
-                          child: Image.asset(
-                locationModel.image,
+            child: Hero(
+              tag: "${locationsData.imageName}",
+              child: Image.network(
+                locationsData.imageName,
                 width: size.width,
                 height: 150,
                 fit: BoxFit.cover,
@@ -50,7 +45,7 @@ class LocationItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 16),
             child: Text(
-              locationModel.name,
+              locationsData.name,
               style: TextThemes.mainTitleStyle,
             ),
           ),
@@ -58,14 +53,14 @@ class LocationItem extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16),
             child: Row(children: [
               Text(
-                locationModel.category,
+                locationsData.type,
                 style: TextThemes.subTitleStyle,
               ),
               const SizedBox(
                 width: 5,
               ),
               Text(
-                locationModel.measurement,
+                locationsData.measurements,
                 style: TextThemes.subTitleStyle,
               ),
             ]),

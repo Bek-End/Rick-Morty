@@ -1,10 +1,10 @@
-import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
+import 'package:RickAndMorty/data/models/characters_model/characters_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_characters_item.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
 class GridCharactersWidget extends StatelessWidget {
-  final CharactersListModel charactersListModel;
+  final CharactersModel charactersListModel;
   const GridCharactersWidget({this.charactersListModel});
 
   @override
@@ -15,7 +15,7 @@ class GridCharactersWidget extends StatelessWidget {
       color: ColorTheme.kDarkBlue,
       child: GridView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        itemCount: charactersListModel.charactersListModel.length,
+        itemCount: charactersListModel.data.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 24,
           mainAxisSpacing: 24,
@@ -24,7 +24,7 @@ class GridCharactersWidget extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           return GridCharactersItem(
-            charactersModel: charactersListModel.charactersListModel[index],
+            dataOfCharacters: charactersListModel.data[index],
           );
         },
       ),

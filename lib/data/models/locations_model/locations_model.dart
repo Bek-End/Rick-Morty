@@ -1,39 +1,43 @@
 import 'dart:convert';
 
-LocationModel locationModelFromJson(String str) => LocationModel.fromJson(json.decode(str));
+LocationsModel locationsModelFromJson(String str) => LocationsModel.fromJson(json.decode(str));
 
-String locationModelToJson(LocationModel data) => json.encode(data.toJson());
+String locationsModelToJson(LocationsModel data) => json.encode(data.toJson());
 
-class LocationModel {
-    LocationModel({
+class LocationsModel {
+    LocationsModel({
+        this.totalRecords,
         this.succeeded,
         this.message,
         this.error,
         this.data,
     });
 
+    final int totalRecords;
     final bool succeeded;
     final dynamic message;
     final dynamic error;
-    final Data data;
+    final List<LocationsData> data;
 
-    factory LocationModel.fromJson(Map<String, dynamic> json) => LocationModel(
+    factory LocationsModel.fromJson(Map<String, dynamic> json) => LocationsModel(
+        totalRecords: json["totalRecords"],
         succeeded: json["succeeded"],
         message: json["message"],
         error: json["error"],
-        data: Data.fromJson(json["data"]),
+        data: List<LocationsData>.from(json["data"].map((x) => LocationsData.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
+        "totalRecords": totalRecords,
         "succeeded": succeeded,
         "message": message,
         "error": error,
-        "data": data.toJson(),
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
     };
 }
 
-class Data {
-    Data({
+class LocationsData {
+    LocationsData({
         this.id,
         this.name,
         this.type,
@@ -50,18 +54,18 @@ class Data {
     final String measurements;
     final String about;
     final String imageName;
-    final List<Character> characters;
-    final List<dynamic> placeOfBirthCharacters;
+    final List<CharactersData> characters;
+    final List<CharactersData> placeOfBirthCharacters;
 
-    factory Data.fromJson(Map<String, dynamic> json) => Data(
+    factory LocationsData.fromJson(Map<String, dynamic> json) => LocationsData(
         id: json["id"],
         name: json["name"],
         type: json["type"],
         measurements: json["measurements"],
         about: json["about"],
         imageName: json["imageName"],
-        characters: List<Character>.from(json["characters"].map((x) => Character.fromJson(x))),
-        placeOfBirthCharacters: List<dynamic>.from(json["placeOfBirthCharacters"].map((x) => x)),
+        characters: List<CharactersData>.from(json["characters"].map((x) => CharactersData.fromJson(x))),
+        placeOfBirthCharacters: List<CharactersData>.from(json["placeOfBirthCharacters"].map((x) => CharactersData.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
@@ -72,12 +76,12 @@ class Data {
         "about": about,
         "imageName": imageName,
         "characters": List<dynamic>.from(characters.map((x) => x.toJson())),
-        "placeOfBirthCharacters": List<dynamic>.from(placeOfBirthCharacters.map((x) => x)),
+        "placeOfBirthCharacters": List<dynamic>.from(placeOfBirthCharacters.map((x) => x.toJson())),
     };
 }
 
-class Character {
-    Character({
+class CharactersData {
+    CharactersData({
         this.id,
         this.firstName,
         this.lastName,
@@ -88,6 +92,7 @@ class Character {
         this.race,
         this.imageName,
         this.locationId,
+        this.location,
         this.placeOfBirthId,
         this.placeOfBirth,
         this.episodes,
@@ -103,11 +108,12 @@ class Character {
     final String race;
     final String imageName;
     final String locationId;
+    final dynamic location;
     final String placeOfBirthId;
     final dynamic placeOfBirth;
     final dynamic episodes;
 
-    factory Character.fromJson(Map<String, dynamic> json) => Character(
+    factory CharactersData.fromJson(Map<String, dynamic> json) => CharactersData(
         id: json["id"],
         firstName: json["firstName"],
         lastName: json["lastName"] == null ? null : json["lastName"],
@@ -118,6 +124,7 @@ class Character {
         race: json["race"],
         imageName: json["imageName"],
         locationId: json["locationId"],
+        location: json["location"],
         placeOfBirthId: json["placeOfBirthId"] == null ? null : json["placeOfBirthId"],
         placeOfBirth: json["placeOfBirth"],
         episodes: json["episodes"],
@@ -134,6 +141,7 @@ class Character {
         "race": race,
         "imageName": imageName,
         "locationId": locationId,
+        "location": location,
         "placeOfBirthId": placeOfBirthId == null ? null : placeOfBirthId,
         "placeOfBirth": placeOfBirth,
         "episodes": episodes,

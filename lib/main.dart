@@ -1,5 +1,8 @@
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
+import 'package:RickAndMorty/screens/location_info/bloc/location_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
+import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/nav_bar_screen.dart';
 import 'package:RickAndMorty/screens/splash/splash_screen.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
@@ -36,7 +39,16 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (_) => CharactersBloc()..add(CharactersEvent.select()),
-          )
+          ),
+          BlocProvider(
+            create: (_) => LocationsBloc()..add(LocationsEvent.started()),
+          ),
+          BlocProvider(
+            create: (_) => EpisodesBloc()..add(EpisodesEvent.started()),
+          ),
+          BlocProvider(
+            create: (_) => LocationBloc(),
+          ),
         ],
         child: BlocConsumer<GlobalBloc, GlobalState>(
           listener: (context, state) {},

@@ -1,16 +1,15 @@
-import 'package:RickAndMorty/components/back_button_component.dart';
 import 'package:RickAndMorty/components/line_component.dart';
-import 'package:RickAndMorty/data/models/character_model/characters_list_model.dart';
-import 'package:RickAndMorty/data/models/episod_model/episod_model.dart';
+import 'package:RickAndMorty/data/models/episod_model.dar/episod_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/episodes_back_button_widget.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class EpisodInfoScreen extends StatelessWidget {
-  final EpisodModel episodModel;
-  const EpisodInfoScreen({this.episodModel});
+  final EpisodModel episodInfo;
+  const EpisodInfoScreen({this.episodInfo});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class EpisodInfoScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
-        child: BackButtonComponent(),
+        child: EpisodesBackButtonWidget(),
       ),
       body: Container(
         child: ListView(padding: EdgeInsets.zero, children: [
@@ -29,8 +28,8 @@ class EpisodInfoScreen extends StatelessWidget {
               width: size.width,
               child: FittedBox(
                 child: Hero(
-                  tag: "${episodModel.image}",
-                  child: Image.asset(episodModel.image),
+                  tag: "${episodInfo.data.imageName}",
+                  child: Image.network(episodInfo.data.imageName),
                 ),
                 fit: BoxFit.cover,
               ),
@@ -57,7 +56,7 @@ class EpisodInfoScreen extends StatelessWidget {
                         const SizedBox(height: 82),
                         Center(
                           child: Text(
-                            episodModel.title,
+                            episodInfo.data.name,
                             style: TextThemes.locationStyle,
                             textAlign: TextAlign.center,
                           ),
@@ -67,13 +66,13 @@ class EpisodInfoScreen extends StatelessWidget {
                         ),
                         Center(
                           child: Text(
-                            episodModel.serie,
+                            episodInfo.data.series.toString(),
                             style: TextThemes.seriesStyle,
                           ),
                         ),
                         const SizedBox(height: 36),
                         Text(
-                          episodModel.episodInfo,
+                          episodInfo.data.plot,
                           style: TextThemes.mainInfoStyle,
                         ),
                         const SizedBox(height: 24),
@@ -83,7 +82,7 @@ class EpisodInfoScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          episodModel.date,
+                          episodInfo.data.premiere.toString(),
                           style: TextThemes.dateStyle
                               .copyWith(color: ColorTheme.kWhite),
                         ),
@@ -97,11 +96,9 @@ class EpisodInfoScreen extends StatelessWidget {
                         const SizedBox(height: 24),
                       ] +
                       List.generate(
-                        6,
-                        (i) => CharacterListComponent(
-                          charactersModel:
-                              CharactersListModel.getCharactersList()
-                                  .charactersListModel[i],
+                        episodInfo.data.characters.length,
+                        (index) => CharacterListComponent(
+                          charactersModel: episodInfo.data.characters[index],
                         ),
                       ),
                 ),
