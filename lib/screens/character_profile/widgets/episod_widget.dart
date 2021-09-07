@@ -21,23 +21,13 @@ class EpisodWidgetWithIcon extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(children: [
-            Container(
-              child: Hero(
-                tag: "${episodModel.imageName}",
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    episodModel.imageName,
-                    width: 74,
-                    height: 74,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              width: 74,
-              height: 74,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                episodModel.imageName,
+                width: 74,
+                height: 74,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(width: 16),

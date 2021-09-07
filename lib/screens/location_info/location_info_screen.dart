@@ -24,10 +24,7 @@ class LocationInfoScreen extends StatelessWidget {
               height: 298,
               width: size.width,
               child: FittedBox(
-                child: Hero(
-                  tag: "${locationInfo.data.imageName}",
-                  child: Image.network(locationInfo.data.imageName),
-                ),
+                child: Image.network(locationInfo.data.imageName),
                 fit: BoxFit.cover,
               ),
             ),

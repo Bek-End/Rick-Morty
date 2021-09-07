@@ -1,9 +1,6 @@
 import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_screens/first_season.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_screens/fourth_season.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_item_widget.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/search_widget.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_screens/second_season.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_screens/third_season.dart';
 import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
@@ -72,16 +69,16 @@ class _EpisodesScreenState extends State<EpisodesScreen> {
                 ]),
           ),
           body: IndexedStack(index: _selectedIndex, children: [
-            FirstSeasonScreen(
+            TabBarItemWidget(
               episodesData: widget.episodesList[0],
             ),
-            SecondSeasonScreen(
+            TabBarItemWidget(
               episodesData: widget.episodesList[1],
             ),
-            ThirdSeasonScreen(
+            TabBarItemWidget(
               episodesData: widget.episodesList[2],
             ),
-            FourthSeasonScreen(
+            TabBarItemWidget(
               episodesData: widget.episodesList[3],
             ),
           ]),

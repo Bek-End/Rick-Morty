@@ -29,14 +29,11 @@ class LocationItem extends StatelessWidget {
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            child: Hero(
-              tag: "${locationsData.imageName}",
-              child: Image.network(
-                locationsData.imageName,
-                width: size.width,
-                height: 150,
-                fit: BoxFit.cover,
-              ),
+            child: Image.network(
+              locationsData.imageName,
+              width: size.width,
+              height: 150,
+              fit: BoxFit.cover,
             ),
           ),
           const SizedBox(

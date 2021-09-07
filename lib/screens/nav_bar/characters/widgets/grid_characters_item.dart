@@ -19,14 +19,9 @@ class GridCharactersItem extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Expanded(
           flex: 5,
-          child: Container(
-            child: Hero(
-              tag: "${dataOfCharacters.imageName}",
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(dataOfCharacters.imageName),
-                radius: 60,
-              ),
-            ),
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(dataOfCharacters.imageName),
+            radius: 60,
           ),
         ),
         Spacer(),

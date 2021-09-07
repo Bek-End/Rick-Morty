@@ -19,14 +19,9 @@ class ListCharactersItem extends StatelessWidget {
               .add(CharactersEvent.info(characterId: dataOfCharacters.id));
         },
         child: Row(children: [
-          Container(
-            child: Hero(
-              tag: "${dataOfCharacters.imageName}",
-              child: CircleAvatar(
-                radius: 37,
-                backgroundImage: NetworkImage(dataOfCharacters.imageName),
-              ),
-            ),
+          CircleAvatar(
+            radius: 37,
+            backgroundImage: NetworkImage(dataOfCharacters.imageName),
           ),
           const SizedBox(width: 18),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

@@ -43,10 +43,10 @@ class ServerApi {
     return characterModelFromJson(response.toString());
   }
 
-  Future<EpisodesModel> getEpisodes() async {
+  Future<EpisodesModel> getEpisodes(int season) async {
     Response<String> response = await _dio.get(
       "/api/Episodes/GetAll",
-      queryParameters: _request,
+      queryParameters: {"PageNumber": 1, "PageSize": 100, "Season": season},
     );
     return episodesModelFromJson(response.toString());
   }

@@ -124,12 +124,12 @@ class CharacterProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100),
                     border: Border.all(width: 8, color: ColorTheme.kMainDark),
                   ),
-                  child: FittedBox(
-                    child: Hero(
-                      tag: "${characterInfo.data.imageName}",
-                      child: ClipOval(
-                        child: Image.network(characterInfo.data.imageName, width: 146,height: 146, fit: BoxFit.cover,),
-                      ),
+                  child: ClipOval(
+                    child: Image.network(
+                      characterInfo.data.imageName,
+                      width: 146,
+                      height: 146,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

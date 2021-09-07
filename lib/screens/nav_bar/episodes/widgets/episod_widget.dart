@@ -14,25 +14,32 @@ class EpisodWidgetWithoutIcon extends StatelessWidget {
       padding: const EdgeInsets.only(top: 24),
       child: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<EpisodesBloc>(context).add(EpisodesEvent.info());
+          BlocProvider.of<EpisodesBloc>(context).add(EpisodesEvent.info(episodId: episodesData.id));
         },
         child: Row(children: [
-          Container(
-            child: Hero(
-              tag: "${episodesData.imageName}",
-              child: Image.network(episodesData.imageName),
-            ),
-            width: 74,
-            height: 74,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.network(
+              episodesData.imageName,
+              width: 74,
+              height: 74,
+              fit: BoxFit.cover,
             ),
           ),
           const SizedBox(width: 16),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(episodesData.series.toString(), style: TextThemes.seriesStyle),
-            Text(episodesData.name, style: TextThemes.titleStyle),
-            Text(episodesData.premiere.toString(), style: TextThemes.dateStyle)
+            Text(
+              "Серия ${episodesData.series}".toUpperCase(),
+              style: TextThemes.seriesStyle,
+            ),
+            Text(
+              episodesData.name,
+              style: TextThemes.titleStyle,
+            ),
+            Text(
+              episodesData.premiere.toString(),
+              style: TextThemes.dateStyle,
+            )
           ])
         ]),
       ),

@@ -15,8 +15,8 @@ class Repository {
     return response;
   }
 
-  Future<EpisodesModel> getEpisodes() async {
-    final response = await _serverApi.getEpisodes();
+  Future<EpisodesModel> getEpisodes(int season) async {
+    final response = await _serverApi.getEpisodes(season);
     return response;
   }
 

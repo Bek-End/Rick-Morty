@@ -27,10 +27,7 @@ class EpisodInfoScreen extends StatelessWidget {
               height: 298,
               width: size.width,
               child: FittedBox(
-                child: Hero(
-                  tag: "${episodInfo.data.imageName}",
-                  child: Image.network(episodInfo.data.imageName),
-                ),
+                child: Image.network(episodInfo.data.imageName),
                 fit: BoxFit.cover,
               ),
             ),
@@ -66,7 +63,7 @@ class EpisodInfoScreen extends StatelessWidget {
                         ),
                         Center(
                           child: Text(
-                            episodInfo.data.series.toString(),
+                            "серия ${episodInfo.data.series}".toUpperCase(),
                             style: TextThemes.seriesStyle,
                           ),
                         ),

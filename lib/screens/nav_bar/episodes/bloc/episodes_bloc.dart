@@ -18,40 +18,23 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
   EpisodesBloc() : super(EpisodesLoadingState());
 
   @override
-  Stream<EpisodesState> mapEventToState(
-    EpisodesEvent event,
-  ) async* {
-    if (episodesList.totalRecords == null) {
+  Stream<EpisodesState> mapEventToState(EpisodesEvent event) async* {
+    if (episodesListForTabBar[3].isEmpty) {
       yield EpisodesState.loading();
       try {
-        episodesList = await _repository.getEpisodes();
-        episodesList.data.forEach((element) {
-          switch (element.season) {
-            case 1:
-              episodesListForTabBar[0].add(element);
-              break;
-            case 2:
-              episodesListForTabBar[1].add(element);
-              break;
-            case 3:
-              episodesListForTabBar[2].add(element);
-              break;
-            case 4:
-              episodesListForTabBar[3].add(element);
-              break;
-          }
-        });
+        for (int season = 1; season < 5; season++) {
+          episodesList = await _repository.getEpisodes(season);
+          episodesListForTabBar[season - 1] = episodesList.data;
+        }
       } catch (e) {
         yield EpisodesErrorState(errorMessage: e);
       }
     }
-    event.map(started: _started, info: _info);
+    yield* event.map(started: _started, info: _info);
   }
 
   Stream<EpisodesState> _started(_Started event) async* {
-    yield EpisodesState.initial(
-      episodesList: episodesListForTabBar,
-    );
+    yield EpisodesState.initial(episodesList: episodesListForTabBar);
   }
 
   Stream<EpisodesState> _info(_InfoEvent event) async* {

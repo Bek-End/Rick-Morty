@@ -22,20 +22,12 @@ class CharacterListComponent extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(children: [
-            Container(
-              child: CircleAvatar(
-                radius: 37,
-                child: Hero(
-                  tag: "${charactersModel.imageName}",
-                  child: ClipOval(
-                    child: Image.network(
-                      charactersModel.imageName,
-                      width: 74,
-                      height: 74,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
+            ClipOval(
+              child: Image.network(
+                charactersModel.imageName,
+                width: 74,
+                height: 74,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(width: 18),
