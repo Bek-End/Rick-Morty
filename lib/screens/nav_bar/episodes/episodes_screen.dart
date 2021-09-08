@@ -1,8 +1,6 @@
 import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_item_widget.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/search_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 final _textController = TextEditingController();
@@ -34,36 +32,33 @@ class _EpisodesScreenState extends State<EpisodesScreen> {
               controller: _textController,
               hintText: "Найти эпизод",
             ),
-            elevation: 0,
-            backgroundColor: ColorTheme.kDarkBlue,
             automaticallyImplyLeading: false,
             bottom: TabBar(
                 onTap: onItemTapped,
                 indicatorWeight: 1,
-                indicatorColor: ColorTheme.kWhite,
                 tabs: [
                   Tab(
                     child: Text(
                       "Сезон 1".toUpperCase(),
-                      style: TextThemes.dialogStyle,
+                      style:Theme.of(context).textTheme.button,
                     ),
                   ),
                   Tab(
                     child: Text(
                       "Сезон 2".toUpperCase(),
-                      style: TextThemes.dialogStyle,
+                      style: Theme.of(context).textTheme.button,
                     ),
                   ),
                   Tab(
                     child: Text(
                       "Сезон 3".toUpperCase(),
-                      style: TextThemes.dialogStyle,
+                      style: Theme.of(context).textTheme.button,
                     ),
                   ),
                   Tab(
                     child: Text(
                       "Сезон 4".toUpperCase(),
-                      style: TextThemes.dialogStyle,
+                      style: Theme.of(context).textTheme.button,
                     ),
                   ),
                 ]),

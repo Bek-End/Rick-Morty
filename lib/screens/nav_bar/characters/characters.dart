@@ -4,7 +4,6 @@ import 'package:RickAndMorty/components/search_component.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/grid_characters_widget.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/widgets/list_characters_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +29,6 @@ class CharactersScreen extends StatelessWidget {
             controller: _textController,
             hintText: "Найти персонажа",
           ),
-          elevation: 0,
-          backgroundColor: ColorTheme.kDarkBlue,
           automaticallyImplyLeading: false,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(60),

@@ -1,8 +1,7 @@
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/data/models/location_model/location_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/locations_back_button_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class LocationInfoScreen extends StatelessWidget {
@@ -38,7 +37,7 @@ class LocationInfoScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 width: size.width,
                 decoration: BoxDecoration(
-                  color: ColorTheme.kMainDark,
+                  color: Theme.of(context).backgroundColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
@@ -50,30 +49,32 @@ class LocationInfoScreen extends StatelessWidget {
                         const SizedBox(height: 34),
                         Text(
                           locationInfo.data.name,
-                          style: TextThemes.locationStyle,
+                          style: Theme.of(context).textTheme.headline1,
                         ),
                         Row(children: [
                           Text(
                             locationInfo.data.type,
-                            style: TextThemes.subTitleStyle,
+                            style: Theme.of(context).textTheme.caption,
                           ),
                           const SizedBox(
                             width: 5,
                           ),
                           Text(
                             locationInfo.data.measurements,
-                            style: TextThemes.subTitleStyle,
+                            style: Theme.of(context).textTheme.caption,
                           ),
                         ]),
                         const SizedBox(height: 32),
                         Text(
                           locationInfo.data.about,
-                          style: TextThemes.mainInfoStyle,
+                          style: AppTextStyles.infoValue.copyWith(
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                         const SizedBox(height: 36),
                         Text(
                           "Персонажи",
-                          style: TextThemes.mainTitleStyle,
+                          style: Theme.of(context).textTheme.headline6,
                         ),
                         const SizedBox(height: 24),
                       ] +

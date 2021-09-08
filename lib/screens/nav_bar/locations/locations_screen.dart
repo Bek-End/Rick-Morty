@@ -1,8 +1,6 @@
 import 'package:RickAndMorty/components/search_component.dart';
 import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/location_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 final _textController = TextEditingController();
@@ -26,8 +24,6 @@ class LocationsScreen extends StatelessWidget {
             controller: _textController,
             hintText: "Найти локацию",
           ),
-          elevation: 0,
-          backgroundColor: ColorTheme.kDarkBlue,
           automaticallyImplyLeading: false,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(60),
@@ -37,7 +33,7 @@ class LocationsScreen extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Всего локаций: ${locationsList.totalRecords}".toUpperCase(),
-                  style: TextThemes.resultOfSearchStyle,
+                  style: Theme.of(context).textTheme.overline,
                 ),
               ),
             ),

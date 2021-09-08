@@ -35,6 +35,14 @@ dependencies:
   dio:
   flutter_spinkit: ^4.1.2
 
+  equatable: any
+  provider: any
+  shared_preferences: 0.5.12+4
+  intl: any
+  package_info: any
+  shimmer: any
+  another_flushbar: any
+
 
 dev_dependencies:
   flutter_test:

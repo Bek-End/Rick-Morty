@@ -1,5 +1,4 @@
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -7,7 +6,7 @@ class SearchWidget extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   const SearchWidget({this.size, this.controller, this.hintText});
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +15,7 @@ class SearchWidget extends StatelessWidget {
         height: 48,
         padding: EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
-          color: ColorTheme.kLightBlue,
+          color: Theme.of(context).dividerColor,
           borderRadius: BorderRadius.circular(100),
         ),
         child: Row(children: [
@@ -27,13 +26,14 @@ class SearchWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               style: TextStyle(
-                color: ColorTheme.kWhite,
+                color: Theme.of(context).accentColor,
               ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(bottom: 12),
                 border: InputBorder.none,
                 hintText: hintText,
-                hintStyle: TextStyle(color: ColorTheme.kDirtyGrey),
+                hintStyle: TextStyle(
+                    color: Theme.of(context).appBarTheme.iconTheme.color),
               ),
               controller: controller,
             ),

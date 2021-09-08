@@ -1,8 +1,8 @@
 import 'package:RickAndMorty/data/models/location_model/location_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_colors.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,24 +32,27 @@ class CharacterListComponent extends StatelessWidget {
             ),
             const SizedBox(width: 18),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(charactersModel.status == 0 ? "Живой" : "Мертвый",
-                  style: TextStyle(
-                      height: 1.6,
-                      letterSpacing: 1.5,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
+              Text(
+                charactersModel.status == 0 ? "Живой" : "Мертвый",
+                style: Theme.of(context).textTheme.overline.copyWith(
                       color: charactersModel.status == 0
-                          ? ColorTheme.kGreen
-                          : ColorTheme.kRed)),
-              Text(charactersModel.fullName, style: TextThemes.titleStyle),
+                          ? AppColors.green
+                          : AppColors.red,
+                    ),
+              ),
+              Text(
+                charactersModel.fullName,
+                style: AppTextStyles.nameValue
+                    .copyWith(color: Theme.of(context).accentColor),
+              ),
               Row(children: [
                 Text(
                   charactersModel.race,
-                  style: TextThemes.subTitleStyle,
+                  style: Theme.of(context).textTheme.caption,
                 ),
                 Text(
                   charactersModel.gender == 0 ? "Мужской" : "Женский",
-                  style: TextThemes.subTitleStyle,
+                  style: Theme.of(context).textTheme.caption,
                 ),
               ])
             ])

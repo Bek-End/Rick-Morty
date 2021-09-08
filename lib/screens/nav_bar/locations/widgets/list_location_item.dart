@@ -1,7 +1,5 @@
 import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +19,7 @@ class LocationItem extends StatelessWidget {
         height: 218,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: ColorTheme.kLightBlue,
+          color: Theme.of(context).dividerColor,
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           ClipRRect(
@@ -43,7 +41,7 @@ class LocationItem extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16),
             child: Text(
               locationsData.name,
-              style: TextThemes.mainTitleStyle,
+              style: Theme.of(context).textTheme.headline6,
             ),
           ),
           Padding(
@@ -51,14 +49,14 @@ class LocationItem extends StatelessWidget {
             child: Row(children: [
               Text(
                 locationsData.type,
-                style: TextThemes.subTitleStyle,
+                style: Theme.of(context).textTheme.caption,
               ),
               const SizedBox(
                 width: 5,
               ),
               Text(
                 locationsData.measurements,
-                style: TextThemes.subTitleStyle,
+                style: Theme.of(context).textTheme.caption,
               ),
             ]),
           )

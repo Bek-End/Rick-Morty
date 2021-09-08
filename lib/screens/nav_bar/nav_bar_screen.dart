@@ -8,7 +8,6 @@ import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/characters.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/locations_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/settings_screen.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -104,59 +103,46 @@ class _NavBarScreenState extends State<NavBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      backgroundColor: ColorTheme.kLightBlue,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: ColorTheme.kLightBlue,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
               MyIcons.navBar[0],
-              color: ColorTheme.kDirtyGrey,
             ),
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[0],
-              color: ColorTheme.kGreen,
             ),
             label: Variables.navBarLabels[0],
           ),
           BottomNavigationBarItem(
-            backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
               MyIcons.navBar[1],
             ),
             label: Variables.navBarLabels[1],
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[1],
-              color: ColorTheme.kGreen,
             ),
           ),
           BottomNavigationBarItem(
-            backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
               MyIcons.navBar[2],
             ),
             label: Variables.navBarLabels[2],
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[2],
-              color: ColorTheme.kGreen,
             ),
           ),
           BottomNavigationBarItem(
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[3],
-              color: ColorTheme.kGreen,
             ),
-            backgroundColor: ColorTheme.kLightBlue,
             icon: SvgPicture.asset(
               MyIcons.navBar[3],
             ),
             label: Variables.navBarLabels[3],
           )
         ],
-        selectedItemColor: ColorTheme.kGreen,
-        unselectedItemColor: ColorTheme.kDirtyGrey,
         currentIndex: _selectedIndex,
         onTap: onItemTapped,
         showUnselectedLabels: true,

@@ -1,9 +1,12 @@
 import 'package:RickAndMorty/components/line_component.dart';
+import 'package:RickAndMorty/data/data_base/theme_types.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/resources/variables.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/widgets/dialog_widget.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
+import 'package:RickAndMorty/theme/theme_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -16,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Text(
           "Настройки",
-          style: TextThemes.mainTitleStyle,
+          style: Theme.of(context).textTheme.headline6,
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(60),
@@ -26,7 +29,7 @@ class SettingsScreen extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 "Внешний вид".toUpperCase(),
-                style: TextThemes.resultOfSearchStyle,
+                style: Theme.of(context).textTheme.overline,
               ),
             ),
           ),
@@ -46,12 +49,13 @@ class SettingsScreen extends StatelessWidget {
               leading: MyIcons.theme,
               title: Text(
                 "Темная тема",
-                style: TextThemes.themeStyle,
+                style: Theme.of(context).textTheme.subtitle1,
               ),
               subtitle: Text(
-                "Включена",
-                style: TextThemes.dateStyle,
-              ),
+                  themeName(
+                    Provider.of<ThemeNotifier>(context).getThemeType(),
+                  ),
+                  style: Theme.of(context).textTheme.bodyText2),
               trailing: MyIcons.forward,
             ),
           ),
@@ -60,28 +64,32 @@ class SettingsScreen extends StatelessWidget {
           ),
           Text(
             "О приложении".toUpperCase(),
-            style: TextThemes.resultOfSearchStyle,
+            style: Theme.of(context).textTheme.overline,
           ),
           const SizedBox(
             height: 24,
           ),
           Text(
-           Variables.appInfo,
-            style: TextThemes.mainInfoStyle,
+            Variables.appInfo,
+            style: AppTextStyles.infoValue.copyWith(
+              color: Theme.of(context).accentColor,
+            ),
           ),
           LineComponent(
             horizontalPadding: 0,
           ),
           Text(
             "Версия приложения".toUpperCase(),
-            style: TextThemes.resultOfSearchStyle,
+            style: Theme.of(context).textTheme.overline,
           ),
           const SizedBox(
             height: 24,
           ),
           Text(
             "Rick & Morty  v1.0.0",
-            style: TextThemes.mainInfoStyle,
+            style: AppTextStyles.infoValue.copyWith(
+              color: Theme.of(context).accentColor,
+            ),
           ),
         ]),
       ),

@@ -3,14 +3,13 @@ import 'package:RickAndMorty/data/models/episod_model.dar/episod_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/episodes_back_button_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_colors.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class EpisodInfoScreen extends StatelessWidget {
   final EpisodModel episodInfo;
   const EpisodInfoScreen({this.episodInfo});
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -41,7 +40,7 @@ class EpisodInfoScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 width: size.width,
                 decoration: BoxDecoration(
-                  color: ColorTheme.kMainDark,
+                  color: Theme.of(context).backgroundColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
@@ -54,7 +53,7 @@ class EpisodInfoScreen extends StatelessWidget {
                         Center(
                           child: Text(
                             episodInfo.data.name,
-                            style: TextThemes.locationStyle,
+                            style: Theme.of(context).textTheme.headline1,
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -64,31 +63,35 @@ class EpisodInfoScreen extends StatelessWidget {
                         Center(
                           child: Text(
                             "серия ${episodInfo.data.series}".toUpperCase(),
-                            style: TextThemes.seriesStyle,
+                            style: Theme.of(context)
+                                .textTheme
+                                .overline
+                                .copyWith(color: AppColors.blue),
                           ),
                         ),
                         const SizedBox(height: 36),
                         Text(
                           episodInfo.data.plot,
-                          style: TextThemes.mainInfoStyle,
+                          style: AppTextStyles.infoValue.copyWith(
+                            color: Theme.of(context).accentColor,
+                          ),
                         ),
                         const SizedBox(height: 24),
                         Text(
                           "Премьера",
-                          style: TextThemes.keyStyle,
+                          style: Theme.of(context).textTheme.caption,
                         ),
                         const SizedBox(height: 4),
                         Text(
                           episodInfo.data.premiere.toString(),
-                          style: TextThemes.dateStyle
-                              .copyWith(color: ColorTheme.kWhite),
+                          style: Theme.of(context).textTheme.bodyText2,
                         ),
                         LineComponent(
                           horizontalPadding: 0,
                         ),
                         Text(
                           "Персонажи",
-                          style: TextThemes.mainTitleStyle,
+                          style: Theme.of(context).textTheme.headline6,
                         ),
                         const SizedBox(height: 24),
                       ] +

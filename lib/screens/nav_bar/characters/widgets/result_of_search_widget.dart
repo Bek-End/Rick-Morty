@@ -1,5 +1,4 @@
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
 import 'package:flutter/material.dart';
 
 class ResultOfSearchWidget extends StatefulWidget {
@@ -20,7 +19,7 @@ class _ResultOfSearchWidgetState extends State<ResultOfSearchWidget> {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
           "Всего персонажей: ${widget.totalRecords}".toUpperCase(),
-          style: TextThemes.resultOfSearchStyle,
+          style: Theme.of(context).textTheme.overline,
         ),
         Padding(
           padding: const EdgeInsets.only(right: 20),

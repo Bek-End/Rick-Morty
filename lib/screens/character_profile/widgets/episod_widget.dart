@@ -1,7 +1,7 @@
 import 'package:RickAndMorty/data/models/character_model/character_model.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,15 +34,17 @@ class EpisodWidgetWithIcon extends StatelessWidget {
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
                 "Серия ${episodModel.series}".toUpperCase(),
-                style: TextThemes.seriesStyle,
+                style: Theme.of(context).textTheme.overline,
               ),
               Text(
                 episodModel.name,
-                style: TextThemes.titleStyle,
+                style: AppTextStyles.nameValue.copyWith(
+                  color: Theme.of(context).accentColor,
+                ),
               ),
               Text(
                 episodModel.premiere.toString(),
-                style: TextThemes.dateStyle,
+                style: AppTextStyles.dateValue,
               )
             ])
           ]),

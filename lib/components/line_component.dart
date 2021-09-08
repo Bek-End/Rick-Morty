@@ -1,4 +1,3 @@
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
 class LineComponent extends StatelessWidget {
@@ -10,7 +9,7 @@ class LineComponent extends StatelessWidget {
     return Container(
       height: 1,
       margin: EdgeInsets.symmetric(vertical: 36, horizontal: horizontalPadding),
-      color: ColorTheme.kLightBlue,
+      color: Theme.of(context).dividerColor,
     );
   }
 }

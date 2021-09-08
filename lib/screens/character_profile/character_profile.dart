@@ -3,8 +3,8 @@ import 'package:RickAndMorty/data/models/character_model/character_model.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/characters_back_button_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/enter_widget.dart';
 import 'package:RickAndMorty/screens/character_profile/widgets/episodes_widget.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
-import 'package:RickAndMorty/theme/text_themes.dart';
+import 'package:RickAndMorty/theme/app_colors.dart';
+import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CharacterProfileScreen extends StatelessWidget {
@@ -33,46 +33,41 @@ class CharacterProfileScreen extends StatelessWidget {
               ),
               Container(
                 width: size.width,
-                color: ColorTheme.kMainDark,
+                color: Theme.of(context).backgroundColor,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(height: 90),
                       Text(characterInfo.data.fullName,
-                          style: TextThemes.characterNameStyle),
+                          style: Theme.of(context).textTheme.headline4),
                       const SizedBox(height: 4),
-                      Text(
-                        characterInfo.data.status == 0 ? "Живой" : "Мертвый",
-                        style: TextStyle(
-                          color: characterInfo.data.status == 0
-                              ? ColorTheme.kGreen
-                              : ColorTheme.kRed,
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500,
-                          height: 1.6,
-                          letterSpacing: 0.25,
-                        ),
-                      ),
+                      Text(characterInfo.data.status == 0 ? "Живой" : "Мертвый",
+                          style: Theme.of(context).textTheme.overline.copyWith(
+                                color: characterInfo.data.status == 0
+                                    ? AppColors.green
+                                    : AppColors.red,
+                                letterSpacing: 0.25,
+                              )),
                       const SizedBox(height: 36),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(children: [
                           Text(
                             characterInfo.data.about,
-                            style: TextThemes.mainInfoStyle,
+                            style: AppTextStyles.infoValue.copyWith(color: Theme.of(context).accentColor),
                           ),
                           const SizedBox(height: 24),
                           Row(children: [
                             Expanded(
                               child: Text(
                                 "Пол",
-                                style: TextThemes.keyStyle,
+                                style: Theme.of(context).textTheme.caption,
                               ),
                             ),
                             Expanded(
                               child: Text(
                                 "Расса",
-                                style: TextThemes.keyStyle,
+                                style: Theme.of(context).textTheme.caption,
                               ),
                             )
                           ]),
@@ -83,13 +78,13 @@ class CharacterProfileScreen extends StatelessWidget {
                                 characterInfo.data.gender == 0
                                     ? "Мужской"
                                     : "Женский",
-                                style: TextThemes.valueStyle,
+                                style: Theme.of(context).textTheme.bodyText2,
                               ),
                             ),
                             Expanded(
                               child: Text(
                                 characterInfo.data.race,
-                                style: TextThemes.valueStyle,
+                                style: Theme.of(context).textTheme.bodyText2,
                               ),
                             )
                           ]),
@@ -112,7 +107,7 @@ class CharacterProfileScreen extends StatelessWidget {
             Container(
               width: size.width,
               height: 218,
-              color: ColorTheme.kMainDark.withOpacity(0.65),
+              color: Theme.of(context).backgroundColor.withOpacity(0.65),
             ),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const SizedBox(height: 138),
@@ -122,7 +117,10 @@ class CharacterProfileScreen extends StatelessWidget {
                   height: 146,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                    border: Border.all(width: 8, color: ColorTheme.kMainDark),
+                    border: Border.all(
+                      width: 8,
+                      color: Theme.of(context).backgroundColor,
+                    ),
                   ),
                   child: ClipOval(
                     child: Image.network(

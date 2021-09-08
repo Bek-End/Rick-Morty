@@ -6,7 +6,10 @@ class ErrorComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(errorMessage),
+      child: Text(
+        errorMessage,
+        style: Theme.of(context).textTheme.headline1,
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/list_location_item.dart';
-import 'package:RickAndMorty/theme/color_theme.dart';
 import 'package:flutter/material.dart';
 
 class LocationWidgets extends StatelessWidget {
@@ -12,7 +11,7 @@ class LocationWidgets extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      color: ColorTheme.kDarkBlue,
+      color: Theme.of(context).primaryColor,
       child: Padding(
         padding: const EdgeInsets.only(top: 12),
         child: ListView.builder(
