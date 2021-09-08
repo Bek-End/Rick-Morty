@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:RickAndMorty/data/models/character_model/character_model.dart';
 import 'package:RickAndMorty/data/models/characters_model/characters_model.dart';
 import 'package:RickAndMorty/data/repository.dart';
 import 'package:bloc/bloc.dart';
@@ -14,15 +13,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   bool isGrid = true;
   final _repository = Repository();
   CharactersModel charactersList = CharactersModel();
-  CharacterModel characterInfo = CharacterModel();
-
   CharactersBloc() : super(CharactersLoadingState());
 
   @override
   Stream<CharactersState> mapEventToState(
     CharactersEvent event,
   ) async* {
-    yield* event.map(select: _select, info: _info, back: _back);
+    yield* event.map(select: _select);
   }
 
   Stream<CharactersState> _select(_SelectEvent event) async* {
@@ -43,24 +40,6 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
           charactersList: charactersList,
           isGrid: isGrid,
         );
-    }
-  }
-
-  Stream<CharactersState> _back(_BackEvent event) async* {
-    charactersList = await _repository.getCharacters();
-    yield CharactersState.select(
-      charactersList: charactersList,
-      isGrid: isGrid,
-    );
-  }
-
-  Stream<CharactersState> _info(_InfoEvent event) async* {
-    yield CharactersState.loading();
-    try {
-      characterInfo = await _repository.getCharacter(event.characterId);
-      yield CharactersState.info(characterInfo: characterInfo);
-    } catch (e) {
-      yield CharactersState.error(errorMessage: e);
     }
   }
 }

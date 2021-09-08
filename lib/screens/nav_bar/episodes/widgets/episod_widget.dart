@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/theme/app_colors.dart';
 import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +15,8 @@ class EpisodWidgetWithoutIcon extends StatelessWidget {
       padding: const EdgeInsets.only(top: 24),
       child: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<EpisodesBloc>(context)
-              .add(EpisodesEvent.info(episodId: episodesData.id));
+          BlocProvider.of<GlobalBloc>(context)
+              .add(GlobalEvent.episodInfo(episodId: episodesData.id));
         },
         child: Row(children: [
           ClipRRect(

@@ -5,10 +5,6 @@ abstract class ListOrGrid {
   bool get isGrid;
 }
 
-abstract class CharacterProfile {
-  CharacterModel get characterInfo;
-}
-
 @freezed
 abstract class CharactersState with _$CharactersState {
   factory CharactersState.loading() = CharactersLoadingState;
@@ -18,6 +14,4 @@ abstract class CharactersState with _$CharactersState {
     CharactersModel charactersList,
     bool isGrid,
   }) = SelectState;
-  @Implements(CharacterProfile)
-  factory CharactersState.info({CharacterModel characterInfo}) = CharactersInfoState;
 }

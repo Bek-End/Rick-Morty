@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/data/models/location_model/location_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/theme/app_colors.dart';
 import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +15,9 @@ class ListCharactersItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 24),
       child: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<CharactersBloc>(context)
-              .add(CharactersEvent.info(characterId: dataOfCharacters.id));
+          BlocProvider.of<GlobalBloc>(context).add(
+            GlobalEvent.characterInfo(characterId: dataOfCharacters.id),
+          );
         },
         child: Row(children: [
           CircleAvatar(

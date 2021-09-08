@@ -1,5 +1,5 @@
 import 'package:RickAndMorty/data/models/location_model/location_model.dart';
-import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,8 +12,9 @@ class GridCharactersItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        BlocProvider.of<CharactersBloc>(context)
-            .add(CharactersEvent.info(characterId: dataOfCharacters.id));
+        BlocProvider.of<GlobalBloc>(context).add(
+          GlobalEvent.characterInfo(characterId: dataOfCharacters.id),
+        );
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Expanded(

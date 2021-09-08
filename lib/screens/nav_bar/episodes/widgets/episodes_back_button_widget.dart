@@ -1,5 +1,5 @@
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,7 +15,7 @@ class EpisodesBackButtonWidget extends StatelessWidget {
         padding: const EdgeInsets.only(left: 24),
         child: ElevatedButton(
           onPressed: () {
-            BlocProvider.of<EpisodesBloc>(context).add(EpisodesEvent.started());
+            BlocProvider.of<GlobalBloc>(context).add(GlobalEvent.back());
           },
           child: MyIcons.back,
         ),

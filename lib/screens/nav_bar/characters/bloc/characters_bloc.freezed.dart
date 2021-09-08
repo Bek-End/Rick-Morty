@@ -17,18 +17,6 @@ class _$CharactersEventTearOff {
   _SelectEvent select() {
     return const _SelectEvent();
   }
-
-// ignore: unused_element
-  _BackEvent back() {
-    return const _BackEvent();
-  }
-
-// ignore: unused_element
-  _InfoEvent info({String characterId}) {
-    return _InfoEvent(
-      characterId: characterId,
-    );
-  }
 }
 
 /// @nodoc
@@ -40,27 +28,19 @@ mixin _$CharactersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult select(),
-    @required TResult back(),
-    @required TResult info(String characterId),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult select(),
-    TResult back(),
-    TResult info(String characterId),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult select(_SelectEvent value),
-    @required TResult back(_BackEvent value),
-    @required TResult info(_InfoEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult select(_SelectEvent value),
-    TResult back(_BackEvent value),
-    TResult info(_InfoEvent value),
     @required TResult orElse(),
   });
 }
@@ -122,12 +102,8 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult select(),
-    @required TResult back(),
-    @required TResult info(String characterId),
   }) {
     assert(select != null);
-    assert(back != null);
-    assert(info != null);
     return select();
   }
 
@@ -135,8 +111,6 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult select(),
-    TResult back(),
-    TResult info(String characterId),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -150,12 +124,8 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult select(_SelectEvent value),
-    @required TResult back(_BackEvent value),
-    @required TResult info(_InfoEvent value),
   }) {
     assert(select != null);
-    assert(back != null);
-    assert(info != null);
     return select(this);
   }
 
@@ -163,8 +133,6 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult select(_SelectEvent value),
-    TResult back(_BackEvent value),
-    TResult info(_InfoEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -177,226 +145,6 @@ class _$_SelectEvent implements _SelectEvent {
 
 abstract class _SelectEvent implements CharactersEvent {
   const factory _SelectEvent() = _$_SelectEvent;
-}
-
-/// @nodoc
-abstract class _$BackEventCopyWith<$Res> {
-  factory _$BackEventCopyWith(
-          _BackEvent value, $Res Function(_BackEvent) then) =
-      __$BackEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BackEventCopyWithImpl<$Res> extends _$CharactersEventCopyWithImpl<$Res>
-    implements _$BackEventCopyWith<$Res> {
-  __$BackEventCopyWithImpl(_BackEvent _value, $Res Function(_BackEvent) _then)
-      : super(_value, (v) => _then(v as _BackEvent));
-
-  @override
-  _BackEvent get _value => super._value as _BackEvent;
-}
-
-/// @nodoc
-class _$_BackEvent implements _BackEvent {
-  const _$_BackEvent();
-
-  @override
-  String toString() {
-    return 'CharactersEvent.back()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BackEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult select(),
-    @required TResult back(),
-    @required TResult info(String characterId),
-  }) {
-    assert(select != null);
-    assert(back != null);
-    assert(info != null);
-    return back();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult select(),
-    TResult back(),
-    TResult info(String characterId),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (back != null) {
-      return back();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult select(_SelectEvent value),
-    @required TResult back(_BackEvent value),
-    @required TResult info(_InfoEvent value),
-  }) {
-    assert(select != null);
-    assert(back != null);
-    assert(info != null);
-    return back(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectEvent value),
-    TResult back(_BackEvent value),
-    TResult info(_InfoEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (back != null) {
-      return back(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BackEvent implements CharactersEvent {
-  const factory _BackEvent() = _$_BackEvent;
-}
-
-/// @nodoc
-abstract class _$InfoEventCopyWith<$Res> {
-  factory _$InfoEventCopyWith(
-          _InfoEvent value, $Res Function(_InfoEvent) then) =
-      __$InfoEventCopyWithImpl<$Res>;
-  $Res call({String characterId});
-}
-
-/// @nodoc
-class __$InfoEventCopyWithImpl<$Res> extends _$CharactersEventCopyWithImpl<$Res>
-    implements _$InfoEventCopyWith<$Res> {
-  __$InfoEventCopyWithImpl(_InfoEvent _value, $Res Function(_InfoEvent) _then)
-      : super(_value, (v) => _then(v as _InfoEvent));
-
-  @override
-  _InfoEvent get _value => super._value as _InfoEvent;
-
-  @override
-  $Res call({
-    Object characterId = freezed,
-  }) {
-    return _then(_InfoEvent(
-      characterId:
-          characterId == freezed ? _value.characterId : characterId as String,
-    ));
-  }
-}
-
-@Implements(CharacterInfo)
-
-/// @nodoc
-class _$_InfoEvent implements _InfoEvent {
-  const _$_InfoEvent({this.characterId});
-
-  @override
-  final String characterId;
-
-  @override
-  String toString() {
-    return 'CharactersEvent.info(characterId: $characterId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _InfoEvent &&
-            (identical(other.characterId, characterId) ||
-                const DeepCollectionEquality()
-                    .equals(other.characterId, characterId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(characterId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$InfoEventCopyWith<_InfoEvent> get copyWith =>
-      __$InfoEventCopyWithImpl<_InfoEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult select(),
-    @required TResult back(),
-    @required TResult info(String characterId),
-  }) {
-    assert(select != null);
-    assert(back != null);
-    assert(info != null);
-    return info(characterId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult select(),
-    TResult back(),
-    TResult info(String characterId),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(characterId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult select(_SelectEvent value),
-    @required TResult back(_BackEvent value),
-    @required TResult info(_InfoEvent value),
-  }) {
-    assert(select != null);
-    assert(back != null);
-    assert(info != null);
-    return info(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectEvent value),
-    TResult back(_BackEvent value),
-    TResult info(_InfoEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InfoEvent implements CharactersEvent, CharacterInfo {
-  const factory _InfoEvent({String characterId}) = _$_InfoEvent;
-
-  String get characterId;
-  @JsonKey(ignore: true)
-  _$InfoEventCopyWith<_InfoEvent> get copyWith;
 }
 
 /// @nodoc
@@ -422,13 +170,6 @@ class _$CharactersStateTearOff {
       isGrid: isGrid,
     );
   }
-
-// ignore: unused_element
-  CharactersInfoState info({CharacterModel characterInfo}) {
-    return CharactersInfoState(
-      characterInfo: characterInfo,
-    );
-  }
 }
 
 /// @nodoc
@@ -442,14 +183,12 @@ mixin _$CharactersState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
-    @required TResult info(CharacterModel characterInfo),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
-    TResult info(CharacterModel characterInfo),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -457,14 +196,12 @@ mixin _$CharactersState {
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
     @required TResult select(SelectState value),
-    @required TResult info(CharactersInfoState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
     TResult select(SelectState value),
-    TResult info(CharactersInfoState value),
     @required TResult orElse(),
   });
 }
@@ -528,12 +265,10 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
-    @required TResult info(CharacterModel characterInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return loading();
   }
 
@@ -543,7 +278,6 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
-    TResult info(CharacterModel characterInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -559,12 +293,10 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
     @required TResult select(SelectState value),
-    @required TResult info(CharactersInfoState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return loading(this);
   }
 
@@ -574,7 +306,6 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
     TResult select(SelectState value),
-    TResult info(CharactersInfoState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -657,12 +388,10 @@ class _$CharactersErrorState implements CharactersErrorState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
-    @required TResult info(CharacterModel characterInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return error(errorMessage);
   }
 
@@ -672,7 +401,6 @@ class _$CharactersErrorState implements CharactersErrorState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
-    TResult info(CharacterModel characterInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -688,12 +416,10 @@ class _$CharactersErrorState implements CharactersErrorState {
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
     @required TResult select(SelectState value),
-    @required TResult info(CharactersInfoState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return error(this);
   }
 
@@ -703,7 +429,6 @@ class _$CharactersErrorState implements CharactersErrorState {
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
     TResult select(SelectState value),
-    TResult info(CharactersInfoState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -799,12 +524,10 @@ class _$SelectState implements SelectState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
-    @required TResult info(CharacterModel characterInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return select(charactersList, isGrid);
   }
 
@@ -814,7 +537,6 @@ class _$SelectState implements SelectState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
-    TResult info(CharacterModel characterInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -830,12 +552,10 @@ class _$SelectState implements SelectState {
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
     @required TResult select(SelectState value),
-    @required TResult info(CharactersInfoState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
-    assert(info != null);
     return select(this);
   }
 
@@ -845,7 +565,6 @@ class _$SelectState implements SelectState {
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
     TResult select(SelectState value),
-    TResult info(CharactersInfoState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -864,140 +583,4 @@ abstract class SelectState implements CharactersState, ListOrGrid {
   bool get isGrid;
   @JsonKey(ignore: true)
   $SelectStateCopyWith<SelectState> get copyWith;
-}
-
-/// @nodoc
-abstract class $CharactersInfoStateCopyWith<$Res> {
-  factory $CharactersInfoStateCopyWith(
-          CharactersInfoState value, $Res Function(CharactersInfoState) then) =
-      _$CharactersInfoStateCopyWithImpl<$Res>;
-  $Res call({CharacterModel characterInfo});
-}
-
-/// @nodoc
-class _$CharactersInfoStateCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res>
-    implements $CharactersInfoStateCopyWith<$Res> {
-  _$CharactersInfoStateCopyWithImpl(
-      CharactersInfoState _value, $Res Function(CharactersInfoState) _then)
-      : super(_value, (v) => _then(v as CharactersInfoState));
-
-  @override
-  CharactersInfoState get _value => super._value as CharactersInfoState;
-
-  @override
-  $Res call({
-    Object characterInfo = freezed,
-  }) {
-    return _then(CharactersInfoState(
-      characterInfo: characterInfo == freezed
-          ? _value.characterInfo
-          : characterInfo as CharacterModel,
-    ));
-  }
-}
-
-@Implements(CharacterProfile)
-
-/// @nodoc
-class _$CharactersInfoState implements CharactersInfoState {
-  _$CharactersInfoState({this.characterInfo});
-
-  @override
-  final CharacterModel characterInfo;
-
-  @override
-  String toString() {
-    return 'CharactersState.info(characterInfo: $characterInfo)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is CharactersInfoState &&
-            (identical(other.characterInfo, characterInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.characterInfo, characterInfo)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(characterInfo);
-
-  @JsonKey(ignore: true)
-  @override
-  $CharactersInfoStateCopyWith<CharactersInfoState> get copyWith =>
-      _$CharactersInfoStateCopyWithImpl<CharactersInfoState>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult error(String errorMessage),
-    @required TResult select(CharactersModel charactersList, bool isGrid),
-    @required TResult info(CharacterModel characterInfo),
-  }) {
-    assert(loading != null);
-    assert(error != null);
-    assert(select != null);
-    assert(info != null);
-    return info(characterInfo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult error(String errorMessage),
-    TResult select(CharactersModel charactersList, bool isGrid),
-    TResult info(CharacterModel characterInfo),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(characterInfo);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(CharactersLoadingState value),
-    @required TResult error(CharactersErrorState value),
-    @required TResult select(SelectState value),
-    @required TResult info(CharactersInfoState value),
-  }) {
-    assert(loading != null);
-    assert(error != null);
-    assert(select != null);
-    assert(info != null);
-    return info(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(CharactersLoadingState value),
-    TResult error(CharactersErrorState value),
-    TResult select(SelectState value),
-    TResult info(CharactersInfoState value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CharactersInfoState
-    implements CharactersState, CharacterProfile {
-  factory CharactersInfoState({CharacterModel characterInfo}) =
-      _$CharactersInfoState;
-
-  CharacterModel get characterInfo;
-  @JsonKey(ignore: true)
-  $CharactersInfoStateCopyWith<CharactersInfoState> get copyWith;
 }

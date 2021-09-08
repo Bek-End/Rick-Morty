@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:RickAndMorty/data/models/episod_model.dar/episod_model.dart';
 import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
 import 'package:RickAndMorty/data/repository.dart';
 import 'package:bloc/bloc.dart';
@@ -13,7 +12,6 @@ part 'episodes_bloc.freezed.dart';
 class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
   final _repository = Repository();
   EpisodesModel episodesList = EpisodesModel();
-  EpisodModel episodInfo = EpisodModel();
   List<List<EpisodesData>> episodesListForTabBar = [[], [], [], []];
   EpisodesBloc() : super(EpisodesLoadingState());
 
@@ -30,15 +28,11 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
         yield EpisodesErrorState(errorMessage: e);
       }
     }
-    yield* event.map(started: _started, info: _info);
+    yield* event.map(started: _started);
   }
 
   Stream<EpisodesState> _started(_Started event) async* {
     yield EpisodesState.initial(episodesList: episodesListForTabBar);
   }
 
-  Stream<EpisodesState> _info(_InfoEvent event) async* {
-    episodInfo = await _repository.getEpisod(event.episodId);
-    yield EpisodesState.info(episodInfo: episodInfo);
-  }
 }

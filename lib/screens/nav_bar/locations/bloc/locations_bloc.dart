@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:RickAndMorty/data/models/location_model/location_model.dart';
 import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/data/repository.dart';
 import 'package:bloc/bloc.dart';
@@ -14,13 +13,12 @@ class LocationsBloc extends Bloc<LocationsEvent, LocationsState> {
   LocationsBloc() : super(LocationsLoadingState());
   final _repository = Repository();
   LocationsModel locationsList = LocationsModel();
-  LocationModel locationInfo = LocationModel();
 
   @override
   Stream<LocationsState> mapEventToState(
     LocationsEvent event,
   ) async* {
-    yield* event.map(started: _started, info: _info);
+    yield* event.map(started: _started);
   }
 
   Stream<LocationsState> _started(_Started event) async* {
@@ -33,10 +31,5 @@ class LocationsBloc extends Bloc<LocationsEvent, LocationsState> {
       }
     }
     yield LocationsState.initial(locationsList: locationsList);
-  }
-
-  Stream<LocationsState> _info(_InfoEvent event) async* {
-    locationInfo = await _repository.getLocation(event.locationId);
-    yield LocationsState.info(locationInfo: locationInfo);
   }
 }

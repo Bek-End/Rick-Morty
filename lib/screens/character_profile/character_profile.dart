@@ -90,6 +90,7 @@ class CharacterProfileScreen extends StatelessWidget {
                           ]),
                           const SizedBox(height: 20),
                           EnterWidget(
+                            id: characterInfo.data.locationId,
                             myKey: "Место рождения",
                             value: characterInfo.data.location.name,
                           ),

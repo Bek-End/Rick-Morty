@@ -2,9 +2,6 @@ import 'package:RickAndMorty/components/error_component.dart';
 import 'package:RickAndMorty/components/loading_component.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:RickAndMorty/resources/variables.dart';
-import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
-import 'package:RickAndMorty/screens/episod_info/episod_info.dart';
-import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/characters.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/locations_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/settings_screen.dart';
@@ -24,21 +21,10 @@ class NavBarScreen extends StatefulWidget {
 class _NavBarScreenState extends State<NavBarScreen> {
   List<Widget> _widgetOptions = <Widget>[
     BlocConsumer<CharactersBloc, CharactersState>(
-      listener: (context, state) {
-        state.maybeMap(
-          select: (_) => SelectState(),
-          orElse: () {
-            return Container();
-          },
-        );
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         if (state is CharactersErrorState) {
           return ErrorComponent(errorMessage: state.errorMessage);
-        }
-        if (state is CharactersInfoState) {
-          print(state.characterInfo);
-          return CharacterProfileScreen(characterInfo: state.characterInfo);
         }
         if (state is CharactersLoadingState) {
           return LoadingComponent();
@@ -51,50 +37,28 @@ class _NavBarScreenState extends State<NavBarScreen> {
         }
       },
     ),
-    BlocListener<LocationsBloc, LocationsState>(
-      listener: (context, state) {
-        state.maybeMap(
-            initial: (_) => LocationsInitialState(),
-            error: (_) => LocationsErrorState(),
-            loading: (_) => LocationsLoadingState(),
-            orElse: () {
-              return Container();
-            });
-      },
-      child:
-          BlocBuilder<LocationsBloc, LocationsState>(builder: (context, state) {
-        if (state is LocationsErrorState) {
-          return ErrorComponent(errorMessage: state.errorMessage);
-        }
-        if (state is LocationsLoadingState) {
-          return LoadingComponent();
-        }
-        if (state is LocationInfoInitialState) {
-          return LocationInfoScreen(locationInfo: state.locationInfo);
-        }
-        if (state is LocationsInitialState) {
-          return LocationsScreen(locationsList: state.locationsList);
-        }
-      }),
-    ),
-    BlocListener<EpisodesBloc, EpisodesState>(
-      listener: (context, state) {},
-      child:
-          BlocBuilder<EpisodesBloc, EpisodesState>(builder: (context, state) {
-        if (state is EpisodesErrorState) {
-          return ErrorComponent(errorMessage: state.errorMessage);
-        }
-        if (state is EpisodesLoadingState) {
-          return LoadingComponent();
-        }
-        if (state is EpisodInfoInitialState) {
-          return EpisodInfoScreen(episodInfo: state.episodInfo);
-        }
-        if (state is EpisodesInitialState) {
-          return EpisodesScreen(episodesList: state.episodesList);
-        }
-      }),
-    ),
+    BlocBuilder<LocationsBloc, LocationsState>(builder: (context, state) {
+      if (state is LocationsErrorState) {
+        return ErrorComponent(errorMessage: state.errorMessage);
+      }
+      if (state is LocationsLoadingState) {
+        return LoadingComponent();
+      }
+      if (state is LocationsInitialState) {
+        return LocationsScreen(locationsList: state.locationsList);
+      }
+    }),
+    BlocBuilder<EpisodesBloc, EpisodesState>(builder: (context, state) {
+      if (state is EpisodesErrorState) {
+        return ErrorComponent(errorMessage: state.errorMessage);
+      }
+      if (state is EpisodesLoadingState) {
+        return LoadingComponent();
+      }
+      if (state is EpisodesInitialState) {
+        return EpisodesScreen(episodesList: state.episodesList);
+      }
+    }),
     SettingsScreen()
   ];
   int _selectedIndex = 0;

@@ -17,13 +17,6 @@ class _$LocationsEventTearOff {
   _Started started() {
     return const _Started();
   }
-
-// ignore: unused_element
-  _InfoEvent info({String locationId}) {
-    return _InfoEvent(
-      locationId: locationId,
-    );
-  }
 }
 
 /// @nodoc
@@ -35,23 +28,19 @@ mixin _$LocationsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult info(String locationId),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult info(String locationId),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult started(_Started value),
-    @required TResult info(_InfoEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
-    TResult info(_InfoEvent value),
     @required TResult orElse(),
   });
 }
@@ -110,10 +99,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult started(),
-    @required TResult info(String locationId),
   }) {
     assert(started != null);
-    assert(info != null);
     return started();
   }
 
@@ -121,7 +108,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult started(),
-    TResult info(String locationId),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -135,10 +121,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult started(_Started value),
-    @required TResult info(_InfoEvent value),
   }) {
     assert(started != null);
-    assert(info != null);
     return started(this);
   }
 
@@ -146,7 +130,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult started(_Started value),
-    TResult info(_InfoEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -159,125 +142,6 @@ class _$_Started implements _Started {
 
 abstract class _Started implements LocationsEvent {
   const factory _Started() = _$_Started;
-}
-
-/// @nodoc
-abstract class _$InfoEventCopyWith<$Res> {
-  factory _$InfoEventCopyWith(
-          _InfoEvent value, $Res Function(_InfoEvent) then) =
-      __$InfoEventCopyWithImpl<$Res>;
-  $Res call({String locationId});
-}
-
-/// @nodoc
-class __$InfoEventCopyWithImpl<$Res> extends _$LocationsEventCopyWithImpl<$Res>
-    implements _$InfoEventCopyWith<$Res> {
-  __$InfoEventCopyWithImpl(_InfoEvent _value, $Res Function(_InfoEvent) _then)
-      : super(_value, (v) => _then(v as _InfoEvent));
-
-  @override
-  _InfoEvent get _value => super._value as _InfoEvent;
-
-  @override
-  $Res call({
-    Object locationId = freezed,
-  }) {
-    return _then(_InfoEvent(
-      locationId:
-          locationId == freezed ? _value.locationId : locationId as String,
-    ));
-  }
-}
-
-@Implements(LocationInfo)
-
-/// @nodoc
-class _$_InfoEvent implements _InfoEvent {
-  const _$_InfoEvent({this.locationId});
-
-  @override
-  final String locationId;
-
-  @override
-  String toString() {
-    return 'LocationsEvent.info(locationId: $locationId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _InfoEvent &&
-            (identical(other.locationId, locationId) ||
-                const DeepCollectionEquality()
-                    .equals(other.locationId, locationId)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$InfoEventCopyWith<_InfoEvent> get copyWith =>
-      __$InfoEventCopyWithImpl<_InfoEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-    @required TResult info(String locationId),
-  }) {
-    assert(started != null);
-    assert(info != null);
-    return info(locationId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    TResult info(String locationId),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(locationId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-    @required TResult info(_InfoEvent value),
-  }) {
-    assert(started != null);
-    assert(info != null);
-    return info(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    TResult info(_InfoEvent value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InfoEvent implements LocationsEvent, LocationInfo {
-  const factory _InfoEvent({String locationId}) = _$_InfoEvent;
-
-  String get locationId;
-  @JsonKey(ignore: true)
-  _$InfoEventCopyWith<_InfoEvent> get copyWith;
 }
 
 /// @nodoc
@@ -302,13 +166,6 @@ class _$LocationsStateTearOff {
       locationsList: locationsList,
     );
   }
-
-// ignore: unused_element
-  LocationInfoInitialState info({LocationModel locationInfo}) {
-    return LocationInfoInitialState(
-      locationInfo: locationInfo,
-    );
-  }
 }
 
 /// @nodoc
@@ -322,14 +179,12 @@ mixin _$LocationsState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult initial(LocationsModel locationsList),
-    @required TResult info(LocationModel locationInfo),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
     TResult error(String errorMessage),
     TResult initial(LocationsModel locationsList),
-    TResult info(LocationModel locationInfo),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -337,14 +192,12 @@ mixin _$LocationsState {
     @required TResult loading(LocationsLoadingState value),
     @required TResult error(LocationsErrorState value),
     @required TResult initial(LocationsInitialState value),
-    @required TResult info(LocationInfoInitialState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult loading(LocationsLoadingState value),
     TResult error(LocationsErrorState value),
     TResult initial(LocationsInitialState value),
-    TResult info(LocationInfoInitialState value),
     @required TResult orElse(),
   });
 }
@@ -408,12 +261,10 @@ class _$LocationsLoadingState implements LocationsLoadingState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult initial(LocationsModel locationsList),
-    @required TResult info(LocationModel locationInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return loading();
   }
 
@@ -423,7 +274,6 @@ class _$LocationsLoadingState implements LocationsLoadingState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult initial(LocationsModel locationsList),
-    TResult info(LocationModel locationInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -439,12 +289,10 @@ class _$LocationsLoadingState implements LocationsLoadingState {
     @required TResult loading(LocationsLoadingState value),
     @required TResult error(LocationsErrorState value),
     @required TResult initial(LocationsInitialState value),
-    @required TResult info(LocationInfoInitialState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return loading(this);
   }
 
@@ -454,7 +302,6 @@ class _$LocationsLoadingState implements LocationsLoadingState {
     TResult loading(LocationsLoadingState value),
     TResult error(LocationsErrorState value),
     TResult initial(LocationsInitialState value),
-    TResult info(LocationInfoInitialState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -536,12 +383,10 @@ class _$LocationsErrorState implements LocationsErrorState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult initial(LocationsModel locationsList),
-    @required TResult info(LocationModel locationInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return error(errorMessage);
   }
 
@@ -551,7 +396,6 @@ class _$LocationsErrorState implements LocationsErrorState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult initial(LocationsModel locationsList),
-    TResult info(LocationModel locationInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -567,12 +411,10 @@ class _$LocationsErrorState implements LocationsErrorState {
     @required TResult loading(LocationsLoadingState value),
     @required TResult error(LocationsErrorState value),
     @required TResult initial(LocationsInitialState value),
-    @required TResult info(LocationInfoInitialState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return error(this);
   }
 
@@ -582,7 +424,6 @@ class _$LocationsErrorState implements LocationsErrorState {
     TResult loading(LocationsLoadingState value),
     TResult error(LocationsErrorState value),
     TResult initial(LocationsInitialState value),
-    TResult info(LocationInfoInitialState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -671,12 +512,10 @@ class _$LocationsInitialState implements LocationsInitialState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult initial(LocationsModel locationsList),
-    @required TResult info(LocationModel locationInfo),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return initial(locationsList);
   }
 
@@ -686,7 +525,6 @@ class _$LocationsInitialState implements LocationsInitialState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult initial(LocationsModel locationsList),
-    TResult info(LocationModel locationInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -702,12 +540,10 @@ class _$LocationsInitialState implements LocationsInitialState {
     @required TResult loading(LocationsLoadingState value),
     @required TResult error(LocationsErrorState value),
     @required TResult initial(LocationsInitialState value),
-    @required TResult info(LocationInfoInitialState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(initial != null);
-    assert(info != null);
     return initial(this);
   }
 
@@ -717,7 +553,6 @@ class _$LocationsInitialState implements LocationsInitialState {
     TResult loading(LocationsLoadingState value),
     TResult error(LocationsErrorState value),
     TResult initial(LocationsInitialState value),
-    TResult info(LocationInfoInitialState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -735,142 +570,4 @@ abstract class LocationsInitialState implements LocationsState, Locations {
   LocationsModel get locationsList;
   @JsonKey(ignore: true)
   $LocationsInitialStateCopyWith<LocationsInitialState> get copyWith;
-}
-
-/// @nodoc
-abstract class $LocationInfoInitialStateCopyWith<$Res> {
-  factory $LocationInfoInitialStateCopyWith(LocationInfoInitialState value,
-          $Res Function(LocationInfoInitialState) then) =
-      _$LocationInfoInitialStateCopyWithImpl<$Res>;
-  $Res call({LocationModel locationInfo});
-}
-
-/// @nodoc
-class _$LocationInfoInitialStateCopyWithImpl<$Res>
-    extends _$LocationsStateCopyWithImpl<$Res>
-    implements $LocationInfoInitialStateCopyWith<$Res> {
-  _$LocationInfoInitialStateCopyWithImpl(LocationInfoInitialState _value,
-      $Res Function(LocationInfoInitialState) _then)
-      : super(_value, (v) => _then(v as LocationInfoInitialState));
-
-  @override
-  LocationInfoInitialState get _value =>
-      super._value as LocationInfoInitialState;
-
-  @override
-  $Res call({
-    Object locationInfo = freezed,
-  }) {
-    return _then(LocationInfoInitialState(
-      locationInfo: locationInfo == freezed
-          ? _value.locationInfo
-          : locationInfo as LocationModel,
-    ));
-  }
-}
-
-@Implements(LocationInformation)
-
-/// @nodoc
-class _$LocationInfoInitialState implements LocationInfoInitialState {
-  const _$LocationInfoInitialState({this.locationInfo});
-
-  @override
-  final LocationModel locationInfo;
-
-  @override
-  String toString() {
-    return 'LocationsState.info(locationInfo: $locationInfo)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is LocationInfoInitialState &&
-            (identical(other.locationInfo, locationInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.locationInfo, locationInfo)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationInfo);
-
-  @JsonKey(ignore: true)
-  @override
-  $LocationInfoInitialStateCopyWith<LocationInfoInitialState> get copyWith =>
-      _$LocationInfoInitialStateCopyWithImpl<LocationInfoInitialState>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult loading(),
-    @required TResult error(String errorMessage),
-    @required TResult initial(LocationsModel locationsList),
-    @required TResult info(LocationModel locationInfo),
-  }) {
-    assert(loading != null);
-    assert(error != null);
-    assert(initial != null);
-    assert(info != null);
-    return info(locationInfo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult loading(),
-    TResult error(String errorMessage),
-    TResult initial(LocationsModel locationsList),
-    TResult info(LocationModel locationInfo),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(locationInfo);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult loading(LocationsLoadingState value),
-    @required TResult error(LocationsErrorState value),
-    @required TResult initial(LocationsInitialState value),
-    @required TResult info(LocationInfoInitialState value),
-  }) {
-    assert(loading != null);
-    assert(error != null);
-    assert(initial != null);
-    assert(info != null);
-    return info(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult loading(LocationsLoadingState value),
-    TResult error(LocationsErrorState value),
-    TResult initial(LocationsInitialState value),
-    TResult info(LocationInfoInitialState value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (info != null) {
-      return info(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LocationInfoInitialState
-    implements LocationsState, LocationInformation {
-  const factory LocationInfoInitialState({LocationModel locationInfo}) =
-      _$LocationInfoInitialState;
-
-  LocationModel get locationInfo;
-  @JsonKey(ignore: true)
-  $LocationInfoInitialStateCopyWith<LocationInfoInitialState> get copyWith;
 }

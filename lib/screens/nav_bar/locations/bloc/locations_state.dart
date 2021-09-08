@@ -4,10 +4,6 @@ abstract class Locations {
   LocationsModel get locationsList;
 }
 
-abstract class LocationInformation {
-  LocationModel get locationInfo;
-}
-
 @freezed
 abstract class LocationsState with _$LocationsState {
   factory LocationsState.loading() = LocationsLoadingState;
@@ -16,6 +12,4 @@ abstract class LocationsState with _$LocationsState {
   const factory LocationsState.initial({
     LocationsModel locationsList,
   }) = LocationsInitialState;
-  @Implements(LocationInformation)
-  const factory LocationsState.info({LocationModel locationInfo}) = LocationInfoInitialState;
 }

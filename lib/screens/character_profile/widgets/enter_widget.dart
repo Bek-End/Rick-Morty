@@ -1,17 +1,20 @@
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/resources/icons.dart';
-import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EnterWidget extends StatelessWidget {
+  final id;
   final String myKey, value;
-  const EnterWidget({this.myKey, this.value});
+  const EnterWidget({this.myKey, this.value, this.id});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        BlocProvider.of<LocationsBloc>(context).add(LocationsEvent.info());
+        BlocProvider.of<GlobalBloc>(context).add(
+          GlobalEvent.locationInfo(locationId: id),
+        );
       },
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

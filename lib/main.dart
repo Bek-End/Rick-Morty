@@ -1,4 +1,9 @@
+import 'package:RickAndMorty/components/error_component.dart';
+import 'package:RickAndMorty/components/loading_component.dart';
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
+import 'package:RickAndMorty/screens/character_profile/character_profile.dart';
+import 'package:RickAndMorty/screens/episod_info/episod_info.dart';
+import 'package:RickAndMorty/screens/location_info/location_info_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/bloc/episodes_bloc.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
@@ -50,6 +55,22 @@ class MyApp extends StatelessWidget {
             child: BlocConsumer<GlobalBloc, GlobalState>(
               listener: (context, state) {},
               builder: (context, state) {
+                if (state is CharacterInfoState) {
+                  return CharacterProfileScreen(
+                      characterInfo: state.characterInfo);
+                }
+                if (state is EpisodInfoState) {
+                  return EpisodInfoScreen(episodInfo: state.episodInfo);
+                }
+                if (state is LocationInfoState) {
+                  return LocationInfoScreen(locationInfo: state.locationInfo);
+                }
+                if (state is GlobalLoadingState) {
+                  return LoadingComponent();
+                }
+                if (state is GlobalErrorState) {
+                  return ErrorComponent(errorMessage: state.errorMessage);
+                }
                 return state.maybeMap(
                   splash: (_) => SplashScreen(),
                   navBar: (_) => NavBarScreen(),

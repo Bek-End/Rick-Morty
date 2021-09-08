@@ -17,6 +17,32 @@ class _$GlobalEventTearOff {
   _NavbarEvent navbar() {
     return const _NavbarEvent();
   }
+
+// ignore: unused_element
+  _BackEvent back() {
+    return const _BackEvent();
+  }
+
+// ignore: unused_element
+  _CharacterInfoEvent characterInfo({String characterId}) {
+    return _CharacterInfoEvent(
+      characterId: characterId,
+    );
+  }
+
+// ignore: unused_element
+  _EpisodInfoEvent episodInfo({String episodId}) {
+    return _EpisodInfoEvent(
+      episodId: episodId,
+    );
+  }
+
+// ignore: unused_element
+  _LocationInfoEvent locationInfo({String locationId}) {
+    return _LocationInfoEvent(
+      locationId: locationId,
+    );
+  }
 }
 
 /// @nodoc
@@ -28,19 +54,35 @@ mixin _$GlobalEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
     @required TResult orElse(),
   });
 }
@@ -100,8 +142,16 @@ class _$_NavbarEvent implements _NavbarEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
   }) {
     assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return navbar();
   }
 
@@ -109,6 +159,10 @@ class _$_NavbarEvent implements _NavbarEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -122,8 +176,16 @@ class _$_NavbarEvent implements _NavbarEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
   }) {
     assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return navbar(this);
   }
 
@@ -131,6 +193,10 @@ class _$_NavbarEvent implements _NavbarEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -146,8 +212,544 @@ abstract class _NavbarEvent implements GlobalEvent {
 }
 
 /// @nodoc
+abstract class _$BackEventCopyWith<$Res> {
+  factory _$BackEventCopyWith(
+          _BackEvent value, $Res Function(_BackEvent) then) =
+      __$BackEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$BackEventCopyWithImpl<$Res> extends _$GlobalEventCopyWithImpl<$Res>
+    implements _$BackEventCopyWith<$Res> {
+  __$BackEventCopyWithImpl(_BackEvent _value, $Res Function(_BackEvent) _then)
+      : super(_value, (v) => _then(v as _BackEvent));
+
+  @override
+  _BackEvent get _value => super._value as _BackEvent;
+}
+
+/// @nodoc
+class _$_BackEvent implements _BackEvent {
+  const _$_BackEvent();
+
+  @override
+  String toString() {
+    return 'GlobalEvent.back()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _BackEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return back();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (back != null) {
+      return back();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return back(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (back != null) {
+      return back(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BackEvent implements GlobalEvent {
+  const factory _BackEvent() = _$_BackEvent;
+}
+
+/// @nodoc
+abstract class _$CharacterInfoEventCopyWith<$Res> {
+  factory _$CharacterInfoEventCopyWith(
+          _CharacterInfoEvent value, $Res Function(_CharacterInfoEvent) then) =
+      __$CharacterInfoEventCopyWithImpl<$Res>;
+  $Res call({String characterId});
+}
+
+/// @nodoc
+class __$CharacterInfoEventCopyWithImpl<$Res>
+    extends _$GlobalEventCopyWithImpl<$Res>
+    implements _$CharacterInfoEventCopyWith<$Res> {
+  __$CharacterInfoEventCopyWithImpl(
+      _CharacterInfoEvent _value, $Res Function(_CharacterInfoEvent) _then)
+      : super(_value, (v) => _then(v as _CharacterInfoEvent));
+
+  @override
+  _CharacterInfoEvent get _value => super._value as _CharacterInfoEvent;
+
+  @override
+  $Res call({
+    Object characterId = freezed,
+  }) {
+    return _then(_CharacterInfoEvent(
+      characterId:
+          characterId == freezed ? _value.characterId : characterId as String,
+    ));
+  }
+}
+
+@Implements(CharacterInfo)
+
+/// @nodoc
+class _$_CharacterInfoEvent implements _CharacterInfoEvent {
+  const _$_CharacterInfoEvent({this.characterId});
+
+  @override
+  final String characterId;
+
+  @override
+  String toString() {
+    return 'GlobalEvent.characterInfo(characterId: $characterId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CharacterInfoEvent &&
+            (identical(other.characterId, characterId) ||
+                const DeepCollectionEquality()
+                    .equals(other.characterId, characterId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(characterId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CharacterInfoEventCopyWith<_CharacterInfoEvent> get copyWith =>
+      __$CharacterInfoEventCopyWithImpl<_CharacterInfoEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return characterInfo(characterId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (characterInfo != null) {
+      return characterInfo(characterId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return characterInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (characterInfo != null) {
+      return characterInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CharacterInfoEvent implements GlobalEvent, CharacterInfo {
+  const factory _CharacterInfoEvent({String characterId}) =
+      _$_CharacterInfoEvent;
+
+  String get characterId;
+  @JsonKey(ignore: true)
+  _$CharacterInfoEventCopyWith<_CharacterInfoEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class _$EpisodInfoEventCopyWith<$Res> {
+  factory _$EpisodInfoEventCopyWith(
+          _EpisodInfoEvent value, $Res Function(_EpisodInfoEvent) then) =
+      __$EpisodInfoEventCopyWithImpl<$Res>;
+  $Res call({String episodId});
+}
+
+/// @nodoc
+class __$EpisodInfoEventCopyWithImpl<$Res>
+    extends _$GlobalEventCopyWithImpl<$Res>
+    implements _$EpisodInfoEventCopyWith<$Res> {
+  __$EpisodInfoEventCopyWithImpl(
+      _EpisodInfoEvent _value, $Res Function(_EpisodInfoEvent) _then)
+      : super(_value, (v) => _then(v as _EpisodInfoEvent));
+
+  @override
+  _EpisodInfoEvent get _value => super._value as _EpisodInfoEvent;
+
+  @override
+  $Res call({
+    Object episodId = freezed,
+  }) {
+    return _then(_EpisodInfoEvent(
+      episodId: episodId == freezed ? _value.episodId : episodId as String,
+    ));
+  }
+}
+
+@Implements(EpisodInfo)
+
+/// @nodoc
+class _$_EpisodInfoEvent implements _EpisodInfoEvent {
+  const _$_EpisodInfoEvent({this.episodId});
+
+  @override
+  final String episodId;
+
+  @override
+  String toString() {
+    return 'GlobalEvent.episodInfo(episodId: $episodId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EpisodInfoEvent &&
+            (identical(other.episodId, episodId) ||
+                const DeepCollectionEquality()
+                    .equals(other.episodId, episodId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(episodId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EpisodInfoEventCopyWith<_EpisodInfoEvent> get copyWith =>
+      __$EpisodInfoEventCopyWithImpl<_EpisodInfoEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return episodInfo(episodId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (episodInfo != null) {
+      return episodInfo(episodId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return episodInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (episodInfo != null) {
+      return episodInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EpisodInfoEvent implements GlobalEvent, EpisodInfo {
+  const factory _EpisodInfoEvent({String episodId}) = _$_EpisodInfoEvent;
+
+  String get episodId;
+  @JsonKey(ignore: true)
+  _$EpisodInfoEventCopyWith<_EpisodInfoEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LocationInfoEventCopyWith<$Res> {
+  factory _$LocationInfoEventCopyWith(
+          _LocationInfoEvent value, $Res Function(_LocationInfoEvent) then) =
+      __$LocationInfoEventCopyWithImpl<$Res>;
+  $Res call({String locationId});
+}
+
+/// @nodoc
+class __$LocationInfoEventCopyWithImpl<$Res>
+    extends _$GlobalEventCopyWithImpl<$Res>
+    implements _$LocationInfoEventCopyWith<$Res> {
+  __$LocationInfoEventCopyWithImpl(
+      _LocationInfoEvent _value, $Res Function(_LocationInfoEvent) _then)
+      : super(_value, (v) => _then(v as _LocationInfoEvent));
+
+  @override
+  _LocationInfoEvent get _value => super._value as _LocationInfoEvent;
+
+  @override
+  $Res call({
+    Object locationId = freezed,
+  }) {
+    return _then(_LocationInfoEvent(
+      locationId:
+          locationId == freezed ? _value.locationId : locationId as String,
+    ));
+  }
+}
+
+@Implements(LocationInfo)
+
+/// @nodoc
+class _$_LocationInfoEvent implements _LocationInfoEvent {
+  const _$_LocationInfoEvent({this.locationId});
+
+  @override
+  final String locationId;
+
+  @override
+  String toString() {
+    return 'GlobalEvent.locationInfo(locationId: $locationId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LocationInfoEvent &&
+            (identical(other.locationId, locationId) ||
+                const DeepCollectionEquality()
+                    .equals(other.locationId, locationId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LocationInfoEventCopyWith<_LocationInfoEvent> get copyWith =>
+      __$LocationInfoEventCopyWithImpl<_LocationInfoEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return locationInfo(locationId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationInfo != null) {
+      return locationInfo(locationId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return locationInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationInfo != null) {
+      return locationInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocationInfoEvent implements GlobalEvent, LocationInfo {
+  const factory _LocationInfoEvent({String locationId}) = _$_LocationInfoEvent;
+
+  String get locationId;
+  @JsonKey(ignore: true)
+  _$LocationInfoEventCopyWith<_LocationInfoEvent> get copyWith;
+}
+
+/// @nodoc
 class _$GlobalStateTearOff {
   const _$GlobalStateTearOff();
+
+// ignore: unused_element
+  GlobalLoadingState loading() {
+    return GlobalLoadingState();
+  }
+
+// ignore: unused_element
+  GlobalErrorState error({String errorMessage}) {
+    return GlobalErrorState(
+      errorMessage: errorMessage,
+    );
+  }
 
 // ignore: unused_element
   _SplashState splash() {
@@ -157,6 +759,27 @@ class _$GlobalStateTearOff {
 // ignore: unused_element
   _NavBarState navBar() {
     return const _NavBarState();
+  }
+
+// ignore: unused_element
+  CharacterInfoState characterInfo({CharacterModel characterInfo}) {
+    return CharacterInfoState(
+      characterInfo: characterInfo,
+    );
+  }
+
+// ignore: unused_element
+  EpisodInfoState episodInfo({EpisodModel episodInfo}) {
+    return EpisodInfoState(
+      episodInfo: episodInfo,
+    );
+  }
+
+// ignore: unused_element
+  LocationInfoState locationInfo({LocationModel locationInfo}) {
+    return LocationInfoState(
+      locationInfo: locationInfo,
+    );
   }
 }
 
@@ -168,24 +791,44 @@ const $GlobalState = _$GlobalStateTearOff();
 mixin _$GlobalState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
     @required TResult splash(),
     @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
     TResult splash(),
     TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
     @required TResult splash(_SplashState value),
     @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
     TResult splash(_SplashState value),
     TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
     @required TResult orElse(),
   });
 }
@@ -204,6 +847,277 @@ class _$GlobalStateCopyWithImpl<$Res> implements $GlobalStateCopyWith<$Res> {
   final GlobalState _value;
   // ignore: unused_field
   final $Res Function(GlobalState) _then;
+}
+
+/// @nodoc
+abstract class $GlobalLoadingStateCopyWith<$Res> {
+  factory $GlobalLoadingStateCopyWith(
+          GlobalLoadingState value, $Res Function(GlobalLoadingState) then) =
+      _$GlobalLoadingStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GlobalLoadingStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $GlobalLoadingStateCopyWith<$Res> {
+  _$GlobalLoadingStateCopyWithImpl(
+      GlobalLoadingState _value, $Res Function(GlobalLoadingState) _then)
+      : super(_value, (v) => _then(v as GlobalLoadingState));
+
+  @override
+  GlobalLoadingState get _value => super._value as GlobalLoadingState;
+}
+
+/// @nodoc
+class _$GlobalLoadingState implements GlobalLoadingState {
+  _$GlobalLoadingState();
+
+  @override
+  String toString() {
+    return 'GlobalState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GlobalLoadingState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GlobalLoadingState implements GlobalState {
+  factory GlobalLoadingState() = _$GlobalLoadingState;
+}
+
+/// @nodoc
+abstract class $GlobalErrorStateCopyWith<$Res> {
+  factory $GlobalErrorStateCopyWith(
+          GlobalErrorState value, $Res Function(GlobalErrorState) then) =
+      _$GlobalErrorStateCopyWithImpl<$Res>;
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class _$GlobalErrorStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $GlobalErrorStateCopyWith<$Res> {
+  _$GlobalErrorStateCopyWithImpl(
+      GlobalErrorState _value, $Res Function(GlobalErrorState) _then)
+      : super(_value, (v) => _then(v as GlobalErrorState));
+
+  @override
+  GlobalErrorState get _value => super._value as GlobalErrorState;
+
+  @override
+  $Res call({
+    Object errorMessage = freezed,
+  }) {
+    return _then(GlobalErrorState(
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GlobalErrorState implements GlobalErrorState {
+  _$GlobalErrorState({this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'GlobalState.error(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GlobalErrorState &&
+            (identical(other.errorMessage, errorMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMessage, errorMessage)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  $GlobalErrorStateCopyWith<GlobalErrorState> get copyWith =>
+      _$GlobalErrorStateCopyWithImpl<GlobalErrorState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return error(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GlobalErrorState implements GlobalState {
+  factory GlobalErrorState({String errorMessage}) = _$GlobalErrorState;
+
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  $GlobalErrorStateCopyWith<GlobalErrorState> get copyWith;
 }
 
 /// @nodoc
@@ -244,19 +1158,34 @@ class _$_SplashState implements _SplashState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
     @required TResult splash(),
     @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
   }) {
+    assert(loading != null);
+    assert(error != null);
     assert(splash != null);
     assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return splash();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
     TResult splash(),
     TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -269,19 +1198,34 @@ class _$_SplashState implements _SplashState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
     @required TResult splash(_SplashState value),
     @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
   }) {
+    assert(loading != null);
+    assert(error != null);
     assert(splash != null);
     assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return splash(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
     TResult splash(_SplashState value),
     TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -334,19 +1278,34 @@ class _$_NavBarState implements _NavBarState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
     @required TResult splash(),
     @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
   }) {
+    assert(loading != null);
+    assert(error != null);
     assert(splash != null);
     assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return navBar();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
     TResult splash(),
     TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -359,19 +1318,34 @@ class _$_NavBarState implements _NavBarState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
     @required TResult splash(_SplashState value),
     @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
   }) {
+    assert(loading != null);
+    assert(error != null);
     assert(splash != null);
     assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
     return navBar(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
     TResult splash(_SplashState value),
     TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -384,4 +1358,461 @@ class _$_NavBarState implements _NavBarState {
 
 abstract class _NavBarState implements GlobalState {
   const factory _NavBarState() = _$_NavBarState;
+}
+
+/// @nodoc
+abstract class $CharacterInfoStateCopyWith<$Res> {
+  factory $CharacterInfoStateCopyWith(
+          CharacterInfoState value, $Res Function(CharacterInfoState) then) =
+      _$CharacterInfoStateCopyWithImpl<$Res>;
+  $Res call({CharacterModel characterInfo});
+}
+
+/// @nodoc
+class _$CharacterInfoStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $CharacterInfoStateCopyWith<$Res> {
+  _$CharacterInfoStateCopyWithImpl(
+      CharacterInfoState _value, $Res Function(CharacterInfoState) _then)
+      : super(_value, (v) => _then(v as CharacterInfoState));
+
+  @override
+  CharacterInfoState get _value => super._value as CharacterInfoState;
+
+  @override
+  $Res call({
+    Object characterInfo = freezed,
+  }) {
+    return _then(CharacterInfoState(
+      characterInfo: characterInfo == freezed
+          ? _value.characterInfo
+          : characterInfo as CharacterModel,
+    ));
+  }
+}
+
+@Implements(CharacterProfile)
+
+/// @nodoc
+class _$CharacterInfoState implements CharacterInfoState {
+  _$CharacterInfoState({this.characterInfo});
+
+  @override
+  final CharacterModel characterInfo;
+
+  @override
+  String toString() {
+    return 'GlobalState.characterInfo(characterInfo: $characterInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CharacterInfoState &&
+            (identical(other.characterInfo, characterInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.characterInfo, characterInfo)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(characterInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  $CharacterInfoStateCopyWith<CharacterInfoState> get copyWith =>
+      _$CharacterInfoStateCopyWithImpl<CharacterInfoState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return characterInfo(this.characterInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (characterInfo != null) {
+      return characterInfo(this.characterInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return characterInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (characterInfo != null) {
+      return characterInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CharacterInfoState implements GlobalState, CharacterProfile {
+  factory CharacterInfoState({CharacterModel characterInfo}) =
+      _$CharacterInfoState;
+
+  CharacterModel get characterInfo;
+  @JsonKey(ignore: true)
+  $CharacterInfoStateCopyWith<CharacterInfoState> get copyWith;
+}
+
+/// @nodoc
+abstract class $EpisodInfoStateCopyWith<$Res> {
+  factory $EpisodInfoStateCopyWith(
+          EpisodInfoState value, $Res Function(EpisodInfoState) then) =
+      _$EpisodInfoStateCopyWithImpl<$Res>;
+  $Res call({EpisodModel episodInfo});
+}
+
+/// @nodoc
+class _$EpisodInfoStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $EpisodInfoStateCopyWith<$Res> {
+  _$EpisodInfoStateCopyWithImpl(
+      EpisodInfoState _value, $Res Function(EpisodInfoState) _then)
+      : super(_value, (v) => _then(v as EpisodInfoState));
+
+  @override
+  EpisodInfoState get _value => super._value as EpisodInfoState;
+
+  @override
+  $Res call({
+    Object episodInfo = freezed,
+  }) {
+    return _then(EpisodInfoState(
+      episodInfo:
+          episodInfo == freezed ? _value.episodInfo : episodInfo as EpisodModel,
+    ));
+  }
+}
+
+@Implements(EpisodeInfo)
+
+/// @nodoc
+class _$EpisodInfoState implements EpisodInfoState {
+  const _$EpisodInfoState({this.episodInfo});
+
+  @override
+  final EpisodModel episodInfo;
+
+  @override
+  String toString() {
+    return 'GlobalState.episodInfo(episodInfo: $episodInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EpisodInfoState &&
+            (identical(other.episodInfo, episodInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.episodInfo, episodInfo)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(episodInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  $EpisodInfoStateCopyWith<EpisodInfoState> get copyWith =>
+      _$EpisodInfoStateCopyWithImpl<EpisodInfoState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return episodInfo(this.episodInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (episodInfo != null) {
+      return episodInfo(this.episodInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return episodInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (episodInfo != null) {
+      return episodInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EpisodInfoState implements GlobalState, EpisodeInfo {
+  const factory EpisodInfoState({EpisodModel episodInfo}) = _$EpisodInfoState;
+
+  EpisodModel get episodInfo;
+  @JsonKey(ignore: true)
+  $EpisodInfoStateCopyWith<EpisodInfoState> get copyWith;
+}
+
+/// @nodoc
+abstract class $LocationInfoStateCopyWith<$Res> {
+  factory $LocationInfoStateCopyWith(
+          LocationInfoState value, $Res Function(LocationInfoState) then) =
+      _$LocationInfoStateCopyWithImpl<$Res>;
+  $Res call({LocationModel locationInfo});
+}
+
+/// @nodoc
+class _$LocationInfoStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $LocationInfoStateCopyWith<$Res> {
+  _$LocationInfoStateCopyWithImpl(
+      LocationInfoState _value, $Res Function(LocationInfoState) _then)
+      : super(_value, (v) => _then(v as LocationInfoState));
+
+  @override
+  LocationInfoState get _value => super._value as LocationInfoState;
+
+  @override
+  $Res call({
+    Object locationInfo = freezed,
+  }) {
+    return _then(LocationInfoState(
+      locationInfo: locationInfo == freezed
+          ? _value.locationInfo
+          : locationInfo as LocationModel,
+    ));
+  }
+}
+
+@Implements(LocationInformation)
+
+/// @nodoc
+class _$LocationInfoState implements LocationInfoState {
+  const _$LocationInfoState({this.locationInfo});
+
+  @override
+  final LocationModel locationInfo;
+
+  @override
+  String toString() {
+    return 'GlobalState.locationInfo(locationInfo: $locationInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LocationInfoState &&
+            (identical(other.locationInfo, locationInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.locationInfo, locationInfo)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(locationInfo);
+
+  @JsonKey(ignore: true)
+  @override
+  $LocationInfoStateCopyWith<LocationInfoState> get copyWith =>
+      _$LocationInfoStateCopyWithImpl<LocationInfoState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return locationInfo(this.locationInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationInfo != null) {
+      return locationInfo(this.locationInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    return locationInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationInfo != null) {
+      return locationInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationInfoState implements GlobalState, LocationInformation {
+  const factory LocationInfoState({LocationModel locationInfo}) =
+      _$LocationInfoState;
+
+  LocationModel get locationInfo;
+  @JsonKey(ignore: true)
+  $LocationInfoStateCopyWith<LocationInfoState> get copyWith;
 }
