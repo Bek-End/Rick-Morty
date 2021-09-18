@@ -71,38 +71,38 @@ class _NavBarScreenState extends State<NavBarScreen> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              MyIcons.navBar[0],
-            ),
+            icon: SvgPicture.asset(MyIcons.navBar[0]),
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[0],
+              color:
+                  Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
             ),
             label: Variables.navBarLabels[0],
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              MyIcons.navBar[1],
-            ),
+            icon: SvgPicture.asset(MyIcons.navBar[1]),
             label: Variables.navBarLabels[1],
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[1],
+              color:
+                  Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
             ),
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              MyIcons.navBar[2],
-            ),
+            icon: SvgPicture.asset(MyIcons.navBar[2]),
             label: Variables.navBarLabels[2],
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[2],
+              color:
+                  Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
             ),
           ),
           BottomNavigationBarItem(
+            icon: SvgPicture.asset(MyIcons.navBar[3]),
             activeIcon: SvgPicture.asset(
               MyIcons.navBar[3],
-            ),
-            icon: SvgPicture.asset(
-              MyIcons.navBar[3],
+              color:
+                  Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
             ),
             label: Variables.navBarLabels[3],
           )

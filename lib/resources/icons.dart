@@ -9,6 +9,7 @@ class MyIcons {
   static final forward = SvgPicture.asset("assets/svg_icons/forward.svg");
   static final theme = SvgPicture.asset("assets/svg_icons/theme.svg");
   static final play = SvgPicture.asset("assets/svg_icons/play.svg");
+  static final exit = SvgPicture.asset("assets/svg_icons/exit.svg");
 
   static final List navBar = [
     "assets/svg_icons/Персонажи.svg",

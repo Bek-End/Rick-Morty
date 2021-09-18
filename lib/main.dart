@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'data/repository.dart';
+import 'screens/search/search_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider<ThemeNotifier>(
@@ -57,7 +58,8 @@ class MyApp extends StatelessWidget {
               builder: (context, state) {
                 if (state is CharacterInfoState) {
                   return CharacterProfileScreen(
-                      characterInfo: state.characterInfo);
+                    characterInfo: state.characterInfo,
+                  );
                 }
                 if (state is EpisodInfoState) {
                   return EpisodInfoScreen(episodInfo: state.episodInfo);
@@ -70,6 +72,13 @@ class MyApp extends StatelessWidget {
                 }
                 if (state is GlobalErrorState) {
                   return ErrorComponent(errorMessage: state.errorMessage);
+                }
+                if (state is GlobalSearchState){
+                  return SearchScreen(
+                    model: state.model,
+                    controller: state.controller,
+                    hintText: state.hintText,
+                  );
                 }
                 return state.maybeMap(
                   splash: (_) => SplashScreen(),

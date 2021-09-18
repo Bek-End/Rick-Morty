@@ -11,7 +11,6 @@ class ListWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      //color: AppColors.primaryDark,
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: charactersListModel.data.length,

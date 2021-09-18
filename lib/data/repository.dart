@@ -39,18 +39,37 @@ class Repository {
     return response;
   }
 
-  Future<CharacterModel> getCharacter(String id) async {
-    final response = await _serverApi.getCharacter(id);
+  Future<CharacterModel> getCharacterById(String id) async {
+    final response = await _serverApi.getCharacterById(id);
     return response;
   }
 
-  Future<EpisodModel> getEpisod(String id) async {
-    final response = await _serverApi.getEpisod(id);
+  Future<EpisodModel> getEpisodById(String id) async {
+    final response = await _serverApi.getEpisodById(id);
     return response;
   }
 
-  Future<LocationModel> getLocation(String id) async {
-    final response = await _serverApi.getLocation(id);
+  Future<LocationModel> getLocationById(String id) async {
+    final response = await _serverApi.getLocationById(id);
+    return response;
+  }
+
+  Future<CharactersModel> getCharactersFilter(
+      {String name, List<int> statusList, List<int> genderList}) async {
+    final response = await _serverApi.getCharactersFilter(
+        name: name, statusList: statusList, genderList: genderList);
+    return response;
+  }
+
+  Future<EpisodesModel> getEpisodesFilter({String name}) async {
+    final response = await _serverApi.getEpisodesFilter(name:name);
+    return response;
+  }
+
+  Future<LocationsModel> getLocationsFilter(
+      {String name, String type, String measurements}) async {
+    final response = await _serverApi.getLocationsFilter(
+        name: name, type: type, measurements: measurements);
     return response;
   }
 }

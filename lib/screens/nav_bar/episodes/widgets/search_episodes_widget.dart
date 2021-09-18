@@ -1,14 +1,16 @@
+import 'package:RickAndMorty/global_bloc/global_bloc.dart';
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchWidget extends StatelessWidget {
-  final Size size;
+class SearchEpisodesWidget extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
-  const SearchWidget({this.size, this.controller, this.hintText});
+  const SearchEpisodesWidget({this.controller, this.hintText});
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Container(
@@ -29,13 +31,22 @@ class SearchWidget extends StatelessWidget {
                 color: Theme.of(context).accentColor,
               ),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.only(bottom: 12),
+                contentPadding: EdgeInsets.only(top: 25),
                 border: InputBorder.none,
                 hintText: hintText,
                 hintStyle: TextStyle(
-                    color: Theme.of(context).appBarTheme.iconTheme.color),
+                  color: Theme.of(context).appBarTheme.iconTheme.color,
+                ),
               ),
               controller: controller,
+              onEditingComplete: () {
+                BlocProvider.of<GlobalBloc>(context).add(
+                  GlobalEvent.search(
+                    controller: controller,
+                    hintText: hintText,
+                  ),
+                );
+              },
             ),
           ),
         ]),

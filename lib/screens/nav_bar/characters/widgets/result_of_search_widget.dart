@@ -1,24 +1,19 @@
 import 'package:RickAndMorty/resources/icons.dart';
 import 'package:flutter/material.dart';
 
-class ResultOfSearchWidget extends StatefulWidget {
+class ResultOfSearchWidget extends StatelessWidget {
   final Function onPressButton;
   final int totalRecords;
-  const ResultOfSearchWidget({Key key, this.totalRecords, this.onPressButton});
-
-  @override
-  _ResultOfSearchWidgetState createState() => _ResultOfSearchWidgetState();
-}
-
-class _ResultOfSearchWidgetState extends State<ResultOfSearchWidget> {
-  bool isGrid = false;
+  final bool isGrid;
+  const ResultOfSearchWidget(
+      {Key key, this.totalRecords, this.onPressButton, this.isGrid});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
-          "Всего персонажей: ${widget.totalRecords}".toUpperCase(),
+          "Всего персонажей: $totalRecords".toUpperCase(),
           style: Theme.of(context).textTheme.overline,
         ),
         Padding(
@@ -26,12 +21,7 @@ class _ResultOfSearchWidgetState extends State<ResultOfSearchWidget> {
           child: IconButton(
             icon: isGrid ? MyIcons.list : MyIcons.grid,
             onPressed: () {
-              setState(
-                () {
-                  isGrid = !isGrid;
-                },
-              );
-              widget.onPressButton();
+              onPressButton();
             },
           ),
         )

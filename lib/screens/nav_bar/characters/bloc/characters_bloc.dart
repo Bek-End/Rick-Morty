@@ -37,9 +37,9 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       }
     } else {
       yield CharactersState.select(
-          charactersList: charactersList,
-          isGrid: isGrid,
-        );
+        charactersList: charactersList,
+        isGrid: isGrid,
+      );
     }
   }
 }

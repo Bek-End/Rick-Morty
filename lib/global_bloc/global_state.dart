@@ -12,9 +12,14 @@ abstract class LocationInformation {
   LocationModel get locationInfo;
 }
 
+abstract class SearchState {
+  dynamic get model;
+  TextEditingController get controller;
+  String get hintText;
+}
+
 @freezed
 abstract class GlobalState with _$GlobalState {
-  
   factory GlobalState.loading() = GlobalLoadingState;
   factory GlobalState.error({String errorMessage}) = GlobalErrorState;
   const factory GlobalState.splash() = _SplashState;
@@ -31,4 +36,10 @@ abstract class GlobalState with _$GlobalState {
   @Implements(LocationInformation)
   const factory GlobalState.locationInfo({LocationModel locationInfo}) =
       LocationInfoState;
+
+  @Implements(SearchState)
+  const factory GlobalState.search(
+      {dynamic model,
+      String hintText,
+      TextEditingController controller}) = GlobalSearchState;
 }

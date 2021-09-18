@@ -11,7 +11,6 @@ class GridCharactersWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      //color: AppColors.primaryDark,
       child: GridView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: charactersListModel.data.length,

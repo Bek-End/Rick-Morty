@@ -35,12 +35,25 @@ class ServerApi {
     return charactersModelFromJson(response.toString());
   }
 
-  Future<CharacterModel> getCharacter(String id) async {
+  Future<CharacterModel> getCharacterById(String id) async {
     Response<String> response = await _dio.get(
       "/api/Characters/GetById",
       queryParameters: {"Id": id},
     );
     return characterModelFromJson(response.toString());
+  }
+
+  Future<CharactersModel> getCharactersFilter(
+      {String name, List<int> statusList, List<int> genderList}) async {
+    Response<String> response = await _dio.get(
+      "/api/Characters/Filter",
+      queryParameters: {
+        "Name": name,
+        "Status": statusList,
+        "Gender": genderList,
+      },
+    );
+    return charactersModelFromJson(response.toString());
   }
 
   Future<EpisodesModel> getEpisodes(int season) async {
@@ -51,12 +64,20 @@ class ServerApi {
     return episodesModelFromJson(response.toString());
   }
 
-  Future<EpisodModel> getEpisod(String id) async {
+  Future<EpisodModel> getEpisodById(String id) async {
     Response<String> response = await _dio.get(
       "/api/Episodes/GetById",
       queryParameters: {"Id": id},
     );
     return episodModelFromJson(response.toString());
+  }
+
+  Future<EpisodesModel> getEpisodesFilter({String name}) async {
+    Response<String> response = await _dio.get(
+      "/api/Episodes/GetByName",
+      queryParameters: {"Name": name},
+    );
+    return episodesModelFromJson(response.toString());
   }
 
   Future<LocationsModel> getLocations() async {
@@ -67,11 +88,19 @@ class ServerApi {
     return locationsModelFromJson(response.toString());
   }
 
-  Future<LocationModel> getLocation(String id) async {
+  Future<LocationModel> getLocationById(String id) async {
     Response<String> response = await _dio.get(
       "/api/Locations/GetById",
       queryParameters: {"Id": id},
     );
     return locationModelFromJson(response.toString());
+  }
+
+  Future<LocationsModel> getLocationsFilter({String name,String type,String measurements}) async {
+    Response<String> response = await _dio.get(
+      "/api/Locations/Filter",
+      queryParameters: {"Name": name, "Type": type, "Measurements": measurements},
+    );
+    return locationsModelFromJson(response.toString());
   }
 }

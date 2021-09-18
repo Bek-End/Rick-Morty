@@ -15,7 +15,6 @@ class CharactersScreen extends StatelessWidget {
   const CharactersScreen({this.charactersList, this.isGrid});
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -25,7 +24,6 @@ class CharactersScreen extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 130,
           title: SearchComponent(
-            size: size,
             controller: _textController,
             hintText: "Найти персонажа",
           ),
@@ -33,6 +31,7 @@ class CharactersScreen extends StatelessWidget {
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(60),
             child: ResultOfSearchWidget(
+                isGrid: isGrid,
                 totalRecords: charactersList.totalRecords,
                 onPressButton: () {
                   context.read<CharactersBloc>()..add(CharactersEvent.select());

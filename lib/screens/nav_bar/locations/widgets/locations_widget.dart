@@ -2,9 +2,9 @@ import 'package:RickAndMorty/data/models/locations_model/locations_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/widgets/list_location_item.dart';
 import 'package:flutter/material.dart';
 
-class LocationWidgets extends StatelessWidget {
+class LocationsWidget extends StatelessWidget {
   final LocationsModel locationsList;
-  const LocationWidgets({this.locationsList});
+  const LocationsWidget({this.locationsList});
 
   @override
   Widget build(BuildContext context) {

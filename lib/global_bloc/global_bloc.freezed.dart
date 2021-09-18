@@ -43,6 +43,15 @@ class _$GlobalEventTearOff {
       locationId: locationId,
     );
   }
+
+// ignore: unused_element
+  _GlobalSearchEvent search(
+      {TextEditingController controller, String hintText}) {
+    return _GlobalSearchEvent(
+      controller: controller,
+      hintText: hintText,
+    );
+  }
 }
 
 /// @nodoc
@@ -58,6 +67,7 @@ mixin _$GlobalEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -66,6 +76,7 @@ mixin _$GlobalEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -75,6 +86,7 @@ mixin _$GlobalEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -83,6 +95,7 @@ mixin _$GlobalEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   });
 }
@@ -146,12 +159,14 @@ class _$_NavbarEvent implements _NavbarEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return navbar();
   }
 
@@ -163,6 +178,7 @@ class _$_NavbarEvent implements _NavbarEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -180,12 +196,14 @@ class _$_NavbarEvent implements _NavbarEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return navbar(this);
   }
 
@@ -197,6 +215,7 @@ class _$_NavbarEvent implements _NavbarEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -253,12 +272,14 @@ class _$_BackEvent implements _BackEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return back();
   }
 
@@ -270,6 +291,7 @@ class _$_BackEvent implements _BackEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -287,12 +309,14 @@ class _$_BackEvent implements _BackEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return back(this);
   }
 
@@ -304,6 +328,7 @@ class _$_BackEvent implements _BackEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -388,12 +413,14 @@ class _$_CharacterInfoEvent implements _CharacterInfoEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return characterInfo(characterId);
   }
 
@@ -405,6 +432,7 @@ class _$_CharacterInfoEvent implements _CharacterInfoEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -422,12 +450,14 @@ class _$_CharacterInfoEvent implements _CharacterInfoEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return characterInfo(this);
   }
 
@@ -439,6 +469,7 @@ class _$_CharacterInfoEvent implements _CharacterInfoEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -527,12 +558,14 @@ class _$_EpisodInfoEvent implements _EpisodInfoEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return episodInfo(episodId);
   }
 
@@ -544,6 +577,7 @@ class _$_EpisodInfoEvent implements _EpisodInfoEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -561,12 +595,14 @@ class _$_EpisodInfoEvent implements _EpisodInfoEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return episodInfo(this);
   }
 
@@ -578,6 +614,7 @@ class _$_EpisodInfoEvent implements _EpisodInfoEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -666,12 +703,14 @@ class _$_LocationInfoEvent implements _LocationInfoEvent {
     @required TResult characterInfo(String characterId),
     @required TResult episodInfo(String episodId),
     @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return locationInfo(locationId);
   }
 
@@ -683,6 +722,7 @@ class _$_LocationInfoEvent implements _LocationInfoEvent {
     TResult characterInfo(String characterId),
     TResult episodInfo(String episodId),
     TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -700,12 +740,14 @@ class _$_LocationInfoEvent implements _LocationInfoEvent {
     @required TResult characterInfo(_CharacterInfoEvent value),
     @required TResult episodInfo(_EpisodInfoEvent value),
     @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
   }) {
     assert(navbar != null);
     assert(back != null);
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return locationInfo(this);
   }
 
@@ -717,6 +759,7 @@ class _$_LocationInfoEvent implements _LocationInfoEvent {
     TResult characterInfo(_CharacterInfoEvent value),
     TResult episodInfo(_EpisodInfoEvent value),
     TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -733,6 +776,164 @@ abstract class _LocationInfoEvent implements GlobalEvent, LocationInfo {
   String get locationId;
   @JsonKey(ignore: true)
   _$LocationInfoEventCopyWith<_LocationInfoEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class _$GlobalSearchEventCopyWith<$Res> {
+  factory _$GlobalSearchEventCopyWith(
+          _GlobalSearchEvent value, $Res Function(_GlobalSearchEvent) then) =
+      __$GlobalSearchEventCopyWithImpl<$Res>;
+  $Res call({TextEditingController controller, String hintText});
+}
+
+/// @nodoc
+class __$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalEventCopyWithImpl<$Res>
+    implements _$GlobalSearchEventCopyWith<$Res> {
+  __$GlobalSearchEventCopyWithImpl(
+      _GlobalSearchEvent _value, $Res Function(_GlobalSearchEvent) _then)
+      : super(_value, (v) => _then(v as _GlobalSearchEvent));
+
+  @override
+  _GlobalSearchEvent get _value => super._value as _GlobalSearchEvent;
+
+  @override
+  $Res call({
+    Object controller = freezed,
+    Object hintText = freezed,
+  }) {
+    return _then(_GlobalSearchEvent(
+      controller: controller == freezed
+          ? _value.controller
+          : controller as TextEditingController,
+      hintText: hintText == freezed ? _value.hintText : hintText as String,
+    ));
+  }
+}
+
+@Implements(SearchEvent)
+
+/// @nodoc
+class _$_GlobalSearchEvent implements _GlobalSearchEvent {
+  const _$_GlobalSearchEvent({this.controller, this.hintText});
+
+  @override
+  final TextEditingController controller;
+  @override
+  final String hintText;
+
+  @override
+  String toString() {
+    return 'GlobalEvent.search(controller: $controller, hintText: $hintText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _GlobalSearchEvent &&
+            (identical(other.controller, controller) ||
+                const DeepCollectionEquality()
+                    .equals(other.controller, controller)) &&
+            (identical(other.hintText, hintText) ||
+                const DeepCollectionEquality()
+                    .equals(other.hintText, hintText)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(controller) ^
+      const DeepCollectionEquality().hash(hintText);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GlobalSearchEventCopyWith<_GlobalSearchEvent> get copyWith =>
+      __$GlobalSearchEventCopyWithImpl<_GlobalSearchEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult navbar(),
+    @required TResult back(),
+    @required TResult characterInfo(String characterId),
+    @required TResult episodInfo(String episodId),
+    @required TResult locationInfo(String locationId),
+    @required TResult search(TextEditingController controller, String hintText),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    assert(search != null);
+    return search(controller, hintText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult navbar(),
+    TResult back(),
+    TResult characterInfo(String characterId),
+    TResult episodInfo(String episodId),
+    TResult locationInfo(String locationId),
+    TResult search(TextEditingController controller, String hintText),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search(controller, hintText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult navbar(_NavbarEvent value),
+    @required TResult back(_BackEvent value),
+    @required TResult characterInfo(_CharacterInfoEvent value),
+    @required TResult episodInfo(_EpisodInfoEvent value),
+    @required TResult locationInfo(_LocationInfoEvent value),
+    @required TResult search(_GlobalSearchEvent value),
+  }) {
+    assert(navbar != null);
+    assert(back != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    assert(search != null);
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult navbar(_NavbarEvent value),
+    TResult back(_BackEvent value),
+    TResult characterInfo(_CharacterInfoEvent value),
+    TResult episodInfo(_EpisodInfoEvent value),
+    TResult locationInfo(_LocationInfoEvent value),
+    TResult search(_GlobalSearchEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GlobalSearchEvent implements GlobalEvent, SearchEvent {
+  const factory _GlobalSearchEvent(
+      {TextEditingController controller,
+      String hintText}) = _$_GlobalSearchEvent;
+
+  TextEditingController get controller;
+  String get hintText;
+  @JsonKey(ignore: true)
+  _$GlobalSearchEventCopyWith<_GlobalSearchEvent> get copyWith;
 }
 
 /// @nodoc
@@ -781,6 +982,16 @@ class _$GlobalStateTearOff {
       locationInfo: locationInfo,
     );
   }
+
+// ignore: unused_element
+  GlobalSearchState search(
+      {dynamic model, String hintText, TextEditingController controller}) {
+    return GlobalSearchState(
+      model: model,
+      hintText: hintText,
+      controller: controller,
+    );
+  }
 }
 
 /// @nodoc
@@ -798,6 +1009,9 @@ mixin _$GlobalState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -808,6 +1022,8 @@ mixin _$GlobalState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -819,6 +1035,7 @@ mixin _$GlobalState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -829,6 +1046,7 @@ mixin _$GlobalState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   });
 }
@@ -895,6 +1113,9 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -903,6 +1124,7 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return loading();
   }
 
@@ -916,6 +1138,8 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -935,6 +1159,7 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -943,6 +1168,7 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return loading(this);
   }
 
@@ -956,6 +1182,7 @@ class _$GlobalLoadingState implements GlobalLoadingState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1041,6 +1268,9 @@ class _$GlobalErrorState implements GlobalErrorState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1049,6 +1279,7 @@ class _$GlobalErrorState implements GlobalErrorState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return error(errorMessage);
   }
 
@@ -1062,6 +1293,8 @@ class _$GlobalErrorState implements GlobalErrorState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1081,6 +1314,7 @@ class _$GlobalErrorState implements GlobalErrorState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1089,6 +1323,7 @@ class _$GlobalErrorState implements GlobalErrorState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return error(this);
   }
 
@@ -1102,6 +1337,7 @@ class _$GlobalErrorState implements GlobalErrorState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1165,6 +1401,9 @@ class _$_SplashState implements _SplashState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1173,6 +1412,7 @@ class _$_SplashState implements _SplashState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return splash();
   }
 
@@ -1186,6 +1426,8 @@ class _$_SplashState implements _SplashState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1205,6 +1447,7 @@ class _$_SplashState implements _SplashState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1213,6 +1456,7 @@ class _$_SplashState implements _SplashState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return splash(this);
   }
 
@@ -1226,6 +1470,7 @@ class _$_SplashState implements _SplashState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1285,6 +1530,9 @@ class _$_NavBarState implements _NavBarState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1293,6 +1541,7 @@ class _$_NavBarState implements _NavBarState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return navBar();
   }
 
@@ -1306,6 +1555,8 @@ class _$_NavBarState implements _NavBarState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1325,6 +1576,7 @@ class _$_NavBarState implements _NavBarState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1333,6 +1585,7 @@ class _$_NavBarState implements _NavBarState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return navBar(this);
   }
 
@@ -1346,6 +1599,7 @@ class _$_NavBarState implements _NavBarState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1433,6 +1687,9 @@ class _$CharacterInfoState implements CharacterInfoState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1441,6 +1698,7 @@ class _$CharacterInfoState implements CharacterInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return characterInfo(this.characterInfo);
   }
 
@@ -1454,6 +1712,8 @@ class _$CharacterInfoState implements CharacterInfoState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1473,6 +1733,7 @@ class _$CharacterInfoState implements CharacterInfoState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1481,6 +1742,7 @@ class _$CharacterInfoState implements CharacterInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return characterInfo(this);
   }
 
@@ -1494,6 +1756,7 @@ class _$CharacterInfoState implements CharacterInfoState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1585,6 +1848,9 @@ class _$EpisodInfoState implements EpisodInfoState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1593,6 +1859,7 @@ class _$EpisodInfoState implements EpisodInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return episodInfo(this.episodInfo);
   }
 
@@ -1606,6 +1873,8 @@ class _$EpisodInfoState implements EpisodInfoState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1625,6 +1894,7 @@ class _$EpisodInfoState implements EpisodInfoState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1633,6 +1903,7 @@ class _$EpisodInfoState implements EpisodInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return episodInfo(this);
   }
 
@@ -1646,6 +1917,7 @@ class _$EpisodInfoState implements EpisodInfoState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1737,6 +2009,9 @@ class _$LocationInfoState implements LocationInfoState {
     @required TResult characterInfo(CharacterModel characterInfo),
     @required TResult episodInfo(EpisodModel episodInfo),
     @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1745,6 +2020,7 @@ class _$LocationInfoState implements LocationInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return locationInfo(this.locationInfo);
   }
 
@@ -1758,6 +2034,8 @@ class _$LocationInfoState implements LocationInfoState {
     TResult characterInfo(CharacterModel characterInfo),
     TResult episodInfo(EpisodModel episodInfo),
     TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1777,6 +2055,7 @@ class _$LocationInfoState implements LocationInfoState {
     @required TResult characterInfo(CharacterInfoState value),
     @required TResult episodInfo(EpisodInfoState value),
     @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
   }) {
     assert(loading != null);
     assert(error != null);
@@ -1785,6 +2064,7 @@ class _$LocationInfoState implements LocationInfoState {
     assert(characterInfo != null);
     assert(episodInfo != null);
     assert(locationInfo != null);
+    assert(search != null);
     return locationInfo(this);
   }
 
@@ -1798,6 +2078,7 @@ class _$LocationInfoState implements LocationInfoState {
     TResult characterInfo(CharacterInfoState value),
     TResult episodInfo(EpisodInfoState value),
     TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1815,4 +2096,186 @@ abstract class LocationInfoState implements GlobalState, LocationInformation {
   LocationModel get locationInfo;
   @JsonKey(ignore: true)
   $LocationInfoStateCopyWith<LocationInfoState> get copyWith;
+}
+
+/// @nodoc
+abstract class $GlobalSearchStateCopyWith<$Res> {
+  factory $GlobalSearchStateCopyWith(
+          GlobalSearchState value, $Res Function(GlobalSearchState) then) =
+      _$GlobalSearchStateCopyWithImpl<$Res>;
+  $Res call({dynamic model, String hintText, TextEditingController controller});
+}
+
+/// @nodoc
+class _$GlobalSearchStateCopyWithImpl<$Res>
+    extends _$GlobalStateCopyWithImpl<$Res>
+    implements $GlobalSearchStateCopyWith<$Res> {
+  _$GlobalSearchStateCopyWithImpl(
+      GlobalSearchState _value, $Res Function(GlobalSearchState) _then)
+      : super(_value, (v) => _then(v as GlobalSearchState));
+
+  @override
+  GlobalSearchState get _value => super._value as GlobalSearchState;
+
+  @override
+  $Res call({
+    Object model = freezed,
+    Object hintText = freezed,
+    Object controller = freezed,
+  }) {
+    return _then(GlobalSearchState(
+      model: model == freezed ? _value.model : model as dynamic,
+      hintText: hintText == freezed ? _value.hintText : hintText as String,
+      controller: controller == freezed
+          ? _value.controller
+          : controller as TextEditingController,
+    ));
+  }
+}
+
+@Implements(SearchState)
+
+/// @nodoc
+class _$GlobalSearchState implements GlobalSearchState {
+  const _$GlobalSearchState({this.model, this.hintText, this.controller});
+
+  @override
+  final dynamic model;
+  @override
+  final String hintText;
+  @override
+  final TextEditingController controller;
+
+  @override
+  String toString() {
+    return 'GlobalState.search(model: $model, hintText: $hintText, controller: $controller)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GlobalSearchState &&
+            (identical(other.model, model) ||
+                const DeepCollectionEquality().equals(other.model, model)) &&
+            (identical(other.hintText, hintText) ||
+                const DeepCollectionEquality()
+                    .equals(other.hintText, hintText)) &&
+            (identical(other.controller, controller) ||
+                const DeepCollectionEquality()
+                    .equals(other.controller, controller)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(model) ^
+      const DeepCollectionEquality().hash(hintText) ^
+      const DeepCollectionEquality().hash(controller);
+
+  @JsonKey(ignore: true)
+  @override
+  $GlobalSearchStateCopyWith<GlobalSearchState> get copyWith =>
+      _$GlobalSearchStateCopyWithImpl<GlobalSearchState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult splash(),
+    @required TResult navBar(),
+    @required TResult characterInfo(CharacterModel characterInfo),
+    @required TResult episodInfo(EpisodModel episodInfo),
+    @required TResult locationInfo(LocationModel locationInfo),
+    @required
+        TResult search(
+            dynamic model, String hintText, TextEditingController controller),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    assert(search != null);
+    return search(model, hintText, controller);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult splash(),
+    TResult navBar(),
+    TResult characterInfo(CharacterModel characterInfo),
+    TResult episodInfo(EpisodModel episodInfo),
+    TResult locationInfo(LocationModel locationInfo),
+    TResult search(
+        dynamic model, String hintText, TextEditingController controller),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search(model, hintText, controller);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(GlobalLoadingState value),
+    @required TResult error(GlobalErrorState value),
+    @required TResult splash(_SplashState value),
+    @required TResult navBar(_NavBarState value),
+    @required TResult characterInfo(CharacterInfoState value),
+    @required TResult episodInfo(EpisodInfoState value),
+    @required TResult locationInfo(LocationInfoState value),
+    @required TResult search(GlobalSearchState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(splash != null);
+    assert(navBar != null);
+    assert(characterInfo != null);
+    assert(episodInfo != null);
+    assert(locationInfo != null);
+    assert(search != null);
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(GlobalLoadingState value),
+    TResult error(GlobalErrorState value),
+    TResult splash(_SplashState value),
+    TResult navBar(_NavBarState value),
+    TResult characterInfo(CharacterInfoState value),
+    TResult episodInfo(EpisodInfoState value),
+    TResult locationInfo(LocationInfoState value),
+    TResult search(GlobalSearchState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GlobalSearchState implements GlobalState, SearchState {
+  const factory GlobalSearchState(
+      {dynamic model,
+      String hintText,
+      TextEditingController controller}) = _$GlobalSearchState;
+
+  dynamic get model;
+  String get hintText;
+  TextEditingController get controller;
+  @JsonKey(ignore: true)
+  $GlobalSearchStateCopyWith<GlobalSearchState> get copyWith;
 }

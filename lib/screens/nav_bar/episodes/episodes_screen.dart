@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/data/models/episodes_model/episodes_model.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/tab_bar_item_widget.dart';
-import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/search_widget.dart';
+import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/search_episodes_widget.dart';
 import 'package:flutter/material.dart';
 
 final _textController = TextEditingController();
@@ -16,7 +16,6 @@ class _EpisodesScreenState extends State<EpisodesScreen> {
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -27,8 +26,7 @@ class _EpisodesScreenState extends State<EpisodesScreen> {
           resizeToAvoidBottomPadding: false,
           appBar: AppBar(
             toolbarHeight: 130,
-            title: SearchWidget(
-              size: size,
+            title: SearchEpisodesWidget(
               controller: _textController,
               hintText: "Найти эпизод",
             ),
