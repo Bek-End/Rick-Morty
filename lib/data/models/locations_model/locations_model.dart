@@ -13,7 +13,7 @@ class LocationsModel {
         this.data,
     });
 
-    final int totalRecords;
+    int totalRecords;
     final bool succeeded;
     final dynamic message;
     final dynamic error;

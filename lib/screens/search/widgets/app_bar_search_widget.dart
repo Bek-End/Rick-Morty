@@ -1,12 +1,12 @@
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AppBArSearchWidget extends StatelessWidget {
+class AppBarSearchWidget extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
-  const AppBArSearchWidget({Key key, this.hintText, this.controller})
+  const AppBarSearchWidget({Key key, this.hintText, this.controller})
       : super(key: key);
 
   @override

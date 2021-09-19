@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/components/line_component.dart';
 import 'package:RickAndMorty/data/data_base/theme_types.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:RickAndMorty/resources/variables.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/widgets/dialog_widget.dart';
 import 'package:RickAndMorty/theme/app_text_styles.dart';

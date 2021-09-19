@@ -10,6 +10,8 @@ class MyIcons {
   static final theme = SvgPicture.asset("assets/svg_icons/theme.svg");
   static final play = SvgPicture.asset("assets/svg_icons/play.svg");
   static final exit = SvgPicture.asset("assets/svg_icons/exit.svg");
+  static final deleteFilter =
+      SvgPicture.asset("assets/svg_icons/delete_filter.svg");
 
   static final List navBar = [
     "assets/svg_icons/Персонажи.svg",

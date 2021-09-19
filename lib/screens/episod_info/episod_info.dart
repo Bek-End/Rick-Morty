@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/components/line_component.dart';
 import 'package:RickAndMorty/data/models/episod_model.dar/episod_model.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:RickAndMorty/components/character_list_component.dart';
 import 'package:RickAndMorty/screens/nav_bar/episodes/widgets/episodes_back_button_widget.dart';
 import 'package:RickAndMorty/theme/app_colors.dart';

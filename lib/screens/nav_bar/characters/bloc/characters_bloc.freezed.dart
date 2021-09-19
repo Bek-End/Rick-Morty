@@ -14,8 +14,18 @@ class _$CharactersEventTearOff {
   const _$CharactersEventTearOff();
 
 // ignore: unused_element
-  _SelectEvent select() {
-    return const _SelectEvent();
+  _CharactersSelectEvent select() {
+    return const _CharactersSelectEvent();
+  }
+
+// ignore: unused_element
+  _CharactersFilterEvent filter(
+      {List<bool> statusList, List<bool> genderList, int sort}) {
+    return _CharactersFilterEvent(
+      statusList: statusList,
+      genderList: genderList,
+      sort: sort,
+    );
   }
 }
 
@@ -28,19 +38,24 @@ mixin _$CharactersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult select(),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult select(),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult select(_SelectEvent value),
+    @required TResult select(_CharactersSelectEvent value),
+    @required TResult filter(_CharactersFilterEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectEvent value),
+    TResult select(_CharactersSelectEvent value),
+    TResult filter(_CharactersFilterEvent value),
     @required TResult orElse(),
   });
 }
@@ -63,27 +78,27 @@ class _$CharactersEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SelectEventCopyWith<$Res> {
-  factory _$SelectEventCopyWith(
-          _SelectEvent value, $Res Function(_SelectEvent) then) =
-      __$SelectEventCopyWithImpl<$Res>;
+abstract class _$CharactersSelectEventCopyWith<$Res> {
+  factory _$CharactersSelectEventCopyWith(_CharactersSelectEvent value,
+          $Res Function(_CharactersSelectEvent) then) =
+      __$CharactersSelectEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SelectEventCopyWithImpl<$Res>
+class __$CharactersSelectEventCopyWithImpl<$Res>
     extends _$CharactersEventCopyWithImpl<$Res>
-    implements _$SelectEventCopyWith<$Res> {
-  __$SelectEventCopyWithImpl(
-      _SelectEvent _value, $Res Function(_SelectEvent) _then)
-      : super(_value, (v) => _then(v as _SelectEvent));
+    implements _$CharactersSelectEventCopyWith<$Res> {
+  __$CharactersSelectEventCopyWithImpl(_CharactersSelectEvent _value,
+      $Res Function(_CharactersSelectEvent) _then)
+      : super(_value, (v) => _then(v as _CharactersSelectEvent));
 
   @override
-  _SelectEvent get _value => super._value as _SelectEvent;
+  _CharactersSelectEvent get _value => super._value as _CharactersSelectEvent;
 }
 
 /// @nodoc
-class _$_SelectEvent implements _SelectEvent {
-  const _$_SelectEvent();
+class _$_CharactersSelectEvent implements _CharactersSelectEvent {
+  const _$_CharactersSelectEvent();
 
   @override
   String toString() {
@@ -92,7 +107,7 @@ class _$_SelectEvent implements _SelectEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SelectEvent);
+    return identical(this, other) || (other is _CharactersSelectEvent);
   }
 
   @override
@@ -102,8 +117,11 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult select(),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   }) {
     assert(select != null);
+    assert(filter != null);
     return select();
   }
 
@@ -111,6 +129,7 @@ class _$_SelectEvent implements _SelectEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult select(),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -123,16 +142,19 @@ class _$_SelectEvent implements _SelectEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult select(_SelectEvent value),
+    @required TResult select(_CharactersSelectEvent value),
+    @required TResult filter(_CharactersFilterEvent value),
   }) {
     assert(select != null);
+    assert(filter != null);
     return select(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult select(_SelectEvent value),
+    TResult select(_CharactersSelectEvent value),
+    TResult filter(_CharactersFilterEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -143,8 +165,154 @@ class _$_SelectEvent implements _SelectEvent {
   }
 }
 
-abstract class _SelectEvent implements CharactersEvent {
-  const factory _SelectEvent() = _$_SelectEvent;
+abstract class _CharactersSelectEvent implements CharactersEvent {
+  const factory _CharactersSelectEvent() = _$_CharactersSelectEvent;
+}
+
+/// @nodoc
+abstract class _$CharactersFilterEventCopyWith<$Res> {
+  factory _$CharactersFilterEventCopyWith(_CharactersFilterEvent value,
+          $Res Function(_CharactersFilterEvent) then) =
+      __$CharactersFilterEventCopyWithImpl<$Res>;
+  $Res call({List<bool> statusList, List<bool> genderList, int sort});
+}
+
+/// @nodoc
+class __$CharactersFilterEventCopyWithImpl<$Res>
+    extends _$CharactersEventCopyWithImpl<$Res>
+    implements _$CharactersFilterEventCopyWith<$Res> {
+  __$CharactersFilterEventCopyWithImpl(_CharactersFilterEvent _value,
+      $Res Function(_CharactersFilterEvent) _then)
+      : super(_value, (v) => _then(v as _CharactersFilterEvent));
+
+  @override
+  _CharactersFilterEvent get _value => super._value as _CharactersFilterEvent;
+
+  @override
+  $Res call({
+    Object statusList = freezed,
+    Object genderList = freezed,
+    Object sort = freezed,
+  }) {
+    return _then(_CharactersFilterEvent(
+      statusList:
+          statusList == freezed ? _value.statusList : statusList as List<bool>,
+      genderList:
+          genderList == freezed ? _value.genderList : genderList as List<bool>,
+      sort: sort == freezed ? _value.sort : sort as int,
+    ));
+  }
+}
+
+@Implements(FilterCharacter)
+
+/// @nodoc
+class _$_CharactersFilterEvent implements _CharactersFilterEvent {
+  const _$_CharactersFilterEvent({this.statusList, this.genderList, this.sort});
+
+  @override
+  final List<bool> statusList;
+  @override
+  final List<bool> genderList;
+  @override
+  final int sort;
+
+  @override
+  String toString() {
+    return 'CharactersEvent.filter(statusList: $statusList, genderList: $genderList, sort: $sort)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CharactersFilterEvent &&
+            (identical(other.statusList, statusList) ||
+                const DeepCollectionEquality()
+                    .equals(other.statusList, statusList)) &&
+            (identical(other.genderList, genderList) ||
+                const DeepCollectionEquality()
+                    .equals(other.genderList, genderList)) &&
+            (identical(other.sort, sort) ||
+                const DeepCollectionEquality().equals(other.sort, sort)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(statusList) ^
+      const DeepCollectionEquality().hash(genderList) ^
+      const DeepCollectionEquality().hash(sort);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CharactersFilterEventCopyWith<_CharactersFilterEvent> get copyWith =>
+      __$CharactersFilterEventCopyWithImpl<_CharactersFilterEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult select(),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
+  }) {
+    assert(select != null);
+    assert(filter != null);
+    return filter(statusList, genderList, sort);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult select(),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filter != null) {
+      return filter(statusList, genderList, sort);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult select(_CharactersSelectEvent value),
+    @required TResult filter(_CharactersFilterEvent value),
+  }) {
+    assert(select != null);
+    assert(filter != null);
+    return filter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult select(_CharactersSelectEvent value),
+    TResult filter(_CharactersFilterEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filter != null) {
+      return filter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CharactersFilterEvent
+    implements CharactersEvent, FilterCharacter {
+  const factory _CharactersFilterEvent(
+      {List<bool> statusList,
+      List<bool> genderList,
+      int sort}) = _$_CharactersFilterEvent;
+
+  List<bool> get statusList;
+  List<bool> get genderList;
+  int get sort;
+  @JsonKey(ignore: true)
+  _$CharactersFilterEventCopyWith<_CharactersFilterEvent> get copyWith;
 }
 
 /// @nodoc
@@ -164,10 +332,20 @@ class _$CharactersStateTearOff {
   }
 
 // ignore: unused_element
-  SelectState select({CharactersModel charactersList, bool isGrid}) {
-    return SelectState(
+  CharactersSelectState select({CharactersModel charactersList, bool isGrid}) {
+    return CharactersSelectState(
       charactersList: charactersList,
       isGrid: isGrid,
+    );
+  }
+
+// ignore: unused_element
+  CharactersFilterState filter(
+      {List<bool> statusList, List<bool> genderList, int sort}) {
+    return CharactersFilterState(
+      statusList: statusList,
+      genderList: genderList,
+      sort: sort,
     );
   }
 }
@@ -183,25 +361,30 @@ mixin _$CharactersState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
-    @required TResult select(SelectState value),
+    @required TResult select(CharactersSelectState value),
+    @required TResult filter(CharactersFilterState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
-    TResult select(SelectState value),
+    TResult select(CharactersSelectState value),
+    TResult filter(CharactersFilterState value),
     @required TResult orElse(),
   });
 }
@@ -265,10 +448,13 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return loading();
   }
 
@@ -278,6 +464,7 @@ class _$CharactersLoadingState implements CharactersLoadingState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -292,11 +479,13 @@ class _$CharactersLoadingState implements CharactersLoadingState {
   TResult map<TResult extends Object>({
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
-    @required TResult select(SelectState value),
+    @required TResult select(CharactersSelectState value),
+    @required TResult filter(CharactersFilterState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return loading(this);
   }
 
@@ -305,7 +494,8 @@ class _$CharactersLoadingState implements CharactersLoadingState {
   TResult maybeMap<TResult extends Object>({
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
-    TResult select(SelectState value),
+    TResult select(CharactersSelectState value),
+    TResult filter(CharactersFilterState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -388,10 +578,13 @@ class _$CharactersErrorState implements CharactersErrorState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return error(errorMessage);
   }
 
@@ -401,6 +594,7 @@ class _$CharactersErrorState implements CharactersErrorState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -415,11 +609,13 @@ class _$CharactersErrorState implements CharactersErrorState {
   TResult map<TResult extends Object>({
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
-    @required TResult select(SelectState value),
+    @required TResult select(CharactersSelectState value),
+    @required TResult filter(CharactersFilterState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return error(this);
   }
 
@@ -428,7 +624,8 @@ class _$CharactersErrorState implements CharactersErrorState {
   TResult maybeMap<TResult extends Object>({
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
-    TResult select(SelectState value),
+    TResult select(CharactersSelectState value),
+    TResult filter(CharactersFilterState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -448,30 +645,30 @@ abstract class CharactersErrorState implements CharactersState {
 }
 
 /// @nodoc
-abstract class $SelectStateCopyWith<$Res> {
-  factory $SelectStateCopyWith(
-          SelectState value, $Res Function(SelectState) then) =
-      _$SelectStateCopyWithImpl<$Res>;
+abstract class $CharactersSelectStateCopyWith<$Res> {
+  factory $CharactersSelectStateCopyWith(CharactersSelectState value,
+          $Res Function(CharactersSelectState) then) =
+      _$CharactersSelectStateCopyWithImpl<$Res>;
   $Res call({CharactersModel charactersList, bool isGrid});
 }
 
 /// @nodoc
-class _$SelectStateCopyWithImpl<$Res>
+class _$CharactersSelectStateCopyWithImpl<$Res>
     extends _$CharactersStateCopyWithImpl<$Res>
-    implements $SelectStateCopyWith<$Res> {
-  _$SelectStateCopyWithImpl(
-      SelectState _value, $Res Function(SelectState) _then)
-      : super(_value, (v) => _then(v as SelectState));
+    implements $CharactersSelectStateCopyWith<$Res> {
+  _$CharactersSelectStateCopyWithImpl(
+      CharactersSelectState _value, $Res Function(CharactersSelectState) _then)
+      : super(_value, (v) => _then(v as CharactersSelectState));
 
   @override
-  SelectState get _value => super._value as SelectState;
+  CharactersSelectState get _value => super._value as CharactersSelectState;
 
   @override
   $Res call({
     Object charactersList = freezed,
     Object isGrid = freezed,
   }) {
-    return _then(SelectState(
+    return _then(CharactersSelectState(
       charactersList: charactersList == freezed
           ? _value.charactersList
           : charactersList as CharactersModel,
@@ -483,8 +680,8 @@ class _$SelectStateCopyWithImpl<$Res>
 @Implements(ListOrGrid)
 
 /// @nodoc
-class _$SelectState implements SelectState {
-  const _$SelectState({this.charactersList, this.isGrid});
+class _$CharactersSelectState implements CharactersSelectState {
+  const _$CharactersSelectState({this.charactersList, this.isGrid});
 
   @override
   final CharactersModel charactersList;
@@ -499,7 +696,7 @@ class _$SelectState implements SelectState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SelectState &&
+        (other is CharactersSelectState &&
             (identical(other.charactersList, charactersList) ||
                 const DeepCollectionEquality()
                     .equals(other.charactersList, charactersList)) &&
@@ -515,8 +712,9 @@ class _$SelectState implements SelectState {
 
   @JsonKey(ignore: true)
   @override
-  $SelectStateCopyWith<SelectState> get copyWith =>
-      _$SelectStateCopyWithImpl<SelectState>(this, _$identity);
+  $CharactersSelectStateCopyWith<CharactersSelectState> get copyWith =>
+      _$CharactersSelectStateCopyWithImpl<CharactersSelectState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -524,10 +722,13 @@ class _$SelectState implements SelectState {
     @required TResult loading(),
     @required TResult error(String errorMessage),
     @required TResult select(CharactersModel charactersList, bool isGrid),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return select(charactersList, isGrid);
   }
 
@@ -537,6 +738,7 @@ class _$SelectState implements SelectState {
     TResult loading(),
     TResult error(String errorMessage),
     TResult select(CharactersModel charactersList, bool isGrid),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -551,11 +753,13 @@ class _$SelectState implements SelectState {
   TResult map<TResult extends Object>({
     @required TResult loading(CharactersLoadingState value),
     @required TResult error(CharactersErrorState value),
-    @required TResult select(SelectState value),
+    @required TResult select(CharactersSelectState value),
+    @required TResult filter(CharactersFilterState value),
   }) {
     assert(loading != null);
     assert(error != null);
     assert(select != null);
+    assert(filter != null);
     return select(this);
   }
 
@@ -564,7 +768,8 @@ class _$SelectState implements SelectState {
   TResult maybeMap<TResult extends Object>({
     TResult loading(CharactersLoadingState value),
     TResult error(CharactersErrorState value),
-    TResult select(SelectState value),
+    TResult select(CharactersSelectState value),
+    TResult filter(CharactersFilterState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -575,12 +780,170 @@ class _$SelectState implements SelectState {
   }
 }
 
-abstract class SelectState implements CharactersState, ListOrGrid {
-  const factory SelectState({CharactersModel charactersList, bool isGrid}) =
-      _$SelectState;
+abstract class CharactersSelectState implements CharactersState, ListOrGrid {
+  const factory CharactersSelectState(
+      {CharactersModel charactersList, bool isGrid}) = _$CharactersSelectState;
 
   CharactersModel get charactersList;
   bool get isGrid;
   @JsonKey(ignore: true)
-  $SelectStateCopyWith<SelectState> get copyWith;
+  $CharactersSelectStateCopyWith<CharactersSelectState> get copyWith;
+}
+
+/// @nodoc
+abstract class $CharactersFilterStateCopyWith<$Res> {
+  factory $CharactersFilterStateCopyWith(CharactersFilterState value,
+          $Res Function(CharactersFilterState) then) =
+      _$CharactersFilterStateCopyWithImpl<$Res>;
+  $Res call({List<bool> statusList, List<bool> genderList, int sort});
+}
+
+/// @nodoc
+class _$CharactersFilterStateCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res>
+    implements $CharactersFilterStateCopyWith<$Res> {
+  _$CharactersFilterStateCopyWithImpl(
+      CharactersFilterState _value, $Res Function(CharactersFilterState) _then)
+      : super(_value, (v) => _then(v as CharactersFilterState));
+
+  @override
+  CharactersFilterState get _value => super._value as CharactersFilterState;
+
+  @override
+  $Res call({
+    Object statusList = freezed,
+    Object genderList = freezed,
+    Object sort = freezed,
+  }) {
+    return _then(CharactersFilterState(
+      statusList:
+          statusList == freezed ? _value.statusList : statusList as List<bool>,
+      genderList:
+          genderList == freezed ? _value.genderList : genderList as List<bool>,
+      sort: sort == freezed ? _value.sort : sort as int,
+    ));
+  }
+}
+
+@Implements(FilterCharacters)
+
+/// @nodoc
+class _$CharactersFilterState implements CharactersFilterState {
+  const _$CharactersFilterState({this.statusList, this.genderList, this.sort});
+
+  @override
+  final List<bool> statusList;
+  @override
+  final List<bool> genderList;
+  @override
+  final int sort;
+
+  @override
+  String toString() {
+    return 'CharactersState.filter(statusList: $statusList, genderList: $genderList, sort: $sort)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CharactersFilterState &&
+            (identical(other.statusList, statusList) ||
+                const DeepCollectionEquality()
+                    .equals(other.statusList, statusList)) &&
+            (identical(other.genderList, genderList) ||
+                const DeepCollectionEquality()
+                    .equals(other.genderList, genderList)) &&
+            (identical(other.sort, sort) ||
+                const DeepCollectionEquality().equals(other.sort, sort)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(statusList) ^
+      const DeepCollectionEquality().hash(genderList) ^
+      const DeepCollectionEquality().hash(sort);
+
+  @JsonKey(ignore: true)
+  @override
+  $CharactersFilterStateCopyWith<CharactersFilterState> get copyWith =>
+      _$CharactersFilterStateCopyWithImpl<CharactersFilterState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult error(String errorMessage),
+    @required TResult select(CharactersModel charactersList, bool isGrid),
+    @required
+        TResult filter(List<bool> statusList, List<bool> genderList, int sort),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(select != null);
+    assert(filter != null);
+    return filter(statusList, genderList, sort);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult error(String errorMessage),
+    TResult select(CharactersModel charactersList, bool isGrid),
+    TResult filter(List<bool> statusList, List<bool> genderList, int sort),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filter != null) {
+      return filter(statusList, genderList, sort);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(CharactersLoadingState value),
+    @required TResult error(CharactersErrorState value),
+    @required TResult select(CharactersSelectState value),
+    @required TResult filter(CharactersFilterState value),
+  }) {
+    assert(loading != null);
+    assert(error != null);
+    assert(select != null);
+    assert(filter != null);
+    return filter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(CharactersLoadingState value),
+    TResult error(CharactersErrorState value),
+    TResult select(CharactersSelectState value),
+    TResult filter(CharactersFilterState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filter != null) {
+      return filter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CharactersFilterState
+    implements CharactersState, FilterCharacters {
+  const factory CharactersFilterState(
+      {List<bool> statusList,
+      List<bool> genderList,
+      int sort}) = _$CharactersFilterState;
+
+  List<bool> get statusList;
+  List<bool> get genderList;
+  int get sort;
+  @JsonKey(ignore: true)
+  $CharactersFilterStateCopyWith<CharactersFilterState> get copyWith;
 }

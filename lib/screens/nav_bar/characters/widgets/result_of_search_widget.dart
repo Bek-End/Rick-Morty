@@ -1,4 +1,4 @@
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:flutter/material.dart';
 
 class ResultOfSearchWidget extends StatelessWidget {
@@ -19,6 +19,7 @@ class ResultOfSearchWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: IconButton(
+            padding: EdgeInsets.zero,
             icon: isGrid ? MyIcons.list : MyIcons.grid,
             onPressed: () {
               onPressButton();

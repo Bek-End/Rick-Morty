@@ -1,6 +1,6 @@
 import 'package:RickAndMorty/data/models/character_model/character_model.dart';
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:RickAndMorty/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

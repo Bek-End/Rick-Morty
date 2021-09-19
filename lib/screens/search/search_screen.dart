@@ -21,7 +21,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: AppBArSearchWidget(hintText: hintText, controller: controller),
+        title: AppBarSearchWidget(hintText: hintText, controller: controller),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(60),
           child: Container(

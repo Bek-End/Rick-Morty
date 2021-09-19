@@ -1,7 +1,10 @@
 import 'package:RickAndMorty/components/error_component.dart';
 import 'package:RickAndMorty/components/loading_component.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
 import 'package:RickAndMorty/resources/variables.dart';
+import 'package:RickAndMorty/screens/characters_filter/characters_filter_screen.dart';
+import 'package:RickAndMorty/screens/locations_filter/locations_filter_screen.dart';
+import 'package:RickAndMorty/screens/locations_filter/location_check_filter_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/characters/characters.dart';
 import 'package:RickAndMorty/screens/nav_bar/locations/locations_screen.dart';
 import 'package:RickAndMorty/screens/nav_bar/settings/settings_screen.dart';
@@ -21,7 +24,14 @@ class NavBarScreen extends StatefulWidget {
 class _NavBarScreenState extends State<NavBarScreen> {
   List<Widget> _widgetOptions = <Widget>[
     BlocConsumer<CharactersBloc, CharactersState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.map(
+          loading: (_) => CharactersLoadingState(),
+          error: (_) => CharactersErrorState(),
+          select: (_) => CharactersSelectState(),
+          filter: (_) => CharactersFilterState(),
+        );
+      },
       builder: (context, state) {
         if (state is CharactersErrorState) {
           return ErrorComponent(errorMessage: state.errorMessage);
@@ -29,7 +39,14 @@ class _NavBarScreenState extends State<NavBarScreen> {
         if (state is CharactersLoadingState) {
           return LoadingComponent();
         }
-        if (state is SelectState) {
+        if (state is CharactersFilterState) {
+          return CharactersFilterScreen(
+            statusList: state.statusList,
+            genderList: state.genderList,
+            sort: state.sort,
+          );
+        }
+        if (state is CharactersSelectState) {
           return CharactersScreen(
             charactersList: state.charactersList,
             isGrid: state.isGrid,
@@ -37,17 +54,43 @@ class _NavBarScreenState extends State<NavBarScreen> {
         }
       },
     ),
-    BlocBuilder<LocationsBloc, LocationsState>(builder: (context, state) {
-      if (state is LocationsErrorState) {
-        return ErrorComponent(errorMessage: state.errorMessage);
-      }
-      if (state is LocationsLoadingState) {
-        return LoadingComponent();
-      }
-      if (state is LocationsInitialState) {
-        return LocationsScreen(locationsList: state.locationsList);
-      }
-    }),
+    BlocConsumer<LocationsBloc, LocationsState>(
+      listener: (context, state) {
+        state.map(
+          initial: (_) => LocationsInitialState(),
+          loading: (_) => LocationsLoadingState(),
+          error: (_) => LocationsErrorState(),
+          filter: (_) => LocationsFilterState(),
+          check: (_) => LocationCheckFilterState(),
+        );
+      },
+      builder: (context, state) {
+        return BlocBuilder<LocationsBloc, LocationsState>(
+            builder: (context, state) {
+          if (state is LocationsErrorState) {
+            return ErrorComponent(errorMessage: state.errorMessage);
+          }
+          if (state is LocationsLoadingState) {
+            return LoadingComponent();
+          }
+          if (state is LocationsInitialState) {
+            return LocationsScreen(locationsList: state.locationsList);
+          }
+
+          if (state is LocationCheckFilterState) {
+            return LocationsCheckFilterScreen(
+                index: state.index, list: state.list);
+          }
+          if (state is LocationsFilterState) {
+            return LocationsFilterScreen(
+              sort: state.sort,
+              typeNumber: state.typeNumber,
+              measurementNumber: state.measurementsNumber,
+            );
+          }
+        });
+      },
+    ),
     BlocBuilder<EpisodesBloc, EpisodesState>(builder: (context, state) {
       if (state is EpisodesErrorState) {
         return ErrorComponent(errorMessage: state.errorMessage);

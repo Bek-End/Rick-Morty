@@ -1,5 +1,7 @@
 import 'package:RickAndMorty/global_bloc/global_bloc.dart';
-import 'package:RickAndMorty/resources/icons.dart';
+import 'package:RickAndMorty/resources/my_icons.dart';
+import 'package:RickAndMorty/screens/nav_bar/characters/bloc/characters_bloc.dart';
+import 'package:RickAndMorty/screens/nav_bar/locations/bloc/locations_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,13 +22,14 @@ class SearchComponent extends StatelessWidget {
           color: Theme.of(context).dividerColor,
           borderRadius: BorderRadius.circular(100),
         ),
-        child: Row(children: [
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: MyIcons.search,
           ),
           Container(
-            width: size.width - 141,
+            width: size.width - 165,
             height: 48,
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
@@ -55,7 +58,30 @@ class SearchComponent extends StatelessWidget {
             width: 1,
             margin: EdgeInsets.only(right: 14),
           ),
-          MyIcons.filter
+          IconButton(
+            tooltip: "Filter",
+            padding: EdgeInsets.only(right: 30),
+            onPressed: () {
+              switch (hintText) {
+                case "Найти локацию":
+                  BlocProvider.of<LocationsBloc>(context).add(
+                      LocationsEvent.filter(
+                          typeNumber: 0, measurementsNumber: 0, sort: 0));
+                  break;
+                case "Найти персонажа":
+                  BlocProvider.of<CharactersBloc>(context).add(
+                    CharactersEvent.filter(
+                        sort: 0,
+                        statusList: [false, false, false],
+                        genderList: [false, false, false]),
+                  );
+                  break;
+                default:
+                  break;
+              }
+            },
+            icon: MyIcons.filter,
+          )
         ]),
       ),
     );

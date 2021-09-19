@@ -1,5 +1,4 @@
 class Variables {
-  
   static List<String> navBarLabels = [
     "Персонажи",
     "Локацииии",
@@ -12,6 +11,27 @@ class Variables {
     "Включена",
     "Следовать настройкам системы",
     "В режиме энергосбережения"
+  ];
+
+  static List<String> typeOfLocationsList = [
+    "Тип",
+    "Мир",
+    "Планета",
+    "Микровселенная",
+    "Цитадель",
+    "Созданная реальность",
+    "Здание",
+    "Неопределенно",
+  ];
+
+  static List<String> measurementsOfLocationsList = [
+    "Измерение",
+    "Измерение 35-C",
+    "Измерение C-137",
+    "Измерение C-500A",
+    "Измерение J19ζ7",
+    "Измерение Дупиду",
+    "Измерение подмены",
   ];
 
   static final String appInfo =
